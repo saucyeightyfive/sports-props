@@ -47,7 +47,12 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          # 3.12, not 3.11. The gap between them is a real hazard: f-strings
+          # containing a backslash or a nested same-quote parse fine on 3.12
+          # and are a hard SyntaxError on 3.11, so code that runs locally can
+          # die in CI with no warning. Keep this matching the version the code
+          # is written and tested against.
+          python-version: '3.12'
           cache: pip
 
       - run: pip install -r requirements.txt
