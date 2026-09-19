@@ -6,6 +6,11 @@ name: weekly-capture
 # This exists because missed weeks were the root cause of every data gap in the
 # predecessor project. The Sunday run is the one that matters: a closing price
 # not captured before kickoff cannot be recovered afterwards by any means.
+#
+# Leagues are a plain comma-separated string looped in bash, not a JSON matrix.
+# A matrix is evaluated before any step runs, so one malformed character in a
+# repo variable kills the whole workflow with an error pointing at the YAML
+# rather than at the variable. A loop fails loudly, inside a step, with a log.
 
 on:
   schedule:
@@ -17,12 +22,12 @@ on:
     - cron: '0 15 * * 2'
   workflow_dispatch:
     inputs:
-      league:
-        description: 'league (nfl | ncaa)'
-        default: 'nfl'
       stage:
         description: 'slate | closing | grade'
         default: 'slate'
+      leagues:
+        description: 'comma-separated (nfl or nfl,ncaa) — blank uses the repo variable'
+        required: false
       week:
         description: 'week number — blank uses the calendar'
         required: false
@@ -30,19 +35,13 @@ on:
 permissions:
   contents: write
 
-# Never let two runs write the ledger at once. A half-finished commit to a
-# CSV is worse than a missed capture.
 concurrency:
-  group: capture-${{ github.ref }}
+  group: capture
   cancel-in-progress: false
 
 jobs:
   capture:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 1
-      matrix:
-        league: ${{ fromJSON(vars.ACTIVE_LEAGUES || '["nfl"]') }}
     steps:
       - uses: actions/checkout@v4
 
@@ -53,57 +52,70 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Resolve stage and week
+      - name: Resolve stage, leagues and week
         id: plan
-        env:
-          LEAGUE: ${{ matrix.league }}
         run: |
           case "${{ github.event.schedule }}" in
             "0 16 * * 4")  STAGE=slate   ;;
             "30 16 * * 0") STAGE=closing ;;
             "0 15 * * 2")  STAGE=grade   ;;
-            *)             STAGE="${{ github.event.inputs.stage || 'slate' }}" ;;
+            *)             STAGE="${{ github.event.inputs.stage }}" ;;
           esac
-          WEEK="${{ github.event.inputs.week }}"
-          if [ -z "$WEEK" ]; then
-            # The week comes from the calendar, not from the ledger. On a
-            # Thursday the ledger's highest week is still last week's.
-            WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
-          fi
-          echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
-          echo "week=$WEEK"   >> "$GITHUB_OUTPUT"
-          echo "::notice::${LEAGUE} · stage=$STAGE · week=$WEEK"
+          [ -z "$STAGE" ] && STAGE=slate
 
-      - name: Run stage
+          LEAGUES="${{ github.event.inputs.leagues }}"
+          [ -z "$LEAGUES" ] && LEAGUES="${{ vars.ACTIVE_LEAGUES }}"
+          [ -z "$LEAGUES" ] && LEAGUES="nfl"
+          # Tolerate anything a human might paste: ["nfl","ncaa"] or nfl, ncaa
+          LEAGUES=$(echo "$LEAGUES" | tr -d '[]"'"'"' ' | tr ',' ' ')
+
+          echo "stage=$STAGE"     >> "$GITHUB_OUTPUT"
+          echo "leagues=$LEAGUES" >> "$GITHUB_OUTPUT"
+          echo "week=${{ github.event.inputs.week }}" >> "$GITHUB_OUTPUT"
+          echo "::notice::stage=$STAGE leagues=$LEAGUES"
+
+      - name: Run stage for each league
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          LEAGUE: ${{ matrix.league }}
           SEASON: ${{ vars.SEASON || '2026' }}
           STAGE: ${{ steps.plan.outputs.stage }}
-          WEEK: ${{ steps.plan.outputs.week }}
+          LEAGUES: ${{ steps.plan.outputs.leagues }}
+          WEEK_IN: ${{ steps.plan.outputs.week }}
         run: |
-          set -o pipefail
-          case "$STAGE" in
-            slate)   python scripts/pull_slate.py   --week "$WEEK" ;;
-            closing) python scripts/pull_closing.py --week "$WEEK" ;;
-            grade)   python scripts/grade.py        --week "$WEEK" ;;
-          esac
-
-      - name: Rebuild dashboard and registry export
-        if: always()
-        env:
-          LEAGUE: ${{ matrix.league }}
-          SEASON: ${{ vars.SEASON || '2026' }}
-          WEEK: ${{ steps.plan.outputs.week }}
-        run: |
-          python scripts/report.py --week "$WEEK"
-          python scripts/review.py
+          FAILED=""
+          for L in $LEAGUES; do
+            export LEAGUE="$L"
+            WEEK="$WEEK_IN"
+            if [ -z "$WEEK" ]; then
+              # The week comes from the calendar, not the ledger. On a Thursday
+              # the ledger's highest week is still last week's.
+              WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
+            fi
+            echo "::group::$L — $STAGE week $WEEK"
+            set +e
+            case "$STAGE" in
+              slate)   python scripts/pull_slate.py   --week "$WEEK" ;;
+              closing) python scripts/pull_closing.py --week "$WEEK" ;;
+              grade)   python scripts/grade.py        --week "$WEEK" ;;
+            esac
+            RC=$?
+            # Rebuild the views either way, so a dry collection still refreshes
+            # the dashboard rather than leaving a stale one published.
+            python scripts/report.py --week "$WEEK" || RC=1
+            python scripts/review.py || true
+            set -e
+            [ $RC -ne 0 ] && FAILED="$FAILED $L"
+            echo "::endgroup::"
+          done
+          if [ -n "$FAILED" ]; then
+            echo "::error::failed for:$FAILED"
+            exit 1
+          fi
 
       - name: Commit what changed
+        if: always()
         env:
-          LEAGUE: ${{ matrix.league }}
           STAGE: ${{ steps.plan.outputs.stage }}
-          WEEK: ${{ steps.plan.outputs.week }}
         run: |
           git config user.name  "props-bot"
           git config user.email "props-bot@users.noreply.github.com"
@@ -112,23 +124,25 @@ jobs:
             echo "::notice::nothing changed — no commit"
             exit 0
           fi
-          git commit -m "auto($LEAGUE): $STAGE week $WEEK [skip ci]"
-          # Someone may have pushed a manual edit while this ran. Rebase onto it
-          # rather than clobbering it — the ledger's history is the audit trail.
+          git commit -m "auto: $STAGE [skip ci]"
+          # Someone may have pushed while this ran. Rebase onto them rather than
+          # clobbering — the ledger's history is the audit trail.
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
-      - name: Warn loudly if a closing capture found nothing
+      - name: Warn if a closing capture left rows open
         if: steps.plan.outputs.stage == 'closing'
         env:
-          LEAGUE: ${{ matrix.league }}
+          LEAGUES: ${{ steps.plan.outputs.leagues }}
         run: |
-          OPEN=$(python -c "
-          import csv,sys,os
+          for L in $LEAGUES; do
+            OPEN=$(LEAGUE="$L" python -c "
+          import csv,sys
           sys.path.insert(0,'scripts'); import config as C
           rows=list(csv.DictReader(open(C.BETS))) if C.BETS.exists() else []
           print(sum(1 for r in rows if r.get('ts_stake') and not r.get('price_close')))")
-          if [ "$OPEN" != "0" ]; then
-            echo "::warning::$OPEN row(s) still have no closing price. This is the"
-            echo "::warning::one number that cannot be recovered after kickoff."
-          fi
+            if [ "$OPEN" != "0" ]; then
+              echo "::warning::$L — $OPEN row(s) still have no closing price."
+              echo "::warning::This is the one number that cannot be recovered after kickoff."
+            fi
+          done
