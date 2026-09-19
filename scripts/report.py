@@ -98,10 +98,14 @@ def hypothesis_card(h, since=None):
 
     trig = _list(h.get("trigger"))
     if trig:
-        items = "".join(
-            f"<li{' class=\"gt\"' if touched(t, since) else ''}>{UI.esc(_clean(t))}</li>"
-            for t in trig)
-        parts.append(f"<p><strong>Fires when — all of:</strong></p><ul>{items}</ul>")
+        # Built without a backslash inside the f-string expression: legal from
+        # Python 3.12 onward, a hard SyntaxError before it. CI runs 3.11.
+        items = []
+        for t in trig:
+            cls = ' class="gt"' if touched(t, since) else ""
+            items.append(f"<li{cls}>{UI.esc(_clean(t))}</li>")
+        parts.append("<p><strong>Fires when — all of:</strong></p><ul>"
+                     + "".join(items) + "</ul>")
 
     cond = h.get("conditions_named")
     if cond:
