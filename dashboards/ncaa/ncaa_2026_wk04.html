@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFL Props — 2026 Week 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+:root{--bg:#0d0e10;--surface:#141518;--surface2:#1c1d21;--border:#2a2b30;--border2:#3a3b42;--text:#e8e9ec;--muted:#8a8b94;--accent:#f0c040;--green:#3ddc84;--red:#ff4d6d;--blue:#4da6ff;--orange:#ff8c42;--purple:#b57bee;--teal:#2dd4bf;--gold:#ffd700;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;}
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.htitle{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.hver{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);border:1px solid var(--border2);padding:2px 6px;border-radius:3px;}
+.hstats{display:flex;gap:18px;flex-wrap:wrap;}
+.hs{text-align:right;}
+.hs-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.hs-v{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+.pos{color:var(--green);}.neg{color:var(--red);}.neu{color:var(--text);}
+.tabs{background:var(--surface);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:11px 16px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;border-right:1px solid var(--border);background:none;border-top:none;border-left:none;transition:all .15s;}
+.tab:hover{color:var(--text);background:var(--surface2);}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent);background:var(--surface2);}
+.nb{display:inline-block;background:var(--red);color:#fff;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;vertical-align:middle;}
+.nb.g{background:var(--green);}.nb.gold{background:var(--gold);color:#000;}
+.tc{display:none;padding:22px;max-width:1180px;margin:0 auto;}
+.tc.active{display:block;}
+.sec{margin-bottom:26px;}
+.sec-t{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.scards{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-bottom:20px;}
+.sc{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:11px 13px;}
+.sc.gold-card{border:2px solid var(--gold);background:linear-gradient(to bottom,#2a2010,#141518);}
+.sc.red-card{border:2px solid var(--red);background:linear-gradient(to bottom,#2a1010,#141518);}
+.sc-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.sc-v{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:700;}
+.sc-s{font-size:11px;color:var(--muted);margin-top:2px;}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:4px;border-left:4px solid var(--green);padding:14px 18px;margin-bottom:13px;}
+.pc.skip{border-left-color:var(--border2);opacity:.7;}
+.pc.shadow{border-left-color:var(--purple);}
+.pc.loss{border-left-color:var(--red);}
+.pc.win{border-left-color:var(--green);}
+.pc.info{border-left-color:var(--blue);}
+.pc.warn{border-left-color:var(--orange);}
+.pc.under{border-left-color:var(--teal);}
+.pc.live{border-left-color:var(--green);border-left-width:6px;background:linear-gradient(to right,#0d2a1a 0%,var(--surface) 8%);}
+.ph{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin-bottom:7px;}
+.pm{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+.pmeta{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.04em;}
+.bgold{background:#3d3210;color:var(--gold);border:1px solid var(--gold);}
+.bf{background:#1a3d2a;color:var(--green);border:1px solid #2a5a3a;}
+.bq{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bbl{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bvu{background:#3d1020;color:var(--red);border:1px solid #5a1530;}
+.bly{background:#3d2010;color:var(--orange);border:1px solid #5a3015;}
+.bsk{background:#1a1b20;color:var(--muted);border:1px solid var(--border);}
+.bsh{background:#2a1a3d;color:var(--purple);border:1px solid #5a3a7a;}
+.btl{background:#0d2d2a;color:var(--teal);border:1px solid #1a5a52;}
+.bc2{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bc3{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bwi{background:#1a3d2a;color:var(--green);}
+.blo{background:#3d1020;color:var(--red);}
+.bpu{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bnw{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bdr{background:#5a1020;color:#ff8080;border:1px solid #7a2030;}
+.bcw{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bgw{background:#3d2810;color:var(--orange);border:1px solid #7a5020;}
+.btls{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bfl{background:#1a1b20;color:var(--muted);border:1px solid var(--border2);}
+.bsu{background:#1a1b20;color:var(--muted);border:1px solid var(--border2);}
+.bsd{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bsc{background:#3d2810;color:var(--orange);border:1px solid #7a5020;}
+.bsh2{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bsr{background:#3d1020;color:#ff6080;border:1px solid #5a1530;}
+.pb{font-size:13px;color:var(--muted);line-height:1.6;}
+.pb strong{color:var(--text);}
+.gt{color:var(--green);}.rt{color:var(--red);}.ot{color:var(--orange);}.pt{color:var(--purple);}.tl{color:var(--teal);}
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px;}
+.tbl th{background:var(--surface2);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 9px;text-align:left;border-bottom:1px solid var(--border);}
+.tbl td{padding:7px 9px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:hover td{background:var(--surface2);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.rb{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:12px 15px;margin-bottom:10px;}
+.rb.nr{border-color:var(--red);}.rb.new{border-color:var(--green);}.rb.lockd{border-color:var(--green);background:linear-gradient(to right,#0d2a1a 0%,var(--surface) 5%);}
+.rb.under{border-color:var(--teal);background:linear-gradient(to right,#0d2422,var(--surface));}
+.rid{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:3px;}
+.rid.nr{color:var(--red);}.rid.new{color:var(--green);}.rid.under{color:var(--teal);}
+.rdesc{font-size:13px;color:var(--text);line-height:1.5;}
+.al{border-radius:4px;padding:11px 15px;margin-bottom:14px;font-size:13px;display:flex;align-items:flex-start;gap:9px;}
+.al.res{background:#0d2a1a;border:1px solid #1a5a30;}
+.al.act{background:#3d1010;border:1px solid #7a2020;}
+.al.inf{background:#1a1d3a;border:1px solid #2a3060;}
+.al.warn{background:#3d2810;border:1px solid #7a5020;}
+.al.under{background:#0d2422;border:1px solid #1a5a52;}
+.al-ic{font-size:15px;flex-shrink:0;margin-top:1px;}
+.al-tx{line-height:1.6;}.al-tx strong{color:var(--text);}
+.res .al-tx{color:#5adc84;}.act .al-tx{color:#ff8080;}.inf .al-tx{color:#9090ff;}.warn .al-tx{color:#ffb060;}.under .al-tx{color:#4dd4c0;}
+.ins{background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:11px 13px;margin-bottom:9px;font-size:13px;}
+.ins-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;background:#3d3210;color:var(--accent);padding:2px 6px;border-radius:2px;margin-bottom:5px;}
+.ins-tag.g{background:#1a3d2a;color:var(--green);}.ins-tag.r{background:#3d1020;color:var(--red);}.ins-tag.tl{background:#0d2d2a;color:var(--teal);}.ins-tag.b{background:#1a2d3d;color:var(--blue);}
+.ins p{color:var(--muted);line-height:1.6;}.ins p strong{color:var(--text);}
+.f5box{background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:10px 12px;margin:9px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.f5box table{width:100%;}.f5box td{padding:3px 7px;}
+.f5box .hdr td{color:var(--muted);font-size:10px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:5px;}
+.f5box .f5tot td{font-weight:700;color:var(--accent);border-top:1px solid var(--border);padding-top:5px;}
+.r15box{background:#0d2a1a;border:1px solid #2a7a40;border-radius:4px;padding:10px 13px;margin:8px 0;font-size:12px;}
+.r15box strong{color:var(--green);font-family:'IBM Plex Mono',monospace;}
+.jumprow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;position:sticky;top:0;z-index:5;}
+.jumplink{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:6px 12px;cursor:pointer;text-decoration:none;transition:all .15s;}
+.jumplink:hover{background:var(--accent);color:#000;border-color:var(--accent);}
+.mergehead{display:flex;align-items:center;gap:12px;margin:8px 0 18px;padding:14px 16px;background:linear-gradient(to right,var(--surface2),var(--surface));border:1px solid var(--border2);border-left:5px solid var(--accent);border-radius:6px;scroll-margin-top:70px;}
+.mergehead .mh-ic{font-size:22px;}
+.mergehead .mh-t{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:var(--text);letter-spacing:.04em;}
+.mergehead .mh-s{font-size:12px;color:var(--muted);margin-top:2px;}
+.mergediv{border:none;border-top:2px dashed var(--border2);margin:32px 0;}
+@media(max-width:700px){.scards{grid-template-columns:repeat(2,1fr);}.header{flex-direction:column;}.hstats{gap:10px;}.hs{text-align:left;}}
+
+/* --- form controls -------------------------------------------------------
+   Added for the live console. Uses the existing tokens only — restyling the
+   :root block still restyles these. */
+.frm{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-bottom:14px;}
+.frm-t{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:11px;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;}
+.fld{display:block;}
+.fld-l{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;}
+.inp,select.inp,textarea.inp{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:6px 9px;font-size:12px;border-radius:3px;font-family:'IBM Plex Mono',monospace;}
+.inp:focus{outline:2px solid var(--accent);outline-offset:-1px;}
+textarea.inp{min-height:52px;resize:vertical;line-height:1.5;}
+.btn{background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 15px;border-radius:3px;cursor:pointer;transition:all .15s;}
+.btn:hover{border-color:var(--accent);color:var(--accent);}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.btn.go{background:#3d3210;border-color:#5a4a10;color:var(--accent);}
+.btn.go:hover{background:var(--accent);color:#000;}
+.irow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.irow .inp{width:84px;}
+.flash{border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:13px;border:1px solid;}
+.flash.ok{background:#0d2a1a;border-color:#1a5a30;color:#5adc84;}
+.flash.err{background:#3d1010;border-color:#7a2020;color:#ff8080;}
+.tklink{color:var(--accent);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;}
+.tklink:hover{text-decoration:underline;}
+.gatebar{height:4px;background:var(--surface2);border-radius:2px;overflow:hidden;margin-top:4px;}
+.gatebar span{display:block;height:100%;background:var(--accent);}
+
+.wkpick{display:inline-block;margin-left:4px;}
+select.inp.wk{width:auto;padding:3px 8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-color:var(--border2);background:var(--surface2);cursor:pointer;}
+select.inp.wk:hover{border-color:var(--accent);}
+
+</style>
+</head>
+<body>
+<div class="header"><div style="display:flex;align-items:baseline;gap:10px"><span class="htitle">🏈 NFL PROPS</span><span class="hver">2026 · WEEK 4 · built Sep 19 14:06</span></div><div class="hstats"><div class="hs"><div class="hs-l">Mean CLV</div><div class="hs-v neu">—</div></div><div class="hs"><div class="hs-l">P&amp;L (live)</div><div class="hs-v neu">+0.00u</div></div><div class="hs"><div class="hs-l">Rows logged</div><div class="hs-v neu">0</div></div><div class="hs"><div class="hs-l">Hypotheses</div><div class="hs-v neu">0 proven / 0</div></div><div class="hs"><div class="hs-l">Live-eligible</div><div class="hs-v neg">none yet</div></div></div></div><div class="tabs"><button class="tab active" onclick="showTab('week',this)">WEEK 4</button><button class="tab" onclick="showTab('performance',this)">PERFORMANCE</button><button class="tab" onclick="showTab('confidence',this)">CONFIDENCE</button><button class="tab" onclick="showTab('posthoc',this)">WK 3 POST-HOC</button><button class="tab" onclick="showTab('hypotheses',this)">HYPOTHESES</button><button class="tab" onclick="showTab('tracking',this)">TRACKING</button><button class="tab" onclick="showTab('methodology',this)">METHODOLOGY</button></div><div id="tab-week" class="tc active"><div class="al warn"><div class="al-ic">📋</div><div class="al-tx"><strong>WEEK 4 — 0 row(s) logged, 0 live, 0 shadow.</strong><br>Every row must be logged before kickoff (G5) and tagged PROJECTED vs CONFIRMED — inactives post ~90 minutes out, and a prop on a scratched player is a process failure, not bad luck.</div></div><div class="sec"><div class="sec-t">// Week 4 rows</div><table class="tbl"><thead><tr><th>ID</th><th>Player</th><th>Market</th><th>Side/Line</th><th>Price</th><th>Close</th><th>CLV</th><th>H</th><th>Tier</th><th>Status</th></tr></thead><tbody><tr><td colspan="10" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div><div class="sec"><div class="sec-t">// Discipline</div><div class="ins"><span class="ins-tag r">BEFORE STAKING ANYTHING</span><p>Only a <strong>PROVEN</strong> hypothesis gets live money. Everything else is <strong>zero dollars</strong>, logged and graded all the same. If no hypothesis fires this week, the correct output is to say so and stop — a dry week is the system working, not a gap to fill.</p></div></div></div><div id="tab-performance" class="tc"><div class="scards"><div class="sc"><div class="sc-l">Mean CLV</div><div class="sc-v neu">—</div><div class="sc-s">n=0 · primary signal</div></div><div class="sc"><div class="sc-l">Beat the close</div><div class="sc-v neu">—</div><div class="sc-s">rows with +CLV</div></div><div class="sc"><div class="sc-l">P&amp;L (live only)</div><div class="sc-v neu">+0.00u</div><div class="sc-s">0 staked row(s)</div></div><div class="sc"><div class="sc-l">Graded record</div><div class="sc-v neu">0-0</div><div class="sc-s">incl. shadow rows</div></div><div class="sc"><div class="sc-l">Shadow rows</div><div class="sc-v neu">0</div><div class="sc-s">tracked, unstaked</div></div></div><div class="sec"><div class="sec-t">// Why CLV leads</div><div class="ins"><span class="ins-tag tl">READ THIS BEFORE THE P&amp;L</span><p>With ~16 games a week, <strong>win-loss says almost nothing</strong> across dozens of rows. Mean CLV is the number that resolves first: a hypothesis that persistently beats the close is real even at a middling hit rate, and one that loses to the close is noise even while it is winning. Judge the season on CLV and margin vs fair — not the record.</p></div></div><div class="sec"><div class="sec-t">// Weekly log</div><table class="tbl"><thead><tr><th>Week</th><th>Rows</th><th>Live</th><th>Mean CLV</th><th>P&amp;L</th></tr></thead><tbody><tr><td colspan="5" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div></div><div id="tab-confidence" class="tc"><div class="al under"><div class="al-ic">⚖</div><div class="al-tx"><strong>Two-step ratification.</strong> Every classification is PROPOSED by Claude, then RATIFIED by you. Nothing credits the confidence ledger until you sign off — and Claude never ratifies its own work. Disagreement is logged signal, not a problem to smooth over.</div></div><div class="sec"><div class="sec-t">// Awaiting your ratification</div><table class="tbl"><thead><tr><th>ID</th><th>H</th><th>Proposed</th><th>Rationale</th></tr></thead><tbody><tr><td colspan="4" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div><div class="sec"><div class="sec-t">// Per-hypothesis state</div><table class="tbl"><thead><tr><th>H</th><th>Name</th><th>Tier</th><th>Rows / min-n</th><th>Mean CLV</th></tr></thead><tbody><tr><td colspan="5" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div><div class="sec"><div class="sec-t">// Ratified history</div><table class="tbl"><thead><tr><th>Date</th><th>H</th><th>Class</th><th>Note</th></tr></thead><tbody><tr><td colspan="4" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div></div><div id="tab-posthoc" class="tc"><div class="al warn"><div class="al-ic">🔬</div><div class="al-tx"><strong>No graded rows for week 3 yet.</strong><br>Run <span class='mono'>python scripts/grade.py --week 3</span> after the games, then propose classifications.</div></div></div><div id="tab-hypotheses" class="tc"><div class="al warn"><div class="al-ic">🧪</div><div class="al-tx"><strong>No hypotheses defined yet — this is correct on day one.</strong><br>Ask for a starter framework: 3–5 falsifiable candidates, each with a trigger, the underlying metrics that verify it (G4), the prop expression, why the market might misprice it, and what would disprove it. All open as SHADOW. Ratify before touching a slate.</div></div><div class="sec"><div class="sec-t">// Template</div><div class="rb new"><div class="rid new">Every hypothesis must name the market&#x27;s error</div><div class="rdesc">If you cannot say <em>why</em> the market is wrong — which specific input it is underweighting — it is not a hypothesis, it is a hunch. Write the disproof condition before the data arrives, so the standard cannot drift to fit the results.</div></div></div></div><div id="tab-tracking" class="tc"><div class="sec"><div class="sec-t">// CLV by hypothesis — the leading indicator</div><table class="tbl"><thead><tr><th>H</th><th>Rows</th><th>Mean CLV</th><th>Beat close</th><th>Signal</th></tr></thead><tbody><tr><td colspan="5" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div><div class="sec"><div class="sec-t">// Mechanism observations</div><table class="tbl"><thead><tr><th>Date</th><th>Player</th><th>Metric</th><th>Actual</th><th>Expected</th><th>Note</th></tr></thead><tbody><tr><td colspan="6" class="mono" style="color:var(--muted);padding:16px 9px">— no rows yet —</td></tr></tbody></table></div><div class="sec"><div class="sec-t">// Why these are separate</div><div class="ins"><span class="ins-tag b">G6 — MECHANISM, NOT MARKETS</span><p>Observations recovered from weeks you missed live here, tagged separately and permanently outside the bet ledger. They can tell you whether a mechanism holds; they can never tell you whether a bet would have won. Reconstructing a line after the fact is how a record starts flattering you.</p></div></div></div><div id="tab-methodology" class="tc"><div class="sec"><div class="sec-t">// Active rules</div></div><div class="sec"><div class="sec-t">// Amendment log</div><div class="ins"><span class="ins-tag b">NO AMENDMENTS</span><p>The rules have not changed since the framework opened.</p></div></div></div>
+<script>
+function showTab(name, btn){
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

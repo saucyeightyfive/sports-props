@@ -1,0 +1,69 @@
+# RULES — grading and process. Amendments are appended, never overwritten.
+
+rules:
+  - id: G1
+    name: Fair-line grading
+    text: >
+      Never grade against an arbitrary bar. Grade against the closing line or a
+      clearly-labeled derived fair line. Judge hypotheses on mean margin vs fair,
+      not W/L count.
+    origin: A prior project's hypothesis showed a 3-0 record against a soft bar
+      that collapsed to ~0 edge against a fair line.
+
+  - id: G2
+    name: CLV on every row
+    text: >
+      Capture line and price at stake-time AND at close on every row, including
+      shadow rows. CLV is the primary early signal; with NFL sample sizes it
+      reveals edge long before W/L can.
+
+  - id: G3
+    name: Expression decomposition
+    text: >
+      Before staking, decompose the bet into the conditions it actually
+      requires. Flag hidden conjunctions. Log conditions_required per row.
+    origin: A moneyline expression presented as single-condition was a
+      conjunction; the elite arm performed exactly as predicted and the bet
+      still lost because the hidden second leg failed.
+
+  - id: G4
+    name: Verify the underlying
+    text: >
+      Reads must rest on usage inputs (snap share, route participation, target
+      share, aDOT, air yards, PROE, pressure rate, red-zone usage), not result
+      stats (yards per game). Results regress; usage holds.
+
+  - id: G5
+    name: Prospective only
+    text: >
+      A play counts only if identified, logged, and priced before kickoff.
+      No retroactive "would have won" ever enters bets.csv.
+
+  - id: G6
+    name: Retroactive mechanism capture
+    text: >
+      For missed weeks, recover mechanism not markets. Box-score-settled
+      observations go to mechanism.csv, tagged separately, and inform a
+      hypothesis's truth but never the W/L ledger. Reconstructing a line is
+      forbidden.
+
+amendments:
+  - date: 2026-09-19
+    rule: G3
+    change: >
+      G3a — no player prop is a single condition. Every prop expression
+      requires at least two: OPPORTUNITY (the player is on the field in the
+      role assumed) and CONVERSION (the opportunity turns into the counted
+      event at his established rate). Stop recording conjunction as a boolean.
+      Record both conditions, and name which one the read claims edge on. A
+      read that claims edge on opportunity must not be graded as though it
+      claimed conversion — that is how a half-correct read gets filed as a
+      clean miss.
+    origin: >
+      Week 1 2026. A receiving read was logged as "volume, single condition."
+      Team volume arrived exactly as predicted -- 35 attempts, 254 yards -- and
+      the player drew four targets, the second-fewest of his career. The
+      opportunity condition held; the conversion condition collapsed. Logged as
+      one condition, the ledger would have recorded a clean miss on a read that
+      was half right, and the lesson would have been unavailable.
+    status: PROPOSED
