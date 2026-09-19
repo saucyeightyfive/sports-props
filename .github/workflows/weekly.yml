@@ -82,7 +82,18 @@ jobs:
           LEAGUES: ${{ steps.plan.outputs.leagues }}
           WEEK_IN: ${{ steps.plan.outputs.week }}
         run: |
-          FAILED=""
+          # GitHub runs every `run:` block as `bash -e`, so the FIRST non-zero
+          # command kills the step outright. That is wrong here: collection
+          # talks to the open internet, and a 403 from a data source is
+          # weather, not a bug. Turn it off explicitly and check return codes
+          # by hand.
+          set +e
+
+          # The split that matters:
+          #   collection failing  -> WARNING, keep going
+          #   report.py failing   -> ERROR, our own code is broken
+          #   a run that goes red for weather is a run you stop reading
+          BROKEN=""
           for L in $LEAGUES; do
             export LEAGUE="$L"
             WEEK="$WEEK_IN"
@@ -91,24 +102,31 @@ jobs:
               # the ledger's highest week is still last week's.
               WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
             fi
-            echo "::group::$L — $STAGE week $WEEK"
-            set +e
+
+            echo "----- $L | $STAGE | week $WEEK -----"
             case "$STAGE" in
               slate)   python scripts/pull_slate.py   --week "$WEEK" ;;
               closing) python scripts/pull_closing.py --week "$WEEK" ;;
               grade)   python scripts/grade.py        --week "$WEEK" ;;
             esac
-            RC=$?
-            # Rebuild the views either way, so a dry collection still refreshes
-            # the dashboard rather than leaving a stale one published.
-            python scripts/report.py --week "$WEEK" || RC=1
+            COLLECT_RC=$?
+            if [ $COLLECT_RC -ne 0 ]; then
+              echo "::warning::$L — $STAGE exited $COLLECT_RC. Collection is"
+              echo "::warning::best-effort; the views are still rebuilt below."
+            fi
+
+            echo "----- $L | rebuild views -----"
+            python scripts/report.py --week "$WEEK"
+            REPORT_RC=$?
             python scripts/review.py || true
-            set -e
-            [ $RC -ne 0 ] && FAILED="$FAILED $L"
-            echo "::endgroup::"
+            if [ $REPORT_RC -ne 0 ]; then
+              BROKEN="$BROKEN $L"
+            fi
           done
-          if [ -n "$FAILED" ]; then
-            echo "::error::failed for:$FAILED"
+
+          if [ -n "$BROKEN" ]; then
+            echo "::error::report.py failed for:$BROKEN — this is a code fault,"
+            echo "::error::not a data-source problem. The log above has the traceback."
             exit 1
           fi
 
