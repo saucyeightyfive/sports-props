@@ -1,0 +1,62 @@
+name: publish-dashboard
+
+# Publishes the dashboards/ folder to GitHub Pages so the record is readable
+# away from the desktop. Free on a public repository.
+#
+# OFF BY DEFAULT. It runs only when the repository variable PUBLISH_PAGES is
+# set to "true". Left ungated it would fail on every push until Pages is
+# configured, and a workflow that is always red is a workflow you stop reading.
+#
+# This publishes BUILT PAGES ONLY — the ledger CSVs and YAMLs are not copied to
+# the site. They are still visible in the repo itself, because the repo is
+# public; that is a deliberate choice, not an accident of this workflow.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dashboards/**'
+  workflow_run:
+    workflows: ["weekly-capture"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a queued run supersedes an older one rather than
+# racing it.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    # Settings -> Secrets and variables -> Actions -> Variables:
+    #   PUBLISH_PAGES = true      (and set Pages source to "GitHub Actions")
+    if: vars.PUBLISH_PAGES == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail early if there is nothing to publish
+        run: |
+          if [ ! -f dashboards/index.html ]; then
+            echo "::error::dashboards/index.html missing. Run"
+            echo "::error::python scripts/report.py --week N for at least one league."
+            exit 1
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboards
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
