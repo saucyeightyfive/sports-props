@@ -28,8 +28,12 @@ def pull_nflverse(week):
     """Schedule + usage inputs (G4). Free via nflverse."""
     try:
         import nfl_data_py as nfl
-    except ImportError:
-        print("  [skip] nfl_data_py not installed (pip install nfl_data_py)")
+    except Exception as e:
+        # Deliberately broad. nfl_data_py imports pandas and numpy, and a
+        # version mismatch there raises AttributeError or TypeError at import,
+        # not ImportError. Collection is best-effort; a dependency skew should
+        # cost a warning, never the whole capture run.
+        print(f"  [skip] nfl_data_py unavailable: {type(e).__name__}: {e}")
         return None
     out = {}
     try:
