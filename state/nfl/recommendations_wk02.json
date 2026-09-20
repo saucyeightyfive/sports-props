@@ -1,0 +1,19 @@
+{
+  "league": "nfl",
+  "season": 2026,
+  "week": 2,
+  "generated": "2026-09-20T15:46:04+00:00",
+  "recommendations": [],
+  "too_thin": [],
+  "no_price": [],
+  "skipped": [
+    [
+      "H1",
+      "hypothesis could not be evaluated"
+    ],
+    [
+      "H3",
+      "edge is in closing_line_cents, measured on the ledger rather than priced here"
+    ]
+  ]
+}

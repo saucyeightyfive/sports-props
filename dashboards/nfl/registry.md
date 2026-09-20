@@ -2,7 +2,7 @@
 
 *Framework status: **PROPOSED**. Everything below is proposed until ratified.*
 
-> Week 1 review. No hypothesis added -- the catalogue was sharpened, not grown. H1 gained a conversion floor and an honest conjunction flag, H5 gained a second axis at no extra min_n cost, G3a proposed in rules.yaml. All four hypotheses still hold zero rows, which is the only reason these edits are legitimate: a definition may be revised freely before it has a record. Once the first row lands, the gate applies and the triggers freeze until min_n.
+> 2026-09-20: every hypothesis now states a CLAIMED EDGE -- how far it thinks the market is wrong, in what unit, and what realised number would prove the claim false. Without that there is nothing to rank recommendations by and nothing to falsify: "the market is wrong about this player" is a mood, not a hypothesis. The numbers below are PROPOSED and need ratification. They are deliberately modest; a claimed edge that does not clear prop vig means the read is real and unbettable, which the engine now says out loud.
 
 
 ## Open hypotheses

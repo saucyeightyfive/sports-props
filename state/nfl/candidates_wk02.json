@@ -1,0 +1,53 @@
+{
+  "league": "nfl",
+  "season": 2026,
+  "week": 2,
+  "generated": "2026-09-20T15:46:04+00:00",
+  "board_lines": 2243,
+  "players_with_usage": 301,
+  "results": [
+    {
+      "id": "H1",
+      "name": "Route-participation lag",
+      "tier": "SHADOW",
+      "verdict": "UNEVALUABLE",
+      "candidates": [],
+      "notes": [
+        "trigger names 'route participation' \u2014 routes run is not in any free nflverse feed",
+        "trigger names 'targets per route run' \u2014 needs routes run"
+      ]
+    },
+    {
+      "id": "H2",
+      "name": "Second-order target absorption",
+      "tier": "SHADOW",
+      "verdict": "NO CANDIDATES",
+      "candidates": [],
+      "notes": [
+        "Partial: alignment overlap not verifiable without route data. Treat these as leads to check by hand, not as a satisfied trigger.",
+        "M.Evans (SF): usage qualifies but team mismatch \u2014 usage says SF, board has ['Carolina Panthers @ Atlanta Falcons']",
+        "M.Washington (MIA): usage qualifies but not on the board"
+      ]
+    },
+    {
+      "id": "H3",
+      "name": "Friday-news latency (CLV-primary)",
+      "tier": "SHADOW",
+      "verdict": "NO CANDIDATES",
+      "candidates": [],
+      "notes": [
+        "movement comparison not yet implemented"
+      ]
+    },
+    {
+      "id": "H5",
+      "name": "Expression-form control (meta)",
+      "tier": "SHADOW",
+      "verdict": "NO CANDIDATES",
+      "candidates": [],
+      "notes": [
+        "rides on H1/H2 rows \u2014 pairs are created when a parent row is logged, not scanned for independently"
+      ]
+    }
+  ]
+}
