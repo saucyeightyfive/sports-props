@@ -120,6 +120,15 @@ jobs:
               echo "::warning::best-effort; the views are still rebuilt below."
             fi
 
+            # Scan AFTER collection: the scanner reads what was just captured.
+            # It never stakes anything; it proposes candidates and reports which
+            # hypotheses could not be evaluated at all.
+            if [ "$STAGE" = "slate" ] || [ "$STAGE" = "closing" ]; then
+              echo "----- $L | scan -----"
+              python scripts/scan.py --week "$WEEK"
+              python scripts/recommend.py --week "$WEEK"
+            fi
+
             echo "----- $L | rebuild views -----"
             python scripts/report.py --week "$WEEK"
             REPORT_RC=$?
