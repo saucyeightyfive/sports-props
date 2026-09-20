@@ -463,6 +463,58 @@ def tab_methodology(rules):
 
 # --------------------------------------------------------------------------- build
 
+def _recommendations(week):
+    import json as _json
+    path = C.STATE / f"recommendations_wk{week:02d}.json"
+    if not path.exists():
+        return ""
+    d = _json.loads(path.read_text())
+    recs, thin = d.get("recommendations", []), d.get("too_thin", [])
+
+    out = ""
+    if recs:
+        blocks = []
+        for r in recs:
+            badges = [UI.badge(f"EV {r['ev_pct']:+.2f}%",
+                               "confirmed" if r["ev_pct"] > 0 else "danger"),
+                      UI.badge(r["hypothesis"], "live"),
+                      UI.badge("SHADOW · 0u", "shadow")]
+            math = UI.table(
+                ["Market fair", "Claimed edge", "Model", "Best price",
+                 "Breakeven", "EV"],
+                [[f'<span class="mono">{r["fair_prob"]}%</span>',
+                  f'<span class="mono">+{r["claimed_edge"]}</span>',
+                  f'<span class="mono gt">{r["model_prob"]}%</span>',
+                  f'<span class="mono">{r["best_price"]:+d} '
+                  f'<span class="mut">{UI.esc(r["best_book"])}</span></span>',
+                  f'<span class="mono">{r["breakeven_prob"]}%</span>',
+                  f'<span class="mono gt">{r["ev_pct"]:+.2f}%</span>']])
+            blocks.append(UI.panel(
+                f'{r["player"]} ({r["team"]}) — {r["market"]} {r["side"]} {r["line"]}',
+                badges,
+                f'<p class="mut">{UI.esc(r["game"])}</p>'
+                f'<p>{UI.esc(r["reason"])}</p>{math}', "live"))
+        out += UI.section("Recommendations", *blocks)
+
+    if thin:
+        rows = [[f'<span class="mono">{UI.esc(r["player"])}</span>',
+                 f'<span class="mono mut">{UI.esc(r["market"])} {UI.esc(r["side"])} '
+                 f'{UI.esc(r["line"])}</span>',
+                 f'<span class="mono">{r["model_prob"]}%</span>',
+                 f'<span class="mono">{r["breakeven_prob"]}%</span>',
+                 f'<span class="mono">{r["hold"]}%</span>'] for r in thin]
+        out += UI.section(
+            "Real reads, wrong price",
+            UI.insight("TOO THIN IS A RESULT",
+                       "These fired a trigger and still should not be bet: even "
+                       "granting the full edge the hypothesis claims, the price "
+                       "does not clear. Prop vig is the reason most true reads "
+                       "are unprofitable, and a system that cannot say so will "
+                       "talk you into the wrong price every week.", "r"),
+            UI.table(["Player", "Market", "Model", "Breakeven", "Vig"], rows))
+    return out
+
+
 def tab_candidates(week):
     """What the scanner found. Proposals only — nothing here is staked."""
     path = C.STATE / f"candidates_wk{week:02d}.json"
@@ -534,7 +586,8 @@ def tab_candidates(week):
         "and it still opens at zero stake unless the hypothesis is PROVEN.",
         kind="under", icon="⚖")
 
-    return head + staked + UI.section("By hypothesis", *blocks) + \
+    return head + staked + _recommendations(week) + \
+        UI.section("By hypothesis — what the scanner tested", *blocks) + \
         UI.section("Reading this tab", why)
 
 
@@ -604,7 +657,7 @@ def build(week, bets, classes, mech, hyp, rules):
 
     nav = UI.tabs([
         ("week", f"WEEK {week}", None),
-        ("candidates", "CANDIDATES", None),
+        ("candidates", "PICKS", None),
         ("performance", "PERFORMANCE", None),
         ("confidence", "CONFIDENCE", "RATIFY" if any(
             (c.get("status") or "").upper() == "PROPOSED" for c in classes) else None),
