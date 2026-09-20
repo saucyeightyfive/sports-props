@@ -462,6 +462,127 @@ def tab_methodology(rules):
             UI.section("Amendment log", *acards))
 
 # --------------------------------------------------------------------------- build
+
+def tab_candidates(week):
+    """What the scanner found. Proposals only — nothing here is staked."""
+    path = C.STATE / f"candidates_wk{week:02d}.json"
+    if not path.exists():
+        return UI.alert(
+            f"<strong>No scan yet for week {week}.</strong><br>"
+            f"Run <span class='mono'>python scripts/scan.py --week {week}</span> "
+            "after the slate pull. The scanner reads the captured prop board "
+            "and the usage data, tests every hypothesis trigger, and lists what "
+            "fired — or says plainly why it could not.", kind="warn", icon="🔍")
+    import json as _json
+    d = _json.loads(path.read_text())
+
+    head = UI.statcards([
+        ("Board lines", f"{d.get('board_lines', 0):,}", "captured this week", "neu"),
+        ("Players w/ usage", str(d.get("players_with_usage", 0)),
+         "current season", "neu"),
+        ("Candidates", str(sum(len(r["candidates"]) for r in d["results"])),
+         "proposals, zero staked", "neu"),
+        ("Unevaluable", str(sum(1 for r in d["results"]
+                                if r["verdict"] == "UNEVALUABLE")),
+         "hypotheses blocked", "neg" if any(
+             r["verdict"] == "UNEVALUABLE" for r in d["results"]) else "pos"),
+    ])
+
+    blocks = []
+    for r in d["results"]:
+        v = r["verdict"]
+        tone = {"FIRED": "live", "NO CANDIDATES": "skip",
+                "UNEVALUABLE": "loss"}[v]
+        badges = [UI.badge(v, {"FIRED": "confirmed", "NO CANDIDATES": "shadow",
+                               "UNEVALUABLE": "danger"}[v]),
+                  UI.badge(str(r.get("tier", "SHADOW")), "shadow")]
+        body = ""
+        if r["candidates"]:
+            trs = []
+            for c in r["candidates"]:
+                trs.append([
+                    f'<span class="mono">{UI.esc(c["player"])}</span>',
+                    f'<span class="mono mut">{UI.esc(c["team"])}</span>',
+                    UI.esc(c["game"]),
+                    f'<span class="mono">{UI.esc(c["market"])} '
+                    f'{UI.esc(c["side"])} {UI.esc(c["line"])}</span>',
+                    f'<span class="mono">{c["price"]:+d} '
+                    f'<span class="mut">{UI.esc(c["book"])}</span></span>',
+                    f'<span class="mono">{c["target_share_prior"]} → '
+                    f'{c["target_share"]} '
+                    f'<span class="gt">(+{c["rise"]})</span></span>',
+                ])
+            body += UI.table(["Player", "Tm", "Game", "Market", "Best price",
+                              "Target share"], trs)
+        if r["notes"]:
+            items = "".join(f"<li>{UI.esc(n)}</li>" for n in r["notes"][:8])
+            body += f'<p><strong>Notes</strong></p><ul>{items}</ul>'
+        blocks.append(UI.panel(f'{r["id"]} — {r["name"]}', badges, body, tone))
+
+    why = UI.insight(
+        "UNEVALUABLE IS NOT A DRY WEEK",
+        "A hypothesis with no candidates was tested and found nothing — that is "
+        "the system working. A hypothesis marked <strong>UNEVALUABLE</strong> "
+        "was never tested at all, because its trigger names an input that does "
+        "not exist in the data being collected. Left alone it sits at zero rows "
+        "all season looking patient. Amend the trigger, fund the source, or "
+        "retire it.", "r")
+
+    staked = UI.alert(
+        "<strong>Nothing on this tab is a bet.</strong><br>Candidates are "
+        "proposals produced by a rule. Logging one is a decision only you make, "
+        "and it still opens at zero stake unless the hypothesis is PROVEN.",
+        kind="under", icon="⚖")
+
+    return head + staked + UI.section("By hypothesis", *blocks) + \
+        UI.section("Reading this tab", why)
+
+
+def tab_journal():
+    """Decisions and reasoning, dated. The record the ledgers do not keep."""
+    import csv as _csv
+    p = C.LEDGER / "journal.csv"
+    if not p.exists():
+        return UI.alert(
+            "<strong>Journal is empty.</strong><br>Log a decision with "
+            "<span class='mono'>python scripts/journal.py --add decision "
+            "\"subject\" \"body\"</span>, or from the console. This is where "
+            "the reasoning lives — what was argued, what was rejected, what you "
+            "believed at the time and were wrong about.", kind="warn", icon="📓")
+    with open(p, newline="") as f:
+        rows = list(_csv.DictReader(f))
+
+    kinds = {}
+    for r in rows:
+        kinds[r["kind"]] = kinds.get(r["kind"], 0) + 1
+    cards = UI.statcards(
+        [("Entries", str(len(rows)), "all time", "neu")] +
+        [(k.title(), str(v), "", "neu") for k, v in sorted(kinds.items())][:4])
+
+    blocks = []
+    for r in reversed(rows):
+        badges = [UI.badge(r["kind"].upper(), {
+            "decision": "confirmed", "amendment": "live",
+            "correction": "danger", "discussion": "info",
+            "observation": "shadow"}.get(r["kind"], "info")),
+            UI.badge(f"WK {r['week']}", "info"),
+            UI.badge(r["ts"][:10], "info")]
+        if r.get("refs"):
+            badges.append(UI.badge(r["refs"], "flag"))
+        blocks.append(UI.panel(f'{r["entry_id"]} — {r["subject"]}', badges,
+                               f'<p>{UI.esc(r["body"])}</p>', "info"))
+
+    note = UI.insight(
+        "WHY THIS EXISTS",
+        "The bet ledger records what was risked. The confidence ledger records "
+        "what a result taught. Neither records the argument that produced the "
+        "decision. In March, the difference between a season you can learn from "
+        "and a pile of numbers is whether anyone wrote down <em>why</em>.", "b")
+
+    return cards + UI.section("Entries, newest first", *blocks) + \
+        UI.section("Why this exists", note)
+
+
 def build(week, bets, classes, mech, hyp, rules):
     clvs = [num(b.get("clv_cents")) for b in bets if num(b.get("clv_cents")) is not None]
     mean_clv = sum(clvs) / len(clvs) if clvs else None
@@ -483,6 +604,7 @@ def build(week, bets, classes, mech, hyp, rules):
 
     nav = UI.tabs([
         ("week", f"WEEK {week}", None),
+        ("candidates", "CANDIDATES", None),
         ("performance", "PERFORMANCE", None),
         ("confidence", "CONFIDENCE", "RATIFY" if any(
             (c.get("status") or "").upper() == "PROPOSED" for c in classes) else None),
@@ -490,16 +612,19 @@ def build(week, bets, classes, mech, hyp, rules):
         ("hypotheses", "HYPOTHESES", None),
         ("tracking", "TRACKING", None),
         ("methodology", "METHODOLOGY", None),
+        ("journal", "JOURNAL", None),
     ])
 
     body = (head + nav +
             UI.tabcontent("week", tab_week(bets, week), active=True) +
+            UI.tabcontent("candidates", tab_candidates(week)) +
             UI.tabcontent("performance", tab_performance(bets)) +
             UI.tabcontent("confidence", tab_confidence(classes, hyp)) +
             UI.tabcontent("posthoc", tab_posthoc(bets, week)) +
             UI.tabcontent("hypotheses", tab_hypotheses(hyp)) +
             UI.tabcontent("tracking", tab_tracking(bets, mech)) +
-            UI.tabcontent("methodology", tab_methodology(rules)))
+            UI.tabcontent("methodology", tab_methodology(rules)) +
+            UI.tabcontent("journal", tab_journal()))
 
     return UI.document("NFL Props", f"NFL Props — {C.SEASON} Week {week}", body)
 
