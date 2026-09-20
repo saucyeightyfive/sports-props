@@ -1,0 +1,179 @@
+name: weekly-capture
+
+# Automates COLLECTION only. Judgment -- hypothesis definition, tier changes,
+# PROPOSED -> RATIFIED -- stays manual, permanently. See CLAUDE.md.
+#
+# This exists because missed weeks were the root cause of every data gap in the
+# predecessor project. The Sunday run is the one that matters: a closing price
+# not captured before kickoff cannot be recovered afterwards by any means.
+#
+# Leagues are a plain comma-separated string looped in bash, not a JSON matrix.
+# A matrix is evaluated before any step runs, so one malformed character in a
+# repo variable kills the whole workflow with an error pointing at the YAML
+# rather than at the variable. A loop fails loudly, inside a step, with a log.
+
+on:
+  schedule:
+    # Thursday 16:00 UTC — slate, injuries, usage, opening props
+    - cron: '0 16 * * 4'
+    # Sunday 16:30 UTC (12:30 ET) — closing capture before the early window
+    - cron: '30 16 * * 0'
+    # Tuesday 15:00 UTC — grade the completed week, rebuild the dashboard
+    - cron: '0 15 * * 2'
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 'slate | closing | grade'
+        default: 'slate'
+      leagues:
+        description: 'comma-separated (nfl or nfl,ncaa) — blank uses the repo variable'
+        required: false
+      week:
+        description: 'week number — blank uses the calendar'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          # 3.12, not 3.11. The gap between them is a real hazard: f-strings
+          # containing a backslash or a nested same-quote parse fine on 3.12
+          # and are a hard SyntaxError on 3.11, so code that runs locally can
+          # die in CI with no warning. Keep this matching the version the code
+          # is written and tested against.
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Resolve stage, leagues and week
+        id: plan
+        run: |
+          case "${{ github.event.schedule }}" in
+            "0 16 * * 4")  STAGE=slate   ;;
+            "30 16 * * 0") STAGE=closing ;;
+            "0 15 * * 2")  STAGE=grade   ;;
+            *)             STAGE="${{ github.event.inputs.stage }}" ;;
+          esac
+          [ -z "$STAGE" ] && STAGE=slate
+
+          LEAGUES="${{ github.event.inputs.leagues }}"
+          [ -z "$LEAGUES" ] && LEAGUES="${{ vars.ACTIVE_LEAGUES }}"
+          [ -z "$LEAGUES" ] && LEAGUES="nfl"
+          # Tolerate anything a human might paste: ["nfl","ncaa"] or nfl, ncaa
+          LEAGUES=$(echo "$LEAGUES" | tr -d '[]"'"'"' ' | tr ',' ' ')
+
+          echo "stage=$STAGE"     >> "$GITHUB_OUTPUT"
+          echo "leagues=$LEAGUES" >> "$GITHUB_OUTPUT"
+          echo "week=${{ github.event.inputs.week }}" >> "$GITHUB_OUTPUT"
+          echo "::notice::stage=$STAGE leagues=$LEAGUES"
+
+      - name: Run stage for each league
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          SEASON: ${{ vars.SEASON || '2026' }}
+          STAGE: ${{ steps.plan.outputs.stage }}
+          LEAGUES: ${{ steps.plan.outputs.leagues }}
+          WEEK_IN: ${{ steps.plan.outputs.week }}
+        run: |
+          # GitHub runs every `run:` block as `bash -e`, so the FIRST non-zero
+          # command kills the step outright. That is wrong here: collection
+          # talks to the open internet, and a 403 from a data source is
+          # weather, not a bug. Turn it off explicitly and check return codes
+          # by hand.
+          set +e
+
+          # The split that matters:
+          #   collection failing  -> WARNING, keep going
+          #   report.py failing   -> ERROR, our own code is broken
+          #   a run that goes red for weather is a run you stop reading
+          BROKEN=""
+          for L in $LEAGUES; do
+            export LEAGUE="$L"
+            WEEK="$WEEK_IN"
+            if [ -z "$WEEK" ]; then
+              # The week comes from the calendar, not the ledger. On a Thursday
+              # the ledger's highest week is still last week's.
+              WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
+            fi
+
+            echo "----- $L | $STAGE | week $WEEK -----"
+            case "$STAGE" in
+              slate)   python scripts/pull_slate.py   --week "$WEEK" ;;
+              closing) python scripts/pull_closing.py --week "$WEEK" ;;
+              grade)   python scripts/grade.py        --week "$WEEK" ;;
+            esac
+            COLLECT_RC=$?
+            if [ $COLLECT_RC -ne 0 ]; then
+              echo "::warning::$L — $STAGE exited $COLLECT_RC. Collection is"
+              echo "::warning::best-effort; the views are still rebuilt below."
+            fi
+
+            # Scan AFTER collection: the scanner reads what was just captured.
+            # It never stakes anything; it proposes candidates and reports which
+            # hypotheses could not be evaluated at all.
+            if [ "$STAGE" = "slate" ] || [ "$STAGE" = "closing" ]; then
+              echo "----- $L | scan -----"
+              python scripts/scan.py --week "$WEEK"
+            fi
+
+            echo "----- $L | rebuild views -----"
+            python scripts/report.py --week "$WEEK"
+            REPORT_RC=$?
+            python scripts/review.py || true
+            if [ $REPORT_RC -ne 0 ]; then
+              BROKEN="$BROKEN $L"
+            fi
+          done
+
+          if [ -n "$BROKEN" ]; then
+            echo "::error::report.py failed for:$BROKEN — this is a code fault,"
+            echo "::error::not a data-source problem. The log above has the traceback."
+            exit 1
+          fi
+
+      - name: Commit what changed
+        if: always()
+        env:
+          STAGE: ${{ steps.plan.outputs.stage }}
+        run: |
+          git config user.name  "props-bot"
+          git config user.email "props-bot@users.noreply.github.com"
+          git add state/ dashboards/ data/ || true
+          if git diff --staged --quiet; then
+            echo "::notice::nothing changed — no commit"
+            exit 0
+          fi
+          git commit -m "auto: $STAGE [skip ci]"
+          # Someone may have pushed while this ran. Rebase onto them rather than
+          # clobbering — the ledger's history is the audit trail.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Warn if a closing capture left rows open
+        if: steps.plan.outputs.stage == 'closing'
+        env:
+          LEAGUES: ${{ steps.plan.outputs.leagues }}
+        run: |
+          for L in $LEAGUES; do
+            OPEN=$(LEAGUE="$L" python -c "
+          import csv,sys
+          sys.path.insert(0,'scripts'); import config as C
+          rows=list(csv.DictReader(open(C.BETS))) if C.BETS.exists() else []
+          print(sum(1 for r in rows if r.get('ts_stake') and not r.get('price_close')))")
+            if [ "$OPEN" != "0" ]; then
+              echo "::warning::$L — $OPEN row(s) still have no closing price."
+              echo "::warning::This is the one number that cannot be recovered after kickoff."
+            fi
+          done
