@@ -12,8 +12,16 @@ meta:
   opened: null                      # set on first ratified framework
   active_count: 0
   framework_status: PROPOSED        # -> RATIFIED only by user
-  last_revised: 2026-09-19
+  last_revised: 2026-09-20
   revision_note: >
+    2026-09-20: every hypothesis now states a CLAIMED EDGE -- how far it thinks
+    the market is wrong, in what unit, and what realised number would prove the
+    claim false. Without that there is nothing to rank recommendations by and
+    nothing to falsify: "the market is wrong about this player" is a mood, not
+    a hypothesis. The numbers below are PROPOSED and need ratification. They
+    are deliberately modest; a claimed edge that does not clear prop vig means
+    the read is real and unbettable, which the engine now says out loud.
+  revision_note_2026_09_19: >
     Week 1 review. No hypothesis added -- the catalogue was sharpened, not
     grown. H1 gained a conversion floor and an honest conjunction flag, H5
     gained a second axis at no extra min_n cost, G3a proposed in rules.yaml.
@@ -82,6 +90,23 @@ hypotheses:
       Also dies if TPRR turns out to fall as route share rises (i.e. the
       promotion is dilution, not opportunity) -- that would mean the mechanism
       is backwards, not merely weak.
+    claimed_edge:
+      unit: probability_points
+      value: 4.0
+      direction: over
+      rationale: >
+        The claim is that a re-based role is not yet in the line. Four points of
+        probability is roughly one extra reception every eight games at a 5.5
+        line -- small enough to be plausible, large enough to clear prop vig.
+      breakeven_note: >
+        At a typical -115/-115 prop the hold is about 4.3%, so roughly 2.2
+        points of edge are consumed before anything is won. A claimed edge
+        under that bar is a read that is real and unbettable, and the engine
+        will say so rather than recommend it.
+      falsifies_if: >
+        Mean margin vs fair stays below +1.0 point of implied probability over
+        min_n rows. Claiming 4 and realising 1 means the number was wrong even
+        if the direction was right.
     min_n: 40
     min_n_note: >
       Expected fire rate 3-6 rows/week from Week 3 => ~50-90 rows/season.
@@ -133,6 +158,18 @@ hypotheses:
       fails independent of the bet: if measured absorbed target share does not
       exceed the candidate's baseline in a majority of fires, the read is
       wrong even where the props happen to cash. Track that in mechanism.csv.
+    claimed_edge:
+      unit: probability_points
+      value: 3.5
+      direction: over
+      rationale: >
+        Vacated targets are redistributed within days and the market reprices
+        the obvious replacement first. The second-order beneficiary carries the
+        lag. Smaller than H1 because the absorbing player is usually already
+        somewhat priced up by kickoff.
+      falsifies_if: >
+        Mean margin vs fair below +1.0 over min_n rows, or absorbed target share
+        fails to exceed baseline in a majority of fires.
     min_n: 25
     min_n_note: >
       Expected 1-2 rows/week => ~25-35 rows/season. Borderline. Likely to end
@@ -183,6 +220,18 @@ hypotheses:
       W/L a distant second: if the line does not move toward the stake price by
       close, there was no latency to exploit and the read was imagined. A
       positive W/L with flat CLV here is GAMBLED, not CONFIRMED.
+    claimed_edge:
+      unit: closing_line_cents
+      value: 6.0
+      direction: with_the_news
+      rationale: >
+        Measured in CLV, not expected value, because the claim is about market
+        SPEED rather than market level. If a stale line is worth taking, it
+        moves toward the stake price by close. Six cents is about half a
+        standard prop's vig -- meaningful, and small enough to be honest.
+      falsifies_if: >
+        Mean CLV below +2.0 cents over 20 rows. A positive W/L with flat CLV
+        here is GAMBLED, not CONFIRMED -- the latency was imagined.
     min_n: 20
     min_n_note: >
       1-3 rows/week => ~30-50 rows/season. CLV stabilizes faster than margin,
@@ -245,6 +294,15 @@ hypotheses:
       advantage to the fewer-condition expression over 30 pairs, or the
       advantage reverses. ANCHOR: share-anchored reads show no advantage over
       volume-anchored ones across 30 pairs. Either axis can die alone.
+    claimed_edge:
+      unit: paired_difference
+      value: null
+      direction: null
+      rationale: >
+        None, deliberately. H5 is a control, not a market read: it claims one
+        EXPRESSION beats another on the same underlying, so its evidence is the
+        gap between paired rows rather than an edge against a price. Giving it
+        a claimed edge would invite staking it, which would be a category error.
     min_n: 30
     min_n_note: >
       Rides free on H1/H2 -- costs no additional judgment and no dollars, and
