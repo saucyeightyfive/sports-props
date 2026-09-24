@@ -1,0 +1,75 @@
+{
+  "league": "nfl",
+  "season": 2026,
+  "week": 3,
+  "generated": "2026-09-24T16:07:07+00:00",
+  "board_lines": 0,
+  "players_with_usage": 363,
+  "results": [
+    {
+      "id": "H1",
+      "name": "Route-participation lag",
+      "tier": "SHADOW",
+      "verdict": "UNEVALUABLE",
+      "candidates": [],
+      "notes": [
+        "trigger names 'route participation' \u2014 routes run is not in any free nflverse feed",
+        "trigger names 'targets per route run' \u2014 needs routes run"
+      ]
+    },
+    {
+      "id": "H2",
+      "name": "Second-order target absorption",
+      "tier": "SHADOW",
+      "verdict": "NO CANDIDATES",
+      "candidates": [],
+      "notes": [
+        "Partial: alignment overlap not verifiable without route data. Treat these as leads to check by hand, not as a satisfied trigger.",
+        "Mi.Wilson (ARI): usage qualifies but not on the board",
+        "R.Bateman (BAL): usage qualifies but not on the board",
+        "K.Coleman (BUF): usage qualifies but not on the board",
+        "J.Chase (CIN): usage qualifies but not on the board",
+        "T.Higgins (CIN): usage qualifies but not on the board",
+        "J.Waddle (DEN): usage qualifies but not on the board",
+        "J.Gibbs (DET): usage qualifies but not on the board",
+        "C.Watson (GB): usage qualifies but not on the board",
+        "J.Downs (IND): usage qualifies but not on the board",
+        "Bri.Thomas (JAX): usage qualifies but not on the board",
+        "P.Washington (JAX): usage qualifies but not on the board",
+        "D.Adams (LA): usage qualifies but not on the board",
+        "T.Ferguson (LA): usage qualifies but not on the board",
+        "M.Washington (MIA): usage qualifies but not on the board",
+        "T.Tucker (LV): usage qualifies but not on the board",
+        "J.Addison (MIN): usage qualifies but not on the board",
+        "H.Henry (NE): usage qualifies but not on the board",
+        "R.Doubs (NE): usage qualifies but not on the board",
+        "A.Mitchell (NYJ): usage qualifies but not on the board",
+        "D.Smith (PHI): usage qualifies but not on the board",
+        "R.Shaheed (SEA): usage qualifies but not on the board",
+        "T.Hurst (TB): usage qualifies but not on the board",
+        "T.McLaurin (WAS): usage qualifies but not on the board"
+      ]
+    },
+    {
+      "id": "H3",
+      "name": "Friday-news latency (CLV-primary)",
+      "tier": "SHADOW",
+      "verdict": "UNEVALUABLE",
+      "candidates": [],
+      "notes": [
+        "needs two prop-board snapshots to measure line movement; 0 captured for week 3",
+        "run pull_slate again closer to kickoff to get the second one"
+      ]
+    },
+    {
+      "id": "H5",
+      "name": "Expression-form control (meta)",
+      "tier": "SHADOW",
+      "verdict": "NO CANDIDATES",
+      "candidates": [],
+      "notes": [
+        "rides on H1/H2 rows \u2014 pairs are created when a parent row is logged, not scanned for independently"
+      ]
+    }
+  ]
+}
