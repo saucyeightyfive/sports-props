@@ -48,6 +48,36 @@ def read(path, cols=None):
         return list(r), (r.fieldnames or list(cols or []))
 
 
+def ensure_source(bets, fields):
+    """Add the `source` column if this ledger predates it.
+
+    Two different records were sharing one lane, and it showed: the engine's
+    sweep auto-logged every recommendation, which then blocked the user from
+    entering any of them by hand, because the duplicate guard could not tell
+    the two apart.
+
+      auto    — the engine recommended it. Logged completely, every week, at
+                zero stake, whether or not the user likes it. This is the
+                hypothesis's record, and it has to be complete: a record of
+                only the picks someone chose to log measures that person's
+                taste, not the hypothesis.
+      console — the user selected it and entered it at their own number. This
+                is the placement record.
+
+    Backfilling existing rows to `auto` labels them for what they already were
+    (they came from `log --pick all`); it changes no number and rewrites no
+    result, which is the line CLAUDE.md actually draws.
+    """
+    if "source" in fields:
+        return fields
+    fields = list(fields) + ["source"]
+    for b in bets:
+        b.setdefault("source", "auto")
+        if not b.get("source"):
+            b["source"] = "auto"
+    return fields
+
+
 def write(path, fields, rows):
     tmp = Path(path).with_suffix(".tmp")
     with open(tmp, "w", newline="") as f:
@@ -116,13 +146,18 @@ def _log_one(r, o, week, bets, fields):
     get = (lambda k, d=None: o.get(k, d))
     line = str(get("line") if get("line") is not None else r["line"])
     side = r["side"]
+    src = get("source") or "auto"
+    # Scoped to the source: the engine's auto sweep having a row must not stop
+    # the user entering their own, and vice versa. Within one source it is
+    # still a duplicate and still refused.
     for b in bets:
         if (str(b.get("week")) == str(week) and b.get("player") == r["player"]
                 and b.get("prop_type") == r["market"] and b.get("side") == side
-                and b.get("line_stake") == line):
+                and b.get("line_stake") == line
+                and (b.get("source") or "auto") == src):
             print(f"  skip {r['player']} {r['market']} {side} {line} — already "
-                  f"logged as {b['row_id']}. Corrections are appended with a "
-                  f"note, never duplicated.")
+                  f"on the ledger as {b['row_id']} ({src}). Corrections are "
+                  f"appended with a note, never duplicated.")
             return None
 
     hid = r["hypothesis"]
@@ -164,6 +199,7 @@ def _log_one(r, o, week, bets, fields):
             f"{r['ev_hypothesis_pct']}% is the hypothesis and "
             f"{r['ev_shopping_pct']}% is the price."),
         "notes": get("note") or "",
+        "source": src,
     })
     bets.append(row)
     print(f"logged {row['row_id']}: {row['player']} {row['prop_type']} "
@@ -198,8 +234,10 @@ def cmd_log(a):
         chosen = [recs[i - 1]]
 
     o = {"line": a.line, "price": a.price, "book": a.book, "stake": a.stake,
-         "status": a.status, "slip": a.slip, "thesis": a.thesis, "note": a.note}
+         "status": a.status, "slip": a.slip, "thesis": a.thesis,
+         "note": a.note, "source": "auto"}
     bets, fields = read(C.BETS)
+    fields = ensure_source(bets, fields)
     written = [r for r in (_log_one(c, o, week, bets, fields) for c in chosen) if r]
     if not written:
         print("nothing new to log.")
@@ -251,6 +289,7 @@ def cmd_enter(a):
         slip_id = f"W{week}S{len(existing) + 1:03d}"
 
     bets, fields = read(C.BETS)
+    fields = ensure_source(bets, fields)
     written = []
     for leg in legs:
         try:
@@ -261,6 +300,7 @@ def cmd_enter(a):
             sys.exit(f"pick {i} is out of range; week {week} has {len(recs)}.")
         o = dict(leg)
         o["slip"] = slip_id or leg.get("slip") or ""
+        o["source"] = "console"
         row = _log_one(recs[i - 1], o, week, bets, fields)
         if row:
             written.append(row)
@@ -364,7 +404,9 @@ def cmd_show(a):
     rows = [b for b in bets if str(b.get("week")) == str(week)]
     print(f"week {week}: {len(rows)} row(s)")
     for b in rows:
-        print(f"  {b['row_id']}  {b['player']:<20} {b['prop_type']} {b['side']} "
+        src = (b.get("source") or "auto")
+        print(f"  {b['row_id']}  {'YOURS ' if src == 'console' else 'engine'}  "
+              f"{b['player']:<20} {b['prop_type']} {b['side']} "
               f"{b['line_stake']} @ {b['price_stake']}  "
               f"close={b.get('price_close') or '—'}  clv={b.get('clv_cents') or '—'}  "
               f"{b.get('outcome') or 'ungraded'}  {b['hypothesis']}")
