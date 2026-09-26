@@ -9,9 +9,25 @@ An **empirical inference engine for NFL player props**. It started with zero
 hypotheses and a zero record. It inherits a *method* from a prior MLB project —
 never that project's findings, records, or concepts. There is no xERA here.
 
-It is also **not** a parlay / high-floor-stacking system. If a play is really a
-"stack juiced favorites" play, say so and note it belongs in a different project.
-One philosophy per repo.
+It is **not** a high-floor-stacking system. If a play is really a "stack juiced
+favorites" play, say so and note it belongs in a different project. One
+philosophy per repo.
+
+**On parlays.** This file used to say flatly that parlays belong elsewhere, and
+then a parlay layer was built anyway — so the rule is restated here rather than
+left to be quietly ignored. Slips are permitted under three conditions and no
+others:
+
+1. Every leg is a prop the recommendation engine already cleared on its own.
+   A slip is never padded with a leg the engine did not produce.
+2. Slip results live in `state/<league>/ledger/slips.csv` and **never** touch a
+   hypothesis's record. A hypothesis judged on parlay outcomes is judged on the
+   other legs' luck.
+3. The compounded vig is reported every time, alongside what the same slip
+   would be worth granting the hypothesis nothing.
+
+A slip is an expression of reads the system already has. It is never a way to
+manufacture action out of a week that produced none.
 
 ## Core ethos (non-negotiable)
 
@@ -112,15 +128,25 @@ Then: PROPOSE classifications, wait for ratification, update
 ## What is automated vs manual
 
 **Automated** (scheduled, runs without the user): slate pulls, injury/usage
-snapshots, closing-line capture, result grading, dashboard build. This exists
-because missed weeks were the root cause of every data gap in the prior project.
+snapshots, closing-line capture, result grading, view builds, and **logging
+every recommendation as a zero-stake shadow row**. This exists because missed
+weeks were the root cause of every data gap in the prior project — and because
+this repo reproduced that failure in its own first season, running the engine
+for three weeks into an empty ledger while the only write path sat on a machine
+that could not execute it.
 
-**Manual, permanently:** hypothesis definition, tier changes, and
-PROPOSED -> RATIFIED. Automate collection; never automate judgment.
+Auto-logging a shadow row is collection, not judgment: it costs nothing, risks
+nothing, and the only alternative on offer was collecting nothing. `ledger.py`
+refuses a stake above zero on anything but a PROVEN hypothesis, so the
+automation is structurally incapable of betting.
+
+**Manual, permanently:** hypothesis definition, tier changes, PROPOSED ->
+RATIFIED, and — once something reaches PROVEN — which rows take money and at
+what size. Automate collection; never automate judgment.
 
 ## Dashboard
 
-`python scripts/report.py --week N` builds a seven-tab dashboard
+`python scripts/report.py --week N` builds the dashboard
 (WEEK / PERFORMANCE / CONFIDENCE / POST-HOC / HYPOTHESES / TRACKING /
 METHODOLOGY) into `dashboards/`.
 
@@ -149,8 +175,13 @@ state/<league>/ledger/classifications.csv PROPOSED/RATIFIED audit trail
 data/raw/<league>/             immutable dated snapshots
 dashboards/<league>/           generated HTML + registry.md
 scripts/pull_*.py grade.py     collection and grading
-scripts/report.py              builds the 7-tab dashboard
-scripts/app.py                 live console — same tabs, writable
+scripts/report.py              builds the dashboard (the record)
+scripts/console.py             builds console.html (the decision, writable)
+scripts/ledger.py              the write path: log / enter / close / ratify
+scripts/scan.py recommend.py   triggers -> candidates -> priced recommendations
+scripts/parlay.py              slips, from cleared legs only
+scripts/gaps.py journal.py     collection gaps; decision log
+scripts/app.py                 superseded local console; not the write path
 scripts/review.py              registry -> markdown export
 scripts/components.py          HTML component builders
 scripts/validate_html.py       4 structural checks; build gate
@@ -174,15 +205,33 @@ sample problem in one sport is not the sample problem in the other.
 
 There are exactly two views and one export, and they read the same files:
 
-- `report.py` — static dashboard, 7 tabs, self-validating. What the scheduled
-  job builds.
-- `app.py` — live console. **Same seven tabs, same components, same theme**,
-  plus the write controls (log a row, capture a close, mark whether a thesis
-  held, ratify). If it looks different from the static build, that is a bug.
+- `report.py` — static dashboard, self-validating. **The record.** What was
+  collected, what it cost, what it taught. Read-only by design.
+- `console.py` — the write-enabled view, built to `dashboards/<league>/
+  console.html` and served by Pages. **The decision.** This week's
+  recommendations and slips, selectable, with the line and price editable to
+  what the user's book actually shows, and an Enter that dispatches
+  `ledger.yml`. Same components, same theme; if it looks different from the
+  static build, that is a bug.
 - `review.py` — registry and rules as markdown, for reading without a browser.
 
 Do not add a third view. The HYPOTHESES and METHODOLOGY tabs *are* the registry
 view; render the registry there or not at all.
+
+`app.py` was the console before this one and is kept for a machine that can run
+Python. **It is no longer the write path** and must not be treated as one: a
+write path that requires a local install is how this repo spent three weeks
+producing recommendations into an empty ledger. If app.py and console.py ever
+disagree about what a write does, console.py is correct — it is the one that
+runs.
+
+**A static page cannot write to a ledger**, and the console does not pretend
+otherwise. It dispatches a workflow; the workflow writes the CSV and rebuilds
+both views; Pages redeploys. The page says the write is pending until the run
+lands, because a UI that reports success before the write is how a ledger and a
+screen quietly diverge. The user's token is theirs: fine-grained, this repo
+only, Actions read/write, held in their browser. Never commit one, never embed
+one, never ask for one.
 
 ## Ledger integrity
 
