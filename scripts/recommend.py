@@ -62,9 +62,18 @@ def decimal(american):
 def devig(rows, player, market, line):
     """Market's own probability for the OVER at this line, vig removed.
 
-    Uses the tightest two-sided pair available: the book whose over/under sum
-    is closest to 1 is the one carrying the least vig, and therefore the most
-    honest estimate. Books with only one side posted are useless here.
+    CONSENSUS, not the tightest single book. An earlier version de-vigged the
+    one book with the least vig and then compared that to the BEST price across
+    all four -- which is circular: the best price is by definition an outlier
+    against the others, so the comparison manufactured positive expected value
+    on essentially every row even when the hypothesis claimed nothing. Twenty-
+    one of twenty-one recommendations cleared and none were reported too thin,
+    which is the signature of a model that cannot say no.
+
+    Averaging the de-vigged estimate across every two-sided book gives a
+    consensus the outlier is measured against, and separates two different
+    things that were being added together: value from shopping the best number,
+    and value the hypothesis actually claims.
     """
     pairs = {}
     for r in rows:
@@ -73,17 +82,19 @@ def devig(rows, player, market, line):
         if r["price"] is None:
             continue
         pairs.setdefault(r["book"], {})[r["side"]] = r["price"]
-    best = None
+
+    ests, holds = [], []
     for book, sides in pairs.items():
         if "over" not in sides or "under" not in sides:
             continue
         po, pu = implied(sides["over"]), implied(sides["under"])
         total = po + pu
-        if best is None or total < best["hold"] + 1:
-            best = {"book": book, "hold": total - 1,
-                    "fair_over": po / total, "over": sides["over"],
-                    "under": sides["under"]}
-    return best
+        ests.append(po / total)
+        holds.append(total - 1)
+    if not ests:
+        return None
+    return {"books": len(ests), "hold": sum(holds) / len(holds),
+            "fair_over": sum(ests) / len(ests)}
 
 
 def best_available(rows, player, market, line, side):
@@ -114,30 +125,47 @@ def price_candidate(c, rows, edge):
     ev = model * (dec - 1) - (1 - model)
     breakeven = 1 / dec
 
+    # Split the edge into its two sources. Shopping value is real but it is
+    # not evidence for the hypothesis -- it would be there with no hypothesis
+    # at all -- so it is reported separately rather than folded in and claimed.
+    ev_shopping = fair * (dec - 1) - (1 - fair)
+
     rec = {**c,
-           "book_devig": mk["book"], "hold": round(mk["hold"] * 100, 2),
+           "books_devigged": mk["books"], "hold": round(mk["hold"] * 100, 2),
            "fair_prob": round(fair * 100, 2),
            "fair_price": to_american(fair),
            "claimed_edge": edge["value"],
            "model_prob": round(model * 100, 2),
            "best_price": b["price"], "best_book": b["book"],
            "breakeven_prob": round(breakeven * 100, 2),
-           "ev_pct": round(ev * 100, 2)}
+           "ev_pct": round(ev * 100, 2),
+           "ev_shopping_pct": round(ev_shopping * 100, 2),
+           "ev_hypothesis_pct": round((ev - ev_shopping) * 100, 2)}
 
-    if ev <= 0:
+    if mk["books"] < 2:
+        rec["verdict"] = "TOO THIN"
+        rec["reason"] = (
+            "only one book posts both sides of this line, so there is no "
+            "consensus to measure an outlier against. A single book's de-vig "
+            "compared against its own price is not evidence of anything.")
+    elif ev <= 0:
         rec["verdict"] = "TOO THIN"
         rec["reason"] = (
             f"the read is real but the price is not. Even granting the full "
-            f"{edge['value']} points this hypothesis claims, the model gets to "
+            f"{edge['value']} points this hypothesis claims, the model reaches "
             f"{rec['model_prob']}% and the price needs {rec['breakeven_prob']}% "
-            f"to break even. Prop vig here is {rec['hold']}%.")
+            f"to break even. Average prop vig across {mk['books']} books is "
+            f"{rec['hold']}%.")
     else:
         rec["verdict"] = "RECOMMEND"
         rec["reason"] = (
-            f"market fair is {rec['fair_prob']}%; the hypothesis claims "
-            f"{edge['value']} points on top, giving {rec['model_prob']}%. "
-            f"Best price {b['price']:+d} at {b['book']} breaks even at "
-            f"{rec['breakeven_prob']}%, leaving {rec['ev_pct']}% expected value.")
+            f"Consensus fair across {mk['books']} books is {rec['fair_prob']}%. "
+            f"Best price {b['price']:+d} at {b['book']} needs "
+            f"{rec['breakeven_prob']}%. Of the {rec['ev_pct']}% expected value, "
+            f"{rec['ev_shopping_pct']}% comes from shopping that price and "
+            f"{rec['ev_hypothesis_pct']}% from the {edge['value']} points the "
+            f"hypothesis claims — only the second is evidence for H"
+            f"{c['hypothesis'][1:]}.")
     return rec
 
 
@@ -180,6 +208,12 @@ def main():
 
     recs.sort(key=lambda r: -r["ev_pct"])
 
+    # Correlation within a game is severe (CLAUDE.md). Several reads out of one
+    # game are not several independent reads.
+    from collections import Counter
+    per_game = Counter(r["game"] for r in recs)
+    concentrated = [(g, n) for g, n in per_game.items() if n > 1]
+
     if recs:
         print(f"\n  {len(recs)} RECOMMENDATION(S)\n")
         for r in recs:
@@ -196,12 +230,18 @@ def main():
     else:
         print("\n  No recommendation. That is a valid and frequent output.\n")
 
+    if concentrated:
+        print("  CORRELATION WARNING — multiple reads from one game:")
+        for g, n in concentrated:
+            print(f"     {n} reads from {g}")
+        print("     These are not independent. Treat the group as one read's "
+              "worth\n     of evidence, and never stack them on a slip.\n")
+
     if thin:
         print(f"  {len(thin)} READ(S) TOO THIN FOR THE PRICE")
         for r in thin:
-            print(f"     {r['player']} {r['market']} {r['side']} {r['line']} — "
-                  f"model {r['model_prob']}% vs breakeven {r['breakeven_prob']}% "
-                  f"(vig {r['hold']}%)")
+            print(f"     {r['player']} {r['market']} {r['side']} {r['line']}")
+            print(f"        {r.get('reason', '')}")
         print()
     if noprice and a.show_rejected:
         print(f"  {len(noprice)} with no usable two-sided market")
@@ -216,6 +256,7 @@ def main():
     out = {"league": C.LEAGUE, "season": C.SEASON, "week": a.week,
            "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "recommendations": recs, "too_thin": thin,
+           "correlated_games": [{"game": g, "reads": n} for g, n in concentrated],
            "no_price": noprice, "skipped": skipped}
     path = C.STATE / f"recommendations_wk{a.week:02d}.json"
     path.write_text(json.dumps(out, indent=2))
