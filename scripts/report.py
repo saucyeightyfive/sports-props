@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import config as C
 import components as UI
+import gaps
 from validate_html import validate
 
 try:
@@ -163,6 +164,34 @@ def candidate_card(c):
     return UI.panel(f"{c.get('id')} — {c.get('name')}", badges, body, "skip")
 
 
+def _gap_banner(week):
+    """Open collection gaps, in red, at the top of the week.
+
+    The system's whole premise is that the record must not flatter itself. A
+    missing prop board is the most flattering failure available: no board means
+    no candidates, no candidates reads as a dry week, and a dry week reads as
+    discipline. It is not — it is a hole, and it says so here until it is
+    filled."""
+    try:
+        open_gaps = gaps.for_week(week)
+    except Exception:
+        return ""
+    if not open_gaps:
+        return ""
+    items = "".join(
+        f"<li><span class='mono'>{UI.esc(g['kind'])}</span> — "
+        f"{UI.esc(gaps.REMEDY.get(g['reason'], g['reason']))}"
+        + (f" <span class='mut'>({UI.esc(g['detail'])})</span>"
+           if g.get("detail") else "") + "</li>"
+        for g in open_gaps)
+    return UI.alert(
+        f"<strong>{len(open_gaps)} COLLECTION GAP(S) THIS WEEK — the data is "
+        f"missing, not empty.</strong><ul>{items}</ul>"
+        "Anything below that reads as \"no candidates\" may simply be "
+        "untested. Do not grade a week against a board that was never "
+        "captured.", kind="act", icon="🚨")
+
+
 def tab_week(bets, week):
     rows = [b for b in bets if str(b.get("week")) == str(week)]
     live = [b for b in rows if (num(b.get("stake_units"), 0) or 0) > 0]
@@ -207,7 +236,7 @@ def tab_week(bets, week):
         "If no hypothesis fires this week, the correct output is to say so and "
         "stop — a dry week is the system working, not a gap to fill.", "r")
 
-    return head + UI.section(f"Week {week} rows", tbl) + UI.section("Discipline", guard)
+    return _gap_banner(week) + head + UI.section(f"Week {week} rows", tbl) + UI.section("Discipline", guard)
 
 
 def tab_performance(bets):
@@ -642,7 +671,7 @@ def tab_candidates(week):
         "and it still opens at zero stake unless the hypothesis is PROVEN.",
         kind="under", icon="⚖")
 
-    return head + staked + _recommendations(week) + _parlays(week) + \
+    return _gap_banner(week) + head + staked + _recommendations(week) + _parlays(week) + \
         UI.section("By hypothesis — what the scanner tested", *blocks) + \
         UI.section("Reading this tab", why)
 
