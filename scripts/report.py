@@ -635,22 +635,33 @@ def tab_candidates(week):
                   UI.badge(str(r.get("tier", "SHADOW")), "shadow")]
         body = ""
         if r["candidates"]:
+            # Every field is read with .get(). A scanner rule can change what
+            # it reports -- H2 stopped emitting "rise" when it started reading
+            # the injury report -- and a dashboard that hard-indexes a
+            # candidate's keys turns a rule change into a failed build.
             trs = []
             for c in r["candidates"]:
+                price = c.get("price")
+                why_col = ("—" if not c.get("vacated_by") else
+                           f'<span class="mono">{UI.esc(c["vacated_by"])} '
+                           f'{c.get("vacated_share", 0):.0%} '
+                           f'{UI.esc(c.get("vacated_status", ""))}</span>')
+                share = c.get("target_share")
                 trs.append([
-                    f'<span class="mono">{UI.esc(c["player"])}</span>',
-                    f'<span class="mono mut">{UI.esc(c["team"])}</span>',
-                    UI.esc(c["game"]),
-                    f'<span class="mono">{UI.esc(c["market"])} '
-                    f'{UI.esc(c["side"])} {UI.esc(c["line"])}</span>',
-                    f'<span class="mono">{c["price"]:+d} '
-                    f'<span class="mut">{UI.esc(c["book"])}</span></span>',
-                    f'<span class="mono">{c["target_share_prior"]} → '
-                    f'{c["target_share"]} '
-                    f'<span class="gt">(+{c["rise"]})</span></span>',
+                    f'<span class="mono">{UI.esc(c.get("player"))}</span>',
+                    f'<span class="mono mut">{UI.esc(c.get("team"))}</span>',
+                    UI.esc(c.get("game")),
+                    f'<span class="mono">{UI.esc(c.get("market"))} '
+                    f'{UI.esc(c.get("side"))} {UI.esc(c.get("line"))}</span>',
+                    (f'<span class="mono">{price:+d} '
+                     f'<span class="mut">{UI.esc(c.get("book"))}</span></span>'
+                     if isinstance(price, int) else "—"),
+                    why_col,
+                    (f'<span class="mono">{share:.0%}</span>'
+                     if isinstance(share, (int, float)) else "—"),
                 ])
             body += UI.table(["Player", "Tm", "Game", "Market", "Best price",
-                              "Target share"], trs)
+                              "Vacated by", "Own share"], trs)
         if r["notes"]:
             items = "".join(f"<li>{UI.esc(n)}</li>" for n in r["notes"][:8])
             body += f'<p><strong>Notes</strong></p><ul>{items}</ul>'
