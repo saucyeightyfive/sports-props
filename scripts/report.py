@@ -830,10 +830,19 @@ def build_index():
         reg = league_dir / "registry.md"
         reglink = (f'<a class="tklink" href="{league_dir.name}/registry.md">'
                    f'registry (markdown)</a>' if reg.exists() else "")
+        # The console is the write-enabled view: select, adjust to your book,
+        # enter. It is listed first because it is the one with something to do
+        # on it -- the dashboard reports, the console records.
+        con = league_dir / "console.html"
+        conlink = (f'<p><a class="tklink" style="font-size:14px" '
+                   f'href="{league_dir.name}/console.html">'
+                   f'Open the console — pick and enter →</a></p>'
+                   if con.exists() else "")
         cards.append(UI.panel(
             league_dir.name.upper(),
             [UI.badge(f"WEEK {week}", "live")],
-            f'<p><a class="tklink" style="font-size:14px" '
+            conlink
+            + f'<p><a class="tklink" style="font-size:14px" '
             f'href="{league_dir.name}/{latest.name}">Open week {week} dashboard →</a></p>'
             + (f'<p class="mut">Earlier: {others}</p>' if others else "")
             + (f"<p>{reglink}</p>" if reglink else ""),
