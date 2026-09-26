@@ -237,12 +237,20 @@ def evaluate(h, idx, rows, bidx, week):
     if hid == "H3":
         # News latency needs two board snapshots to measure whether a line
         # moved after the news. One snapshot cannot show movement.
-        snaps = sorted(C.RAW.glob(f"{C.SEASON}_wk{week:02d}_props_open_*.json"))
+        # Count BOTH board kinds. pull_closing writes props_close_*, and an
+        # earlier version of this check globbed only props_open_* -- so the
+        # Sunday capture existed and H3 reported "1 captured" forever. The
+        # open-vs-close pair is the right comparison anyway: it is exactly the
+        # movement between stake-time and the number that settles CLV.
+        opens = sorted(C.RAW.glob(f"{C.SEASON}_wk{week:02d}_props_open_*.json"))
+        closes = sorted(C.RAW.glob(f"{C.SEASON}_wk{week:02d}_props_close_*.json"))
+        snaps = opens + closes
         if len(snaps) < 2:
             return "UNEVALUABLE", [], [
                 f"needs two prop-board snapshots to measure line movement; "
-                f"{len(snaps)} captured for week {week}",
-                "run pull_slate again closer to kickoff to get the second one"]
+                f"{len(opens)} open + {len(closes)} close captured for week {week}",
+                "the Thursday slate pull and the Sunday closing pull are the "
+                "intended pair"]
         return "NO CANDIDATES", [], ["movement comparison not yet implemented"]
 
     if hid == "H5":
