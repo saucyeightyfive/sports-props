@@ -515,6 +515,62 @@ def _recommendations(week):
     return out
 
 
+def _parlays(week):
+    """Slips built from qualifying single props. Separate ledger, always."""
+    import json as _json
+    path = C.STATE / f"parlays_wk{week:02d}.json"
+    if not path.exists():
+        return ""
+    d = _json.loads(path.read_text())
+    slips = d.get("slips", [])
+    if not slips:
+        return UI.section("Parlays", UI.insight(
+            "NO SLIP THIS WEEK",
+            f"{d.get('qualifying_legs', 0)} qualifying single prop(s). A parlay "
+            "built from fewer than two of them is not a parlay, and padding it "
+            "with legs the engine did not recommend is how a disciplined system "
+            "becomes a lottery ticket.", "b"))
+
+    blocks = []
+    for s_ in slips:
+        badges = [UI.badge(f"{s_['n_legs']} LEG", "info"),
+                  UI.badge(f"{s_['offered_price']:+d}", "live"),
+                  UI.badge(f"EV {s_['ev_pct']:+.2f}%",
+                           "confirmed" if s_["ev_pct"] > 0 else "danger")]
+        if s_["same_game"]:
+            badges.append(UI.badge("CORRELATED", "danger"))
+        legs = UI.table(
+            ["H", "Player", "Market", "Price", "Fair", "Model"],
+            [[f'<span class="mono">{UI.esc(l["hypothesis"])}</span>',
+              UI.esc(l["player"]),
+              f'<span class="mono mut">{UI.esc(l["market"])} {UI.esc(l["side"])} '
+              f'{UI.esc(l["line"])}</span>',
+              f'<span class="mono">{l["best_price"]:+d} '
+              f'<span class="mut">{UI.esc(l["best_book"])}</span></span>',
+              f'<span class="mono">{l["fair_prob"]}%</span>',
+              f'<span class="mono gt">{l["model_prob"]}%</span>'] for l in s_["legs"]])
+        body = (f'<p>Your price <span class="mono">{s_["offered_price"]:+d}</span> '
+                f'against a fair <span class="mono">{s_["fair_price"]:+d}</span>. '
+                f'Compounded vig costs <strong>{abs(s_["vig_cost_pct"]):.2f}%</strong> '
+                f'of the edge — each added leg pays the house again.</p>{legs}')
+        if s_["same_game"]:
+            body += ('<p><strong>These legs share a game.</strong> They are not '
+                     'two independent bets, and the combined probability above '
+                     'overstates the slip.</p>')
+        blocks.append(UI.panel(
+            " + ".join(l["player"] for l in s_["legs"]), badges, body,
+            "loss" if s_["same_game"] or s_["ev_pct"] <= 0 else "live"))
+
+    note = UI.insight(
+        "WHY PARLAYS HAVE THEIR OWN LEDGER",
+        "A slip's result is recorded in slips.csv and never credits or debits a "
+        "hypothesis. A hypothesis cannot be judged on another leg's luck — a "
+        "correct read that loses because an unrelated leg failed would poison "
+        "the evidence it was collected for.", "tl")
+
+    return UI.section("Parlays", *blocks) + UI.section("Reading these", note)
+
+
 def tab_candidates(week):
     """What the scanner found. Proposals only — nothing here is staked."""
     path = C.STATE / f"candidates_wk{week:02d}.json"
@@ -586,7 +642,7 @@ def tab_candidates(week):
         "and it still opens at zero stake unless the hypothesis is PROVEN.",
         kind="under", icon="⚖")
 
-    return head + staked + _recommendations(week) + \
+    return head + staked + _recommendations(week) + _parlays(week) + \
         UI.section("By hypothesis — what the scanner tested", *blocks) + \
         UI.section("Reading this tab", why)
 
