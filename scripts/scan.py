@@ -174,6 +174,43 @@ def player_index(usage_rows, snap_rows):
     return out
 
 
+
+def absent_high_share(injuries, idx):
+    """Players ruled OUT or DOUBTFUL who carried a real share of the targets.
+
+    This is the condition H2 is actually about. Without it the hypothesis has
+    no subject: there is no vacated role to redistribute, only ordinary
+    week-to-week noise in target share.
+    """
+    OUT = {"out", "doubtful"}
+    # index usage by (team, name key) so an injury row's full name can find the
+    # play-by-play's abbreviated one
+    by_team = {}
+    for name, u in idx.items():
+        k = name_key(name)
+        if k:
+            by_team[(u["team"], k)] = (name, u)
+
+    found = []
+    for r in injuries or []:
+        status = str(r.get("report_status") or "").strip().lower()
+        if status not in OUT:
+            continue
+        team = (r.get("team") or "").upper()
+        k = name_key(r.get("full_name"))
+        hit = by_team.get((team, k))
+        if not hit:
+            continue
+        pbp_name, u = hit
+        if u["target_share"] < 0.20:
+            continue
+        found.append({"player": r.get("full_name"), "pbp_name": pbp_name,
+                      "team": team, "share": u["target_share"],
+                      "status": r.get("report_status"),
+                      "position": r.get("position")})
+    found.sort(key=lambda x: -x["share"])
+    return found
+
 # --------------------------------------------------------------------------- rules
 def _share_rise(idx, rows, bidx, hid, market, min_share, min_rise):
     """Shared shape: current target share above a floor, and risen against the
@@ -207,7 +244,7 @@ def _share_rise(idx, rows, bidx, hid, market, min_share, min_rise):
     return cands, notes
 
 
-def evaluate(h, idx, rows, bidx, week):
+def evaluate(h, idx, rows, bidx, week, inj):
     """Return (verdict, candidates, notes) for one hypothesis.
 
     Each hypothesis gets its OWN rule. An earlier version ran one generic rule
@@ -224,14 +261,60 @@ def evaluate(h, idx, rows, bidx, week):
         return "UNEVALUABLE", [], ["no current-season usage data available yet"]
 
     if hid == "H2":
-        # Second-order absorption: a share that jumped hard, which is what a
-        # vacated role looks like in the data we can actually see. The full
-        # trigger also wants alignment overlap, which needs route data.
-        cands, notes = _share_rise(idx, rows, bidx, hid,
-                                   "player_receptions", 0.18, 0.08)
-        notes.insert(0, "Partial: alignment overlap not verifiable without "
-                        "route data. Treat these as leads to check by hand, "
-                        "not as a satisfied trigger.")
+        # The real trigger: a teammate with >= 20% target share is RULED OUT,
+        # and this player is positioned to absorb it.
+        #
+        # An earlier version ran a generic "target share rose 8 points" rule
+        # and never opened the injury report at all. On a full Week 3 board it
+        # fired 21 times against a registry that predicts 1-2 a week -- not a
+        # filter, a firehose. Any player whose share ticked up for any reason
+        # qualified, which is not this hypothesis, it is a different and much
+        # weaker one wearing its name.
+        absent = absent_high_share(inj, idx)
+        if not absent:
+            return "NO CANDIDATES", [], [
+                "no player with >= 20% target share is ruled OUT or DOUBTFUL "
+                "this week, so there is nothing to absorb"]
+
+        notes = [f"{len(absent)} vacancy(ies): " + ", ".join(
+            f"{a['player']} ({a['team']}, {a['share']:.0%}, {a['status']})"
+            for a in absent[:6])]
+        notes.append("Partial: alignment overlap still needs route data, so "
+                     "which teammate inherits the tree is unverified. These "
+                     "are the right shortlist, not a satisfied trigger.")
+
+        cands = []
+        for vac in absent:
+            for name, u in idx.items():
+                if u["team"] != vac["team"] or name == vac["pbp_name"]:
+                    continue
+                # A plausible absorber already runs a real share of the
+                # offence. Without routes this is the honest proxy, and it is
+                # a floor, not the mechanism.
+                if u["target_share"] < 0.10:
+                    continue
+                board_name, why = resolve(name, u["team"], rows, bidx)
+                if not board_name:
+                    continue
+                b = best_price(rows, board_name, "player_receptions", "over")
+                if not b:
+                    continue
+                cands.append({
+                    "hypothesis": hid, "player": board_name, "team": u["team"],
+                    "game": b["game"], "market": "player_receptions",
+                    "side": "over", "line": b["line"], "price": b["price"],
+                    "book": b["book"],
+                    "vacated_by": vac["player"],
+                    "vacated_share": round(vac["share"], 3),
+                    "vacated_status": vac["status"],
+                    "target_share": round(u["target_share"], 3),
+                    "target_share_prior": (round(u["target_share_prior"], 3)
+                                           if u["target_share_prior"] is not None else None),
+                    "adot": round(u["adot"], 1),
+                    "snap_share": (round(u["snap_share"], 3) if u["snap_share"] else None),
+                    "weeks_seen": u["weeks_seen"],
+                })
+        cands.sort(key=lambda c: -c["vacated_share"])
         return ("FIRED" if cands else "NO CANDIDATES"), cands, notes
 
     if hid == "H3":
@@ -279,13 +362,15 @@ def main():
           f"{len({r['player'] for r in rows})} players")
 
     bidx = board_name_index(rows)
+    injuries = (nflv or {}).get("injuries") or []
     idx = player_index(U.usage_table(a.week), U.snap_share(nflv))
     print(f"  usage: {len(idx)} players with current-season data")
+    print(f"  injuries: {len(injuries)} rows")
 
     hyp = read_yaml(C.HYPOTHESES)
     results, total = [], 0
     for h in (hyp.get("hypotheses") or []):
-        verdict, cands, notes = evaluate(h, idx, rows, bidx, a.week)
+        verdict, cands, notes = evaluate(h, idx, rows, bidx, a.week, injuries)
         total += len(cands)
         results.append({"id": h.get("id"), "name": h.get("name"),
                         "tier": h.get("tier"), "verdict": verdict,
