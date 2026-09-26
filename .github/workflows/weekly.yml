@@ -127,6 +127,7 @@ jobs:
               echo "----- $L | scan -----"
               python scripts/scan.py --week "$WEEK"
               python scripts/recommend.py --week "$WEEK"
+              python scripts/parlay.py --week "$WEEK"
             fi
 
             echo "----- $L | rebuild views -----"
