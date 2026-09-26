@@ -31,6 +31,17 @@ SPORT = "americanfootball_nfl"
 
 # Prop markets we track. Keep this list tight — every market added multiplies
 # rows, and unfocused volume is not the same as sample.
+# The Odds API bills each per-event request as (markets x regions).
+#
+# On the free tier the right answer was to collect only what a live hypothesis
+# reads -- three markets, 48 credits a sweep, because 500 a month made every
+# unread market a real cost. On the 20,000-credit tier that trade reverses, for
+# one reason: a board not captured this week cannot be bought back later at
+# this tier. Storage is free and history is not repurchasable, so collect the
+# wider set now and let a future hypothesis have something to test.
+#
+# Six markets across ~32 events is ~192 credits a sweep. Three sweeps a week is
+# roughly 2,300 a month against 20,000.
 PROP_MARKETS = [
     "player_pass_yds",
     "player_pass_tds",
@@ -41,6 +52,19 @@ PROP_MARKETS = [
 ]
 
 BOOKMAKERS = ["draftkings", "fanduel", "betmgm", "caesars"]
+
+# Books are free -- the bill is markets x regions per event, so four books cost
+# the same as one and give a real de-vig and a best-price comparison.
+
+# How far ahead to buy boards. Widened from 4 days on the paid tier: H1's
+# trigger asks whether a line has moved since the prior week, which needs an
+# early board to compare against, and the softest lines are the earliest ones.
+PROPS_HORIZON_DAYS = int(os.getenv("PROPS_HORIZON_DAYS", "8"))
+
+# Minimum gap between sweeps of the same week. This is a guard against a
+# debugging re-run silently re-buying a board, not a budget cap -- six hours
+# still allows Thursday, Sunday morning and a pre-kickoff capture.
+PROPS_REFRESH_HOURS = int(os.getenv("PROPS_REFRESH_HOURS", "6"))
 
 
 # ---------------------------------------------------------------------------
