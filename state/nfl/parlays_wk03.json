@@ -2,8 +2,223 @@
   "league": "nfl",
   "season": 2026,
   "week": 3,
-  "generated": "2026-09-26T20:29:57+00:00",
-  "qualifying_legs": 0,
-  "slips": [],
-  "note": "fewer than two qualifying single props"
+  "generated": "2026-09-26T20:39:53+00:00",
+  "qualifying_legs": 21,
+  "slips": [
+    {
+      "legs": [
+        {
+          "hypothesis": "H2",
+          "player": "Rashid Shaheed",
+          "team": "SEA",
+          "game": "Seattle Seahawks @ Washington Commanders",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 2.5,
+          "best_price": 110,
+          "best_book": "betmgm",
+          "fair_prob": 47.4,
+          "model_prob": 50.9,
+          "ev_pct": 6.9
+        },
+        {
+          "hypothesis": "H2",
+          "player": "Tee Higgins",
+          "team": "CIN",
+          "game": "Cincinnati Bengals @ Pittsburgh Steelers",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 4.5,
+          "best_price": 115,
+          "best_book": "betmgm",
+          "fair_prob": 46.0,
+          "model_prob": 49.5,
+          "ev_pct": 6.42
+        }
+      ],
+      "n_legs": 2,
+      "same_game": false,
+      "offered_price": 351,
+      "offered_prob": 22.15,
+      "model_prob": 25.2,
+      "fair_prob": 21.8,
+      "fair_price": 297,
+      "market_only_price": 359,
+      "ev_pct": 13.76,
+      "ev_market_only_pct": -1.55,
+      "vig_cost_pct": 15.31
+    },
+    {
+      "legs": [
+        {
+          "hypothesis": "H2",
+          "player": "Rashid Shaheed",
+          "team": "SEA",
+          "game": "Seattle Seahawks @ Washington Commanders",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 2.5,
+          "best_price": 110,
+          "best_book": "betmgm",
+          "fair_prob": 47.4,
+          "model_prob": 50.9,
+          "ev_pct": 6.9
+        },
+        {
+          "hypothesis": "H2",
+          "player": "Parker Washington",
+          "team": "JAX",
+          "game": "New England Patriots @ Jacksonville Jaguars",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 5.5,
+          "best_price": 120,
+          "best_book": "betmgm",
+          "fair_prob": 44.75,
+          "model_prob": 48.25,
+          "ev_pct": 6.16
+        }
+      ],
+      "n_legs": 2,
+      "same_game": false,
+      "offered_price": 362,
+      "offered_prob": 21.65,
+      "model_prob": 24.56,
+      "fair_prob": 21.21,
+      "fair_price": 307,
+      "market_only_price": 371,
+      "ev_pct": 13.46,
+      "ev_market_only_pct": -2.0,
+      "vig_cost_pct": 15.47
+    },
+    {
+      "legs": [
+        {
+          "hypothesis": "H2",
+          "player": "Rashid Shaheed",
+          "team": "SEA",
+          "game": "Seattle Seahawks @ Washington Commanders",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 2.5,
+          "best_price": 110,
+          "best_book": "betmgm",
+          "fair_prob": 47.4,
+          "model_prob": 50.9,
+          "ev_pct": 6.9
+        },
+        {
+          "hypothesis": "H2",
+          "player": "Brian Thomas Jr",
+          "team": "JAX",
+          "game": "New England Patriots @ Jacksonville Jaguars",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 3.5,
+          "best_price": 140,
+          "best_book": "fanduel",
+          "fair_prob": 40.69,
+          "model_prob": 44.19,
+          "ev_pct": 6.06
+        }
+      ],
+      "n_legs": 2,
+      "same_game": false,
+      "offered_price": 404,
+      "offered_prob": 19.84,
+      "model_prob": 22.49,
+      "fair_prob": 19.29,
+      "fair_price": 345,
+      "market_only_price": 418,
+      "ev_pct": 13.36,
+      "ev_market_only_pct": -2.79,
+      "vig_cost_pct": 16.16
+    },
+    {
+      "legs": [
+        {
+          "hypothesis": "H2",
+          "player": "Tee Higgins",
+          "team": "CIN",
+          "game": "Cincinnati Bengals @ Pittsburgh Steelers",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 4.5,
+          "best_price": 115,
+          "best_book": "betmgm",
+          "fair_prob": 46.0,
+          "model_prob": 49.5,
+          "ev_pct": 6.42
+        },
+        {
+          "hypothesis": "H2",
+          "player": "Parker Washington",
+          "team": "JAX",
+          "game": "New England Patriots @ Jacksonville Jaguars",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 5.5,
+          "best_price": 120,
+          "best_book": "betmgm",
+          "fair_prob": 44.75,
+          "model_prob": 48.25,
+          "ev_pct": 6.16
+        }
+      ],
+      "n_legs": 2,
+      "same_game": false,
+      "offered_price": 373,
+      "offered_prob": 21.14,
+      "model_prob": 23.88,
+      "fair_prob": 20.59,
+      "fair_price": 319,
+      "market_only_price": 386,
+      "ev_pct": 12.97,
+      "ev_market_only_pct": -2.63,
+      "vig_cost_pct": 15.6
+    },
+    {
+      "legs": [
+        {
+          "hypothesis": "H2",
+          "player": "Tee Higgins",
+          "team": "CIN",
+          "game": "Cincinnati Bengals @ Pittsburgh Steelers",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 4.5,
+          "best_price": 115,
+          "best_book": "betmgm",
+          "fair_prob": 46.0,
+          "model_prob": 49.5,
+          "ev_pct": 6.42
+        },
+        {
+          "hypothesis": "H2",
+          "player": "Brian Thomas Jr",
+          "team": "JAX",
+          "game": "New England Patriots @ Jacksonville Jaguars",
+          "market": "player_receptions",
+          "side": "over",
+          "line": 3.5,
+          "best_price": 140,
+          "best_book": "fanduel",
+          "fair_prob": 40.69,
+          "model_prob": 44.19,
+          "ev_pct": 6.06
+        }
+      ],
+      "n_legs": 2,
+      "same_game": false,
+      "offered_price": 416,
+      "offered_prob": 19.38,
+      "model_prob": 21.87,
+      "fair_prob": 18.72,
+      "fair_price": 357,
+      "market_only_price": 434,
+      "ev_pct": 12.87,
+      "ev_market_only_pct": -3.42,
+      "vig_cost_pct": 16.29
+    }
+  ]
 }
