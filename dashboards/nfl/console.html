@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Console wk 3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+:root{--bg:#0d0e10;--surface:#141518;--surface2:#1c1d21;--border:#2a2b30;--border2:#3a3b42;--text:#e8e9ec;--muted:#8a8b94;--accent:#f0c040;--green:#3ddc84;--red:#ff4d6d;--blue:#4da6ff;--orange:#ff8c42;--purple:#b57bee;--teal:#2dd4bf;--gold:#ffd700;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;}
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.htitle{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.hver{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);border:1px solid var(--border2);padding:2px 6px;border-radius:3px;}
+.hstats{display:flex;gap:18px;flex-wrap:wrap;}
+.hs{text-align:right;}
+.hs-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.hs-v{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+.pos{color:var(--green);}.neg{color:var(--red);}.neu{color:var(--text);}
+.tabs{background:var(--surface);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:11px 16px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;border-right:1px solid var(--border);background:none;border-top:none;border-left:none;transition:all .15s;}
+.tab:hover{color:var(--text);background:var(--surface2);}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent);background:var(--surface2);}
+.nb{display:inline-block;background:var(--red);color:#fff;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;vertical-align:middle;}
+.nb.g{background:var(--green);}.nb.gold{background:var(--gold);color:#000;}
+.tc{display:none;padding:22px;max-width:1180px;margin:0 auto;}
+.tc.active{display:block;}
+.sec{margin-bottom:26px;}
+.sec-t{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.scards{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-bottom:20px;}
+.sc{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:11px 13px;}
+.sc.gold-card{border:2px solid var(--gold);background:linear-gradient(to bottom,#2a2010,#141518);}
+.sc.red-card{border:2px solid var(--red);background:linear-gradient(to bottom,#2a1010,#141518);}
+.sc-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.sc-v{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:700;}
+.sc-s{font-size:11px;color:var(--muted);margin-top:2px;}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:4px;border-left:4px solid var(--green);padding:14px 18px;margin-bottom:13px;}
+.pc.skip{border-left-color:var(--border2);opacity:.7;}
+.pc.shadow{border-left-color:var(--purple);}
+.pc.loss{border-left-color:var(--red);}
+.pc.win{border-left-color:var(--green);}
+.pc.info{border-left-color:var(--blue);}
+.pc.warn{border-left-color:var(--orange);}
+.pc.under{border-left-color:var(--teal);}
+.pc.live{border-left-color:var(--green);border-left-width:6px;background:linear-gradient(to right,#0d2a1a 0%,var(--surface) 8%);}
+.ph{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin-bottom:7px;}
+.pm{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+.pmeta{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.04em;}
+.bgold{background:#3d3210;color:var(--gold);border:1px solid var(--gold);}
+.bf{background:#1a3d2a;color:var(--green);border:1px solid #2a5a3a;}
+.bq{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bbl{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bvu{background:#3d1020;color:var(--red);border:1px solid #5a1530;}
+.bly{background:#3d2010;color:var(--orange);border:1px solid #5a3015;}
+.bsk{background:#1a1b20;color:var(--muted);border:1px solid var(--border);}
+.bsh{background:#2a1a3d;color:var(--purple);border:1px solid #5a3a7a;}
+.btl{background:#0d2d2a;color:var(--teal);border:1px solid #1a5a52;}
+.bc2{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bc3{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bwi{background:#1a3d2a;color:var(--green);}
+.blo{background:#3d1020;color:var(--red);}
+.bpu{background:#3d3210;color:var(--accent);border:1px solid #5a4a10;}
+.bnw{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bdr{background:#5a1020;color:#ff8080;border:1px solid #7a2030;}
+.bcw{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bgw{background:#3d2810;color:var(--orange);border:1px solid #7a5020;}
+.btls{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bfl{background:#1a1b20;color:var(--muted);border:1px solid var(--border2);}
+.bsu{background:#1a1b20;color:var(--muted);border:1px solid var(--border2);}
+.bsd{background:#1a2d3d;color:var(--blue);border:1px solid #1a3d5a;}
+.bsc{background:#3d2810;color:var(--orange);border:1px solid #7a5020;}
+.bsh2{background:#0d3a1a;color:#5adc84;border:1px solid #2a7a40;}
+.bsr{background:#3d1020;color:#ff6080;border:1px solid #5a1530;}
+.pb{font-size:13px;color:var(--muted);line-height:1.6;}
+.pb strong{color:var(--text);}
+.gt{color:var(--green);}.rt{color:var(--red);}.ot{color:var(--orange);}.pt{color:var(--purple);}.tl{color:var(--teal);}
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px;}
+.tbl th{background:var(--surface2);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 9px;text-align:left;border-bottom:1px solid var(--border);}
+.tbl td{padding:7px 9px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:hover td{background:var(--surface2);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.rb{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:12px 15px;margin-bottom:10px;}
+.rb.nr{border-color:var(--red);}.rb.new{border-color:var(--green);}.rb.lockd{border-color:var(--green);background:linear-gradient(to right,#0d2a1a 0%,var(--surface) 5%);}
+.rb.under{border-color:var(--teal);background:linear-gradient(to right,#0d2422,var(--surface));}
+.rid{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:3px;}
+.rid.nr{color:var(--red);}.rid.new{color:var(--green);}.rid.under{color:var(--teal);}
+.rdesc{font-size:13px;color:var(--text);line-height:1.5;}
+.al{border-radius:4px;padding:11px 15px;margin-bottom:14px;font-size:13px;display:flex;align-items:flex-start;gap:9px;}
+.al.res{background:#0d2a1a;border:1px solid #1a5a30;}
+.al.act{background:#3d1010;border:1px solid #7a2020;}
+.al.inf{background:#1a1d3a;border:1px solid #2a3060;}
+.al.warn{background:#3d2810;border:1px solid #7a5020;}
+.al.under{background:#0d2422;border:1px solid #1a5a52;}
+.al-ic{font-size:15px;flex-shrink:0;margin-top:1px;}
+.al-tx{line-height:1.6;}.al-tx strong{color:var(--text);}
+.res .al-tx{color:#5adc84;}.act .al-tx{color:#ff8080;}.inf .al-tx{color:#9090ff;}.warn .al-tx{color:#ffb060;}.under .al-tx{color:#4dd4c0;}
+.ins{background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:11px 13px;margin-bottom:9px;font-size:13px;}
+.ins-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;background:#3d3210;color:var(--accent);padding:2px 6px;border-radius:2px;margin-bottom:5px;}
+.ins-tag.g{background:#1a3d2a;color:var(--green);}.ins-tag.r{background:#3d1020;color:var(--red);}.ins-tag.tl{background:#0d2d2a;color:var(--teal);}.ins-tag.b{background:#1a2d3d;color:var(--blue);}
+.ins p{color:var(--muted);line-height:1.6;}.ins p strong{color:var(--text);}
+.f5box{background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:10px 12px;margin:9px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.f5box table{width:100%;}.f5box td{padding:3px 7px;}
+.f5box .hdr td{color:var(--muted);font-size:10px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:5px;}
+.f5box .f5tot td{font-weight:700;color:var(--accent);border-top:1px solid var(--border);padding-top:5px;}
+.r15box{background:#0d2a1a;border:1px solid #2a7a40;border-radius:4px;padding:10px 13px;margin:8px 0;font-size:12px;}
+.r15box strong{color:var(--green);font-family:'IBM Plex Mono',monospace;}
+.jumprow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;position:sticky;top:0;z-index:5;}
+.jumplink{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:6px 12px;cursor:pointer;text-decoration:none;transition:all .15s;}
+.jumplink:hover{background:var(--accent);color:#000;border-color:var(--accent);}
+.mergehead{display:flex;align-items:center;gap:12px;margin:8px 0 18px;padding:14px 16px;background:linear-gradient(to right,var(--surface2),var(--surface));border:1px solid var(--border2);border-left:5px solid var(--accent);border-radius:6px;scroll-margin-top:70px;}
+.mergehead .mh-ic{font-size:22px;}
+.mergehead .mh-t{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:var(--text);letter-spacing:.04em;}
+.mergehead .mh-s{font-size:12px;color:var(--muted);margin-top:2px;}
+.mergediv{border:none;border-top:2px dashed var(--border2);margin:32px 0;}
+@media(max-width:700px){.scards{grid-template-columns:repeat(2,1fr);}.header{flex-direction:column;}.hstats{gap:10px;}.hs{text-align:left;}}
+
+/* --- form controls -------------------------------------------------------
+   Added for the live console. Uses the existing tokens only — restyling the
+   :root block still restyles these. */
+.frm{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-bottom:14px;}
+.frm-t{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:11px;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;}
+.fld{display:block;}
+.fld-l{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;}
+.inp,select.inp,textarea.inp{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:6px 9px;font-size:12px;border-radius:3px;font-family:'IBM Plex Mono',monospace;}
+.inp:focus{outline:2px solid var(--accent);outline-offset:-1px;}
+textarea.inp{min-height:52px;resize:vertical;line-height:1.5;}
+.btn{background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 15px;border-radius:3px;cursor:pointer;transition:all .15s;}
+.btn:hover{border-color:var(--accent);color:var(--accent);}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.btn.go{background:#3d3210;border-color:#5a4a10;color:var(--accent);}
+.btn.go:hover{background:var(--accent);color:#000;}
+.irow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.irow .inp{width:84px;}
+.flash{border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:13px;border:1px solid;}
+.flash.ok{background:#0d2a1a;border-color:#1a5a30;color:#5adc84;}
+.flash.err{background:#3d1010;border-color:#7a2020;color:#ff8080;}
+.tklink{color:var(--accent);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;}
+.tklink:hover{text-decoration:underline;}
+.gatebar{height:4px;background:var(--surface2);border-radius:2px;overflow:hidden;margin-top:4px;}
+.gatebar span{display:block;height:100%;background:var(--accent);}
+
+.wkpick{display:inline-block;margin-left:4px;}
+select.inp.wk{width:auto;padding:3px 8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-color:var(--border2);background:var(--surface2);cursor:pointer;}
+select.inp.wk:hover{border-color:var(--accent);}
+
+
+.cwrap{max-width:1180px;margin:0 auto;padding:22px;}
+.leg{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--purple);border-radius:4px;padding:13px 16px;margin-bottom:10px;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;}
+.leg.sel{border-color:var(--accent);border-left-color:var(--accent);background:var(--surface2);}
+.leg.done{opacity:.55;border-left-color:var(--border2);}
+.leg input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);cursor:pointer;margin-top:2px;}
+.leg-t{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+.leg-s{font-size:11px;color:var(--muted);margin-top:2px;}
+.leg-w{font-size:12px;color:var(--text);margin-top:7px;line-height:1.45;}
+.nums{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;align-items:flex-end;}
+.nf{display:flex;flex-direction:column;gap:3px;}
+.nf label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.nf input{background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 7px;border-radius:3px;width:84px;}
+.nf input:focus{outline:none;border-color:var(--accent);}
+.nf input.edited{border-color:var(--accent);color:var(--accent);}
+.evsplit{display:flex;gap:14px;flex-wrap:wrap;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;}
+.evsplit b{font-weight:700;}
+.tray{position:sticky;bottom:0;background:var(--surface);border-top:2px solid var(--accent);padding:13px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;z-index:20;}
+.tray-c{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 16px;border-radius:3px;border:1px solid var(--border2);background:var(--surface2);color:var(--text);cursor:pointer;transition:all .15s;}
+.btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);}
+.btn.pri{background:var(--accent);color:#000;border-color:var(--accent);}
+.btn.pri:hover:not(:disabled){filter:brightness(1.12);}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.tog{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;}
+.tog input{accent-color:var(--accent);width:15px;height:15px;cursor:pointer;}
+.tokbar{background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:13px 16px;margin-bottom:18px;}
+.tokbar input{background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:7px 9px;border-radius:3px;width:330px;max-width:100%;}
+.tokrow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block;}
+.dot.ok{background:var(--green);}
+.log{font-family:'IBM Plex Mono',monospace;font-size:11px;background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:11px 13px;margin-top:11px;white-space:pre-wrap;color:var(--muted);max-height:220px;overflow:auto;}
+.trk{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:9px;border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+.trk div{padding:7px 10px;font-size:10px;text-align:center;background:var(--bg);color:var(--muted);text-transform:uppercase;letter-spacing:.07em;border-right:1px solid var(--border);}
+.trk div:last-child{border-right:none;}
+.trk div.on{background:#1a3d2a;color:var(--green);font-weight:700;}
+.trk div.wait{background:#3d3210;color:var(--accent);font-weight:700;}
+.hint{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="header"><div style="display:flex;align-items:baseline;gap:10px"><span class="htitle">CONSOLE — NFL 2026 WK 3</span><span class="hver">2026-09-26 23:21Z</span></div><div class="hstats"><div class="hs"><div class="hs-l">recommendations</div><div class="hs-v neu">5</div></div><div class="hs"><div class="hs-l">entered this week</div><div class="hs-v neu">5</div></div><div class="hs"><div class="hs-l">mean CLV</div><div class="hs-v neu">—</div></div><div class="hs"><div class="hs-l">live rows</div><div class="hs-v neu">0</div></div></div></div><div class="tabs"><button class="tab active" onclick="showTab('picks',this)">PICKS<span class="nb g">5</span></button><button class="tab" onclick="showTab('slips',this)">PARLAYS<span class="nb g">4</span></button><button class="tab" onclick="showTab('tracking',this)">TRACKING<span class="nb g">5</span></button></div><div class="cwrap">
+<div class="tokbar">
+  <div class="tokrow">
+    <span id="tokdot" class="dot"></span>
+    <input id="tokin" type="password" placeholder="GitHub token (ghp_… or github_pat_…)">
+    <button id="toksave" class="btn pri">Save</button>
+    <button id="tokclear" class="btn">Forget</button>
+  </div>
+  <div class="hint" id="tokmsg"></div>
+  <div class="hint">A fine-grained token on <b>saucyeightyfive/sports-props</b> only, with
+    <b>Actions: read and write</b>. It is stored in this browser and sent only to
+    api.github.com. It is never committed to the repo and it never passes through
+    Claude. Create one at github.com/settings/personal-access-tokens.</div>
+</div></div><div id="tab-picks" class="tc active"><div class="sec"><div class="sec-t">// This week&#x27;s recommendations</div><div class="al warn"><div class="al-ic">⚠</div><div class="al-tx">4 of these come from Houston Texans @ Indianapolis Colts. They are one read's worth of evidence, not 4, and stacking them on a slip multiplies a single outcome rather than diversifying it.</div></div><div class="al under"><div class="al-ic">◆</div><div class="al-tx">Every hypothesis behind these is SHADOW, so every entry is logged at zero units. That is not a limitation to work around — it is the system refusing to bet an unproven claim. What accumulates now is CLV and margin vs fair, not money.</div></div>
+<div class="leg done" data-i="0">
+  <input type="checkbox" data-i="0" disabled>
+  <div>
+    <div class="leg-t">Davante Adams · player_receptions over 5.5</div>
+    <div class="leg-s">LA — Los Angeles Rams @ Denver Broncos · H2
+       · <b style="color:var(--muted)">already on the ledger</b></div>
+    <div class="leg-w">Absorbing the 33% target share vacated by Puka Nacua (Doubtful). Consensus fair 52.84%; the price needs
+      54.34% to break even.</div>
+    <div class="evsplit">
+      <span>EV <b class="pos">+3.69%</b></span>
+      <span>hypothesis <b class="pos">+6.44%</b></span>
+      <span>shopping <b class="neg">-2.75%</b></span>
+    </div>
+    <div class="nums">
+      <div class="nf"><label>line</label>
+        <input class="f-line" data-i="0" data-f="line" data-orig="5.5" value="5.5"></div>
+      <div class="nf"><label>price</label>
+        <input class="f-price" data-i="0" data-f="price" data-orig="-119" value="-119"></div>
+      <div class="nf"><label>book</label>
+        <input class="f-book" data-i="0" data-f="book" data-orig="draftkings" value="draftkings"></div>
+    </div>
+    <div class="hint">These are the captured board's numbers. Change them to what
+      your book actually shows — your book is the authority, and the number you
+      enter is the one CLV is measured from.</div>
+  </div>
+</div>
+<div class="leg done" data-i="1">
+  <input type="checkbox" data-i="1" disabled>
+  <div>
+    <div class="leg-t">Jared Wayne · player_receptions over 1.5</div>
+    <div class="leg-s">HOU — Houston Texans @ Indianapolis Colts · H2
+       · <b style="color:var(--muted)">already on the ledger</b></div>
+    <div class="leg-w">Absorbing the 27% target share vacated by Nico Collins (Out). Consensus fair 46.84%; the price needs
+      48.78% to break even.</div>
+    <div class="evsplit">
+      <span>EV <b class="pos">+3.20%</b></span>
+      <span>hypothesis <b class="pos">+7.17%</b></span>
+      <span>shopping <b class="neg">-3.98%</b></span>
+    </div>
+    <div class="nums">
+      <div class="nf"><label>line</label>
+        <input class="f-line" data-i="1" data-f="line" data-orig="1.5" value="1.5"></div>
+      <div class="nf"><label>price</label>
+        <input class="f-price" data-i="1" data-f="price" data-orig="105" value="105"></div>
+      <div class="nf"><label>book</label>
+        <input class="f-book" data-i="1" data-f="book" data-orig="betmgm" value="betmgm"></div>
+    </div>
+    <div class="hint">These are the captured board's numbers. Change them to what
+      your book actually shows — your book is the authority, and the number you
+      enter is the one CLV is measured from.</div>
+  </div>
+</div>
+<div class="leg done" data-i="2">
+  <input type="checkbox" data-i="2" disabled>
+  <div>
+    <div class="leg-t">Xavier Hutchinson · player_receptions over 3.5</div>
+    <div class="leg-s">HOU — Houston Texans @ Indianapolis Colts · H2
+       · <b style="color:var(--muted)">already on the ledger</b></div>
+    <div class="leg-w">Absorbing the 27% target share vacated by Nico Collins (Out). Consensus fair 46.82%; the price needs
+      49.02% to break even.</div>
+    <div class="evsplit">
+      <span>EV <b class="pos">+2.65%</b></span>
+      <span>hypothesis <b class="pos">+7.14%</b></span>
+      <span>shopping <b class="neg">-4.49%</b></span>
+    </div>
+    <div class="nums">
+      <div class="nf"><label>line</label>
+        <input class="f-line" data-i="2" data-f="line" data-orig="3.5" value="3.5"></div>
+      <div class="nf"><label>price</label>
+        <input class="f-price" data-i="2" data-f="price" data-orig="104" value="104"></div>
+      <div class="nf"><label>book</label>
+        <input class="f-book" data-i="2" data-f="book" data-orig="draftkings" value="draftkings"></div>
+    </div>
+    <div class="hint">These are the captured board's numbers. Change them to what
+      your book actually shows — your book is the authority, and the number you
+      enter is the one CLV is measured from.</div>
+  </div>
+</div>
+<div class="leg done" data-i="3">
+  <input type="checkbox" data-i="3" disabled>
+  <div>
+    <div class="leg-t">Jaylin Noel · player_receptions over 2.5</div>
+    <div class="leg-s">HOU — Houston Texans @ Indianapolis Colts · H2
+       · <b style="color:var(--muted)">already on the ledger</b></div>
+    <div class="leg-w">Absorbing the 27% target share vacated by Nico Collins (Out). Consensus fair 45.37%; the price needs
+      47.85% to break even.</div>
+    <div class="evsplit">
+      <span>EV <b class="pos">+2.13%</b></span>
+      <span>hypothesis <b class="pos">+7.31%</b></span>
+      <span>shopping <b class="neg">-5.19%</b></span>
+    </div>
+    <div class="nums">
+      <div class="nf"><label>line</label>
+        <input class="f-line" data-i="3" data-f="line" data-orig="2.5" value="2.5"></div>
+      <div class="nf"><label>price</label>
+        <input class="f-price" data-i="3" data-f="price" data-orig="109" value="109"></div>
+      <div class="nf"><label>book</label>
+        <input class="f-book" data-i="3" data-f="book" data-orig="draftkings" value="draftkings"></div>
+    </div>
+    <div class="hint">These are the captured board's numbers. Change them to what
+      your book actually shows — your book is the authority, and the number you
+      enter is the one CLV is measured from.</div>
+  </div>
+</div>
+<div class="leg done" data-i="4">
+  <input type="checkbox" data-i="4" disabled>
+  <div>
+    <div class="leg-t">Kayshon Boutte · player_receptions over 2.5</div>
+    <div class="leg-s">HOU — Houston Texans @ Indianapolis Colts · H2
+       · <b style="color:var(--muted)">already on the ledger</b></div>
+    <div class="leg-w">Absorbing the 27% target share vacated by Nico Collins (Out). Consensus fair 53.34%; the price needs
+      55.95% to break even.</div>
+    <div class="evsplit">
+      <span>EV <b class="pos">+1.60%</b></span>
+      <span>hypothesis <b class="pos">+6.26%</b></span>
+      <span>shopping <b class="neg">-4.65%</b></span>
+    </div>
+    <div class="nums">
+      <div class="nf"><label>line</label>
+        <input class="f-line" data-i="4" data-f="line" data-orig="2.5" value="2.5"></div>
+      <div class="nf"><label>price</label>
+        <input class="f-price" data-i="4" data-f="price" data-orig="-127" value="-127"></div>
+      <div class="nf"><label>book</label>
+        <input class="f-book" data-i="4" data-f="book" data-orig="draftkings" value="draftkings"></div>
+    </div>
+    <div class="hint">These are the captured board's numbers. Change them to what
+      your book actually shows — your book is the authority, and the number you
+      enter is the one CLV is measured from.</div>
+  </div>
+</div></div></div><div id="tab-slips" class="tc"><div class="sec"><div class="sec-t">// Slips parlay.py would build</div>
+<div class="leg" style="grid-template-columns:1fr">
+  <div>
+    <div class="leg-t">2-leg · +0
+      <span class="leg-s">(fair +253)</span></div>
+    <div class='leg-s'>· Davante Adams player_receptions over 5.5 @ -119 (draftkings)</div><div class='leg-s'>· Jared Wayne player_receptions over 1.5 @ +105 (betmgm)</div>
+    <div class="evsplit">
+      <span>slip EV <b class="pos">+7.00%</b></span>
+      <span>vig cost <b class='neg'>13.62%</b></span>
+      <span>market-only <b class='neg'>-6.62%</b></span>
+    </div>
+    <div class="hint">Compounded vig: every leg pays the house its cut, so the
+      slip is taxed more than its legs are separately. The market-only number is
+      what this same slip is worth granting the hypothesis nothing.</div>
+    <div style="margin-top:10px">
+      <button class="btn" onclick="useSlip(0)">Load these legs into PICKS</button>
+    </div>
+  </div>
+</div>
+<div class="leg" style="grid-template-columns:1fr">
+  <div>
+    <div class="leg-t">2-leg · +0
+      <span class="leg-s">(fair +253)</span></div>
+    <div class='leg-s'>· Davante Adams player_receptions over 5.5 @ -119 (draftkings)</div><div class='leg-s'>· Xavier Hutchinson player_receptions over 3.5 @ +104 (draftkings)</div>
+    <div class="evsplit">
+      <span>slip EV <b class="pos">+6.44%</b></span>
+      <span>vig cost <b class='neg'>13.56%</b></span>
+      <span>market-only <b class='neg'>-7.12%</b></span>
+    </div>
+    <div class="hint">Compounded vig: every leg pays the house its cut, so the
+      slip is taxed more than its legs are separately. The market-only number is
+      what this same slip is worth granting the hypothesis nothing.</div>
+    <div style="margin-top:10px">
+      <button class="btn" onclick="useSlip(1)">Load these legs into PICKS</button>
+    </div>
+  </div>
+</div>
+<div class="leg" style="grid-template-columns:1fr">
+  <div>
+    <div class="leg-t">2-leg · +0
+      <span class="leg-s">(fair +263)</span></div>
+    <div class='leg-s'>· Davante Adams player_receptions over 5.5 @ -119 (draftkings)</div><div class='leg-s'>· Jaylin Noel player_receptions over 2.5 @ +109 (draftkings)</div>
+    <div class="evsplit">
+      <span>slip EV <b class="pos">+5.90%</b></span>
+      <span>vig cost <b class='neg'>13.69%</b></span>
+      <span>market-only <b class='neg'>-7.79%</b></span>
+    </div>
+    <div class="hint">Compounded vig: every leg pays the house its cut, so the
+      slip is taxed more than its legs are separately. The market-only number is
+      what this same slip is worth granting the hypothesis nothing.</div>
+    <div style="margin-top:10px">
+      <button class="btn" onclick="useSlip(2)">Load these legs into PICKS</button>
+    </div>
+  </div>
+</div>
+<div class="leg" style="grid-template-columns:1fr">
+  <div>
+    <div class="leg-t">2-leg · +0
+      <span class="leg-s">(fair +212)</span></div>
+    <div class='leg-s'>· Davante Adams player_receptions over 5.5 @ -119 (draftkings)</div><div class='leg-s'>· Kayshon Boutte player_receptions over 2.5 @ -127 (draftkings)</div>
+    <div class="evsplit">
+      <span>slip EV <b class="pos">+5.34%</b></span>
+      <span>vig cost <b class='neg'>12.63%</b></span>
+      <span>market-only <b class='neg'>-7.29%</b></span>
+    </div>
+    <div class="hint">Compounded vig: every leg pays the house its cut, so the
+      slip is taxed more than its legs are separately. The market-only number is
+      what this same slip is worth granting the hypothesis nothing.</div>
+    <div style="margin-top:10px">
+      <button class="btn" onclick="useSlip(3)">Load these legs into PICKS</button>
+    </div>
+  </div>
+</div></div></div><div id="tab-tracking" class="tc"><div class="sec"><div class="sec-t">// Entered — pre, close, result</div><div class="al warn"><div class="al-ic">⏱</div><div class="al-tx">5 row(s) still have no closing price. That is the one number that cannot be recovered after kickoff — the Sunday capture runs at 12:30 ET, and anything entered after the early window closes will carry no CLV for the rest of its life.</div></div>
+<div class="pc shadow">
+  <div class="ph">
+    <span class="pm">W3R001 · Davante Adams
+      player_receptions over 5.5</span>
+    <span class="pmeta">
+      <span class="badge bsr">H2</span>
+      <span class="badge bsr">SHADOW</span>
+      <span class="badge bsk">0.0u</span>
+    </span>
+  </div>
+  <div class="leg-s">entered @ -119 (draftkings)
+    · close —
+    · CLV —
+    </div>
+  <div class="trk">
+    <div class="on">pre-game · entered</div>
+    <div class="wait">awaiting close</div>
+    <div class="wait">awaiting result</div>
+  </div>
+</div>
+<div class="pc shadow">
+  <div class="ph">
+    <span class="pm">W3R002 · Jared Wayne
+      player_receptions over 1.5</span>
+    <span class="pmeta">
+      <span class="badge bsr">H2</span>
+      <span class="badge bsr">SHADOW</span>
+      <span class="badge bsk">0.0u</span>
+    </span>
+  </div>
+  <div class="leg-s">entered @ 105 (betmgm)
+    · close —
+    · CLV —
+    </div>
+  <div class="trk">
+    <div class="on">pre-game · entered</div>
+    <div class="wait">awaiting close</div>
+    <div class="wait">awaiting result</div>
+  </div>
+</div>
+<div class="pc shadow">
+  <div class="ph">
+    <span class="pm">W3R003 · Xavier Hutchinson
+      player_receptions over 3.5</span>
+    <span class="pmeta">
+      <span class="badge bsr">H2</span>
+      <span class="badge bsr">SHADOW</span>
+      <span class="badge bsk">0.0u</span>
+    </span>
+  </div>
+  <div class="leg-s">entered @ 104 (draftkings)
+    · close —
+    · CLV —
+    </div>
+  <div class="trk">
+    <div class="on">pre-game · entered</div>
+    <div class="wait">awaiting close</div>
+    <div class="wait">awaiting result</div>
+  </div>
+</div>
+<div class="pc shadow">
+  <div class="ph">
+    <span class="pm">W3R004 · Jaylin Noel
+      player_receptions over 2.5</span>
+    <span class="pmeta">
+      <span class="badge bsr">H2</span>
+      <span class="badge bsr">SHADOW</span>
+      <span class="badge bsk">0.0u</span>
+    </span>
+  </div>
+  <div class="leg-s">entered @ 109 (draftkings)
+    · close —
+    · CLV —
+    </div>
+  <div class="trk">
+    <div class="on">pre-game · entered</div>
+    <div class="wait">awaiting close</div>
+    <div class="wait">awaiting result</div>
+  </div>
+</div>
+<div class="pc shadow">
+  <div class="ph">
+    <span class="pm">W3R005 · Kayshon Boutte
+      player_receptions over 2.5</span>
+    <span class="pmeta">
+      <span class="badge bsr">H2</span>
+      <span class="badge bsr">SHADOW</span>
+      <span class="badge bsk">0.0u</span>
+    </span>
+  </div>
+  <div class="leg-s">entered @ -127 (draftkings)
+    · close —
+    · CLV —
+    </div>
+  <div class="trk">
+    <div class="on">pre-game · entered</div>
+    <div class="wait">awaiting close</div>
+    <div class="wait">awaiting result</div>
+  </div>
+</div></div></div>
+<div class="tray">
+  <span class="tray-c" id="count">nothing selected</span>
+  <button class="btn" id="btnAll">Select all</button>
+  <button class="btn" id="btnNone">Clear</button>
+  <label class="tog"><input type="checkbox" id="asslip" disabled>
+    enter as one slip</label>
+  <button class="btn pri needsel needtok" id="btnEnter" disabled>Enter selected</button>
+</div>
+<div class="cwrap"><div class="log" id="log">Select legs above, adjust the line
+and price to what your book shows, then press Enter. Nothing is written until
+you do, and nothing takes money while every hypothesis is SHADOW.</div></div>
+<script>
+function showTab(name, btn){
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+<script>window.__DATA__={"repo": "saucyeightyfive/sports-props", "league": "nfl", "season": 2026, "week": 3, "built": "2026-09-26T23:21:29+00:00", "recommendations": [{"hypothesis": "H2", "player": "Davante Adams", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 5.5, "price": -119, "book": "draftkings", "vacated_by": "Puka Nacua", "vacated_share": 0.333, "vacated_status": "Doubtful", "target_share": 0.333, "target_share_prior": 0.222, "adot": 19.8, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 6.72, "fair_prob": 52.84, "fair_price": -112, "claimed_edge": 3.5, "model_prob": 56.34, "best_price": -119, "best_book": "draftkings", "breakeven_prob": 54.34, "ev_pct": 3.69, "ev_shopping_pct": -2.75, "ev_hypothesis_pct": 6.44, "verdict": "RECOMMEND", "reason": "Consensus fair across 3 books is 52.84%. Best price -119 at draftkings needs 54.34%. Of the 3.69% expected value, -2.75% comes from shopping that price and 6.44% from the 3.5 points the hypothesis claims \u2014 only the second is evidence for H2."}, {"hypothesis": "H2", "player": "Jared Wayne", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 1.5, "price": 105, "book": "betmgm", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.14, "target_share_prior": 0.027, "adot": 14.9, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 6.74, "fair_prob": 46.84, "fair_price": 113, "claimed_edge": 3.5, "model_prob": 50.34, "best_price": 105, "best_book": "betmgm", "breakeven_prob": 48.78, "ev_pct": 3.2, "ev_shopping_pct": -3.98, "ev_hypothesis_pct": 7.17, "verdict": "RECOMMEND", "reason": "Consensus fair across 3 books is 46.84%. Best price +105 at betmgm needs 48.78%. Of the 3.2% expected value, -3.98% comes from shopping that price and 7.17% from the 3.5 points the hypothesis claims \u2014 only the second is evidence for H2."}, {"hypothesis": "H2", "player": "Xavier Hutchinson", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 3.5, "price": 104, "book": "draftkings", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.18, "target_share_prior": 0.162, "adot": 12.4, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 6.61, "fair_prob": 46.82, "fair_price": 114, "claimed_edge": 3.5, "model_prob": 50.32, "best_price": 104, "best_book": "draftkings", "breakeven_prob": 49.02, "ev_pct": 2.65, "ev_shopping_pct": -4.49, "ev_hypothesis_pct": 7.14, "verdict": "RECOMMEND", "reason": "Consensus fair across 3 books is 46.82%. Best price +104 at draftkings needs 49.02%. Of the 2.65% expected value, -4.49% comes from shopping that price and 7.14% from the 3.5 points the hypothesis claims \u2014 only the second is evidence for H2."}, {"hypothesis": "H2", "player": "Jaylin Noel", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 2.5, "price": 109, "book": "draftkings", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.1, "target_share_prior": 0.054, "adot": 7.8, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 6.67, "fair_prob": 45.37, "fair_price": 120, "claimed_edge": 3.5, "model_prob": 48.87, "best_price": 109, "best_book": "draftkings", "breakeven_prob": 47.85, "ev_pct": 2.13, "ev_shopping_pct": -5.19, "ev_hypothesis_pct": 7.31, "verdict": "RECOMMEND", "reason": "Consensus fair across 3 books is 45.37%. Best price +109 at draftkings needs 47.85%. Of the 2.13% expected value, -5.19% comes from shopping that price and 7.31% from the 3.5 points the hypothesis claims \u2014 only the second is evidence for H2."}, {"hypothesis": "H2", "player": "Kayshon Boutte", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 2.5, "price": -127, "book": "draftkings", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.1, "target_share_prior": 0.054, "adot": 13.2, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 7.01, "fair_prob": 53.34, "fair_price": -114, "claimed_edge": 3.5, "model_prob": 56.84, "best_price": -127, "best_book": "draftkings", "breakeven_prob": 55.95, "ev_pct": 1.6, "ev_shopping_pct": -4.65, "ev_hypothesis_pct": 6.26, "verdict": "RECOMMEND", "reason": "Consensus fair across 3 books is 53.34%. Best price -127 at draftkings needs 55.95%. Of the 1.6% expected value, -4.65% comes from shopping that price and 6.26% from the 3.5 points the hypothesis claims \u2014 only the second is evidence for H2."}], "slips": [{"legs": [{"hypothesis": "H2", "player": "Davante Adams", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 5.5, "best_price": -119, "best_book": "draftkings", "fair_prob": 52.84, "model_prob": 56.34, "ev_pct": 3.69}, {"hypothesis": "H2", "player": "Jared Wayne", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 1.5, "best_price": 105, "best_book": "betmgm", "fair_prob": 46.84, "model_prob": 50.34, "ev_pct": 3.2}], "n_legs": 2, "same_game": false, "offered_price": 277, "offered_prob": 26.51, "model_prob": 28.36, "fair_prob": 24.75, "fair_price": 253, "market_only_price": 304, "ev_pct": 7.0, "ev_market_only_pct": -6.62, "vig_cost_pct": 13.62}, {"legs": [{"hypothesis": "H2", "player": "Davante Adams", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 5.5, "best_price": -119, "best_book": "draftkings", "fair_prob": 52.84, "model_prob": 56.34, "ev_pct": 3.69}, {"hypothesis": "H2", "player": "Xavier Hutchinson", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 3.5, "best_price": 104, "best_book": "draftkings", "fair_prob": 46.82, "model_prob": 50.32, "ev_pct": 2.65}], "n_legs": 2, "same_game": false, "offered_price": 275, "offered_prob": 26.64, "model_prob": 28.35, "fair_prob": 24.74, "fair_price": 253, "market_only_price": 304, "ev_pct": 6.44, "ev_market_only_pct": -7.12, "vig_cost_pct": 13.56}, {"legs": [{"hypothesis": "H2", "player": "Davante Adams", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 5.5, "best_price": -119, "best_book": "draftkings", "fair_prob": 52.84, "model_prob": 56.34, "ev_pct": 3.69}, {"hypothesis": "H2", "player": "Jaylin Noel", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 2.5, "best_price": 109, "best_book": "draftkings", "fair_prob": 45.37, "model_prob": 48.87, "ev_pct": 2.13}], "n_legs": 2, "same_game": false, "offered_price": 285, "offered_prob": 26.0, "model_prob": 27.53, "fair_prob": 23.97, "fair_price": 263, "market_only_price": 317, "ev_pct": 5.9, "ev_market_only_pct": -7.79, "vig_cost_pct": 13.69}, {"legs": [{"hypothesis": "H2", "player": "Davante Adams", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 5.5, "best_price": -119, "best_book": "draftkings", "fair_prob": 52.84, "model_prob": 56.34, "ev_pct": 3.69}, {"hypothesis": "H2", "player": "Kayshon Boutte", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 2.5, "best_price": -127, "best_book": "draftkings", "fair_prob": 53.34, "model_prob": 56.84, "ev_pct": 1.6}], "n_legs": 2, "same_game": false, "offered_price": 229, "offered_prob": 30.4, "model_prob": 32.02, "fair_prob": 28.18, "fair_price": 212, "market_only_price": 255, "ev_pct": 5.34, "ev_market_only_pct": -7.29, "vig_cost_pct": 12.63}], "too_thin": [{"hypothesis": "H2", "player": "Terrance Ferguson", "team": "LA", "game": "Los Angeles Rams @ Denver Broncos", "market": "player_receptions", "side": "over", "line": 4.5, "price": 129, "book": "draftkings", "vacated_by": "Puka Nacua", "vacated_share": 0.333, "vacated_status": "Doubtful", "target_share": 0.3, "target_share_prior": 0.037, "adot": 6.0, "snap_share": null, "weeks_seen": 2, "books_devigged": 1, "hold": 5.93, "fair_prob": 41.22, "fair_price": 143, "claimed_edge": 3.5, "model_prob": 44.72, "best_price": 129, "best_book": "draftkings", "breakeven_prob": 43.67, "ev_pct": 2.41, "ev_shopping_pct": -5.6, "ev_hypothesis_pct": 8.01, "verdict": "TOO THIN", "reason": "only one book posts both sides of this line, so there is no consensus to measure an outlier against. A single book's de-vig compared against its own price is not evidence of anything."}, {"hypothesis": "H2", "player": "Dalton Schultz", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 5.5, "price": 112, "book": "fanduel", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.28, "target_share_prior": 0.216, "adot": 7.4, "snap_share": null, "weeks_seen": 2, "books_devigged": 1, "hold": 6.85, "fair_prob": 44.15, "fair_price": 127, "claimed_edge": 3.5, "model_prob": 47.65, "best_price": 112, "best_book": "fanduel", "breakeven_prob": 47.17, "ev_pct": 1.01, "ev_shopping_pct": -6.41, "ev_hypothesis_pct": 7.42, "verdict": "TOO THIN", "reason": "only one book posts both sides of this line, so there is no consensus to measure an outlier against. A single book's de-vig compared against its own price is not evidence of anything."}, {"hypothesis": "H2", "player": "Woody Marks", "team": "HOU", "game": "Houston Texans @ Indianapolis Colts", "market": "player_receptions", "side": "over", "line": 1.5, "price": -153, "book": "draftkings", "vacated_by": "Nico Collins", "vacated_share": 0.27, "vacated_status": "Out", "target_share": 0.12, "target_share_prior": 0.027, "adot": 1.8, "snap_share": null, "weeks_seen": 2, "books_devigged": 3, "hold": 6.78, "fair_prob": 56.97, "fair_price": -132, "claimed_edge": 3.5, "model_prob": 60.47, "best_price": -153, "best_book": "draftkings", "breakeven_prob": 60.47, "ev_pct": -0.0, "ev_shopping_pct": -5.79, "ev_hypothesis_pct": 5.79, "verdict": "TOO THIN", "reason": "the read is real but the price is not. Even granting the full 3.5 points this hypothesis claims, the model reaches 60.47% and the price needs 60.47% to break even. Average prop vig across 3 books is 6.78%."}], "correlated": [{"game": "Houston Texans @ Indianapolis Colts", "reads": 4}], "bets": [{"row_id": "W3R001", "season": "2026", "week": "3", "date": "2026-09-26", "kickoff_et": "", "game": "Los Angeles Rams @ Denver Broncos", "player": "Davante Adams", "team": "LA", "opponent": "", "position": "", "prop_type": "player_receptions", "side": "over", "line_stake": "5.5", "price_stake": "-119", "book_stake": "draftkings", "ts_stake": "2026-09-26T22:24:36+00:00", "line_close": "", "price_close": "", "book_close": "", "ts_close": "", "clv_cents": "", "clv_pct": "", "fair_line": "", "actual_result": "", "margin_vs_fair": "", "hypothesis": "H2", "tier_at_stake": "SHADOW", "expression_conditions": "Davante Adams plays a normal snap count | absorbs share vacated by Puka Nacua | targets convert at his established rate", "conjunction": "true", "status_at_stake": "PROJECTED", "stake_units": "0.0", "outcome": "", "pnl_units": "", "notes": "", "slip_id": "", "thesis": "Davante Adams absorbs targets vacated by Puka Nacua (33% share, Doubtful). Consensus fair 52.84%, model 56.34% on H2's claimed 3.5 points. Of 3.69% EV, 6.44% is the hypothesis and -2.75% is the price.", "mechanism_held": ""}, {"row_id": "W3R002", "season": "2026", "week": "3", "date": "2026-09-26", "kickoff_et": "", "game": "Houston Texans @ Indianapolis Colts", "player": "Jared Wayne", "team": "HOU", "opponent": "", "position": "", "prop_type": "player_receptions", "side": "over", "line_stake": "1.5", "price_stake": "105", "book_stake": "betmgm", "ts_stake": "2026-09-26T22:24:36+00:00", "line_close": "", "price_close": "", "book_close": "", "ts_close": "", "clv_cents": "", "clv_pct": "", "fair_line": "", "actual_result": "", "margin_vs_fair": "", "hypothesis": "H2", "tier_at_stake": "SHADOW", "expression_conditions": "Jared Wayne plays a normal snap count | absorbs share vacated by Nico Collins | targets convert at his established rate", "conjunction": "true", "status_at_stake": "PROJECTED", "stake_units": "0.0", "outcome": "", "pnl_units": "", "notes": "", "slip_id": "", "thesis": "Jared Wayne absorbs targets vacated by Nico Collins (27% share, Out). Consensus fair 46.84%, model 50.34% on H2's claimed 3.5 points. Of 3.2% EV, 7.17% is the hypothesis and -3.98% is the price.", "mechanism_held": ""}, {"row_id": "W3R003", "season": "2026", "week": "3", "date": "2026-09-26", "kickoff_et": "", "game": "Houston Texans @ Indianapolis Colts", "player": "Xavier Hutchinson", "team": "HOU", "opponent": "", "position": "", "prop_type": "player_receptions", "side": "over", "line_stake": "3.5", "price_stake": "104", "book_stake": "draftkings", "ts_stake": "2026-09-26T22:24:36+00:00", "line_close": "", "price_close": "", "book_close": "", "ts_close": "", "clv_cents": "", "clv_pct": "", "fair_line": "", "actual_result": "", "margin_vs_fair": "", "hypothesis": "H2", "tier_at_stake": "SHADOW", "expression_conditions": "Xavier Hutchinson plays a normal snap count | absorbs share vacated by Nico Collins | targets convert at his established rate", "conjunction": "true", "status_at_stake": "PROJECTED", "stake_units": "0.0", "outcome": "", "pnl_units": "", "notes": "", "slip_id": "", "thesis": "Xavier Hutchinson absorbs targets vacated by Nico Collins (27% share, Out). Consensus fair 46.82%, model 50.32% on H2's claimed 3.5 points. Of 2.65% EV, 7.14% is the hypothesis and -4.49% is the price.", "mechanism_held": ""}, {"row_id": "W3R004", "season": "2026", "week": "3", "date": "2026-09-26", "kickoff_et": "", "game": "Houston Texans @ Indianapolis Colts", "player": "Jaylin Noel", "team": "HOU", "opponent": "", "position": "", "prop_type": "player_receptions", "side": "over", "line_stake": "2.5", "price_stake": "109", "book_stake": "draftkings", "ts_stake": "2026-09-26T22:24:36+00:00", "line_close": "", "price_close": "", "book_close": "", "ts_close": "", "clv_cents": "", "clv_pct": "", "fair_line": "", "actual_result": "", "margin_vs_fair": "", "hypothesis": "H2", "tier_at_stake": "SHADOW", "expression_conditions": "Jaylin Noel plays a normal snap count | absorbs share vacated by Nico Collins | targets convert at his established rate", "conjunction": "true", "status_at_stake": "PROJECTED", "stake_units": "0.0", "outcome": "", "pnl_units": "", "notes": "", "slip_id": "", "thesis": "Jaylin Noel absorbs targets vacated by Nico Collins (27% share, Out). Consensus fair 45.37%, model 48.87% on H2's claimed 3.5 points. Of 2.13% EV, 7.31% is the hypothesis and -5.19% is the price.", "mechanism_held": ""}, {"row_id": "W3R005", "season": "2026", "week": "3", "date": "2026-09-26", "kickoff_et": "", "game": "Houston Texans @ Indianapolis Colts", "player": "Kayshon Boutte", "team": "HOU", "opponent": "", "position": "", "prop_type": "player_receptions", "side": "over", "line_stake": "2.5", "price_stake": "-127", "book_stake": "draftkings", "ts_stake": "2026-09-26T22:24:36+00:00", "line_close": "", "price_close": "", "book_close": "", "ts_close": "", "clv_cents": "", "clv_pct": "", "fair_line": "", "actual_result": "", "margin_vs_fair": "", "hypothesis": "H2", "tier_at_stake": "SHADOW", "expression_conditions": "Kayshon Boutte plays a normal snap count | absorbs share vacated by Nico Collins | targets convert at his established rate", "conjunction": "true", "status_at_stake": "PROJECTED", "stake_units": "0.0", "outcome": "", "pnl_units": "", "notes": "", "slip_id": "", "thesis": "Kayshon Boutte absorbs targets vacated by Nico Collins (27% share, Out). Consensus fair 53.34%, model 56.84% on H2's claimed 3.5 points. Of 1.6% EV, 6.26% is the hypothesis and -4.65% is the price.", "mechanism_held": ""}], "logged_keys": ["Davante Adams|player_receptions|over|5.5", "Jared Wayne|player_receptions|over|1.5", "Xavier Hutchinson|player_receptions|over|3.5", "Jaylin Noel|player_receptions|over|2.5", "Kayshon Boutte|player_receptions|over|2.5"], "hypotheses": {"H1": {"tier": "SHADOW", "status": "", "claim": 4.0, "unit": "probability_points", "min_n": 40}, "H2": {"tier": "SHADOW", "status": "", "claim": 3.5, "unit": "probability_points", "min_n": 25}, "H3": {"tier": "SHADOW", "status": "", "claim": 6.0, "unit": "closing_line_cents", "min_n": 20}, "H5": {"tier": "SHADOW", "status": "", "claim": null, "unit": "paired_difference", "min_n": 30}}};</script><script>
+const D = window.__DATA__;
+const LS_TOK = 'sp_gh_token';
+const sel = new Map();          // pick index -> {line, price, book}
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function tok(){ try { return localStorage.getItem(LS_TOK) || ''; } catch(e){ return ''; } }
+function setTok(v){ try { v ? localStorage.setItem(LS_TOK, v) : localStorage.removeItem(LS_TOK); } catch(e){} paintTok(); }
+function paintTok(){
+  const has = !!tok();
+  $('#tokdot').className = 'dot' + (has ? ' ok' : '');
+  $('#tokmsg').textContent = has
+    ? 'Token saved in this browser. Entries will be submitted to GitHub.'
+    : 'No token. You can browse and select, but Enter is disabled until you add one.';
+  // A control that needs BOTH a token and a selection must satisfy both. An
+  // earlier version enabled Enter the moment a token was saved, which offered
+  // a button that could only decline.
+  document.querySelectorAll('.needtok').forEach(b => {
+    b.disabled = !has || (b.classList.contains('needsel') && !sel.size);
+  });
+}
+
+function mark(i){
+  const card = document.querySelector('.leg[data-i="'+i+'"]');
+  if (card) card.classList.toggle('sel', sel.has(i));
+  const n = sel.size;
+  $('#count').textContent = n === 0 ? 'nothing selected'
+    : n + ' leg' + (n===1?'':'s') + ' selected';
+  document.querySelectorAll('.needsel').forEach(b => b.disabled = !n || !tok());
+  const sl = $('#asslip');
+  if (sl) { sl.disabled = n < 2; if (n < 2) sl.checked = false; }
+}
+
+function toggle(i, on){
+  if (on) {
+    const c = document.querySelector('.leg[data-i="'+i+'"]');
+    sel.set(i, {
+      line:  parseFloat(c.querySelector('.f-line').value),
+      price: parseInt(c.querySelector('.f-price').value, 10),
+      book:  c.querySelector('.f-book').value.trim(),
+    });
+  } else sel.delete(i);
+  mark(i);
+}
+
+function edited(i, field, el){
+  el.classList.toggle('edited', el.value !== el.dataset.orig);
+  if (!sel.has(i)) return;
+  const v = sel.get(i);
+  v[field] = field === 'book' ? el.value.trim()
+           : field === 'price' ? parseInt(el.value, 10) : parseFloat(el.value);
+  sel.set(i, v);
+}
+
+function say(msg, tone){
+  const l = $('#log');
+  l.style.color = tone === 'bad' ? 'var(--red)'
+                : tone === 'good' ? 'var(--green)' : 'var(--muted)';
+  l.textContent = msg;
+}
+
+async function enter(){
+  if (!sel.size) return;
+  const asSlip = $('#asslip') && $('#asslip').checked;
+  const legs = [...sel.entries()].map(([i, v]) => ({
+    pick: i + 1, line: v.line, price: v.price, book: v.book, stake: 0
+  }));
+
+  // Correlation is checked here, not only at build time, because the user can
+  // select a combination the engine never proposed.
+  if (asSlip) {
+    const games = legs.map(l => D.recommendations[l.pick-1].game);
+    const dupe = games.find((g,i) => games.indexOf(g) !== i);
+    if (dupe && !confirm(
+        'Two or more of these legs come from ' + dupe + '.\n\n' +
+        'Legs from one game are not independent -- multiplying their ' +
+        'probabilities overstates the slip. Enter it anyway?')) return;
+  }
+
+  const payload = { week: D.week, slip: asSlip, legs };
+  const btns = document.querySelectorAll('.needsel, .needtok');
+  btns.forEach(b => b.disabled = true);
+  say('submitting ' + legs.length + ' leg(s)...');
+
+  try {
+    const r = await fetch(
+      'https://api.github.com/repos/' + D.repo +
+      '/actions/workflows/ledger.yml/dispatches', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + tok(),
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+      body: JSON.stringify({ ref: 'main', inputs: {
+        action: 'enter', league: D.league, week: String(D.week),
+        payload: JSON.stringify(payload),
+      }}),
+    });
+    if (r.status === 204) {
+      say('Submitted.\n\n' + legs.length + ' leg(s) sent' +
+          (asSlip ? ' as one slip' : ' as singles') + '.\n\n' +
+          'The ledger is written by the run, not by this page. Give it about a ' +
+          'minute, then reload -- the rows appear under TRACKING once the run ' +
+          'finishes and Pages redeploys.\n\n' +
+          'Watch it: github.com/' + D.repo + '/actions', 'good');
+      sel.clear();
+      document.querySelectorAll('.leg input[type=checkbox]').forEach(c => c.checked = false);
+      document.querySelectorAll('.leg').forEach(c => c.classList.remove('sel'));
+      mark(-1);
+    } else if (r.status === 401 || r.status === 403) {
+      say('GitHub refused the token (' + r.status + ').\n\n' +
+          'It needs Actions: read and write on ' + D.repo + ', and it must not ' +
+          'be expired. Nothing was written.', 'bad');
+    } else if (r.status === 404) {
+      say('404 from GitHub.\n\nEither the token cannot see ' + D.repo + ', or ' +
+          'ledger.yml is not on the main branch yet. Nothing was written.', 'bad');
+    } else {
+      const t = await r.text();
+      say('GitHub returned ' + r.status + '. Nothing was written.\n\n' + t, 'bad');
+    }
+  } catch (e) {
+    say('The request never reached GitHub: ' + e.message +
+        '\n\nNothing was written.', 'bad');
+  } finally {
+    paintTok(); mark(-1);
+  }
+}
+
+function selectAll(){
+  document.querySelectorAll('.leg:not(.done) input[type=checkbox]').forEach(c => {
+    if (!c.checked) { c.checked = true; toggle(parseInt(c.dataset.i,10), true); }
+  });
+}
+function clearAll(){
+  document.querySelectorAll('.leg input[type=checkbox]').forEach(c => c.checked = false);
+  sel.clear(); document.querySelectorAll('.leg').forEach(c => c.classList.remove('sel'));
+  mark(-1);
+}
+
+function useSlip(n){
+  clearAll();
+  D.slips[n].legs.forEach(leg => {
+    const i = D.recommendations.findIndex(r =>
+      r.player === leg.player && r.market === leg.market && r.line === leg.line);
+    if (i < 0) return;
+    const c = document.querySelector('.leg[data-i="'+i+'"] input[type=checkbox]');
+    if (c && !c.disabled) { c.checked = true; toggle(i, true); }
+  });
+  if ($('#asslip')) $('#asslip').checked = sel.size >= 2;
+  // components.py renders tabs as showTab(key, this); PICKS is the first.
+  const first = document.querySelectorAll('.tab')[0];
+  if (first) showTab('picks', first);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  paintTok();
+  $('#toksave').onclick = () => { setTok($('#tokin').value.trim()); $('#tokin').value=''; };
+  $('#tokclear').onclick = () => setTok('');
+  document.querySelectorAll('.leg input[type=checkbox]').forEach(c => {
+    c.onchange = () => toggle(parseInt(c.dataset.i, 10), c.checked);
+  });
+  document.querySelectorAll('.leg .f-line, .leg .f-price, .leg .f-book').forEach(el => {
+    el.oninput = () => edited(parseInt(el.dataset.i,10), el.dataset.f, el);
+  });
+  $('#btnEnter').onclick = enter;
+  $('#btnAll').onclick = selectAll;
+  $('#btnNone').onclick = clearAll;
+  mark(-1);
+});
+</script></body>
+</html>
