@@ -16,8 +16,16 @@ on:
     branches: [main]
     paths:
       - 'dashboards/**'
+  # Both writing workflows are named here, and they have to be.
+  #
+  # Each of them commits with [skip ci], which suppresses the push trigger
+  # above -- so the `paths: dashboards/**` rule never fires for the runs that
+  # actually change dashboards/. Listening by name is what gets the deploy.
+  # Leaving `ledger` off this list is not a small omission: it means every
+  # entry made in the console writes the ledger correctly, reports success,
+  # and then shows the user a page that has not moved.
   workflow_run:
-    workflows: ["weekly-capture"]
+    workflows: ["weekly-capture", "ledger"]
     types: [completed]
   workflow_dispatch:
 
