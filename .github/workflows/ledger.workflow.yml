@@ -22,7 +22,7 @@ on:
         description: 'what to do'
         type: choice
         default: 'list'
-        options: [list, log, close, ratify, show]
+        options: [list, log, enter, close, ratify, show]
       league:
         description: 'nfl | ncaa'
         default: 'nfl'
@@ -31,6 +31,9 @@ on:
         required: false
       pick:
         description: 'LOG: recommendation number from `list`, or "all"'
+        required: false
+      payload:
+        description: 'ENTER: JSON from the console. Not meant to be typed by hand.'
         required: false
       row:
         description: 'CLOSE / RATIFY: row id, e.g. W3R001'
@@ -81,9 +84,10 @@ jobs:
         env:
           LEAGUE: ${{ inputs.league }}
           SEASON: ${{ vars.SEASON || '2026' }}
-          IN_ACTION: ${{ inputs.action }}
-          IN_WEEK:   ${{ inputs.week }}
-          IN_PICK:   ${{ inputs.pick }}
+          IN_ACTION:  ${{ inputs.action }}
+          IN_WEEK:    ${{ inputs.week }}
+          IN_PICK:    ${{ inputs.pick }}
+          IN_PAYLOAD: ${{ inputs.payload }}
           IN_ROW:    ${{ inputs.row }}
           IN_LINE:   ${{ inputs.line }}
           IN_PRICE:  ${{ inputs.price }}
@@ -133,6 +137,11 @@ jobs:
                            ("--price", "IN_PRICE"), ("--book", "IN_BOOK"),
                            ("--note", "IN_NOTE")):
                   opt(f, k)
+          elif act == "enter":
+              # From the console. The payload is JSON and goes across as one
+              # argv element -- never through a shell, never re-quoted.
+              need("IN_PAYLOAD")
+              argv += ["--json", g("IN_PAYLOAD")]
           elif act == "close":
               need("IN_ROW", "IN_PRICE")
               argv += ["--row", g("IN_ROW"), "--price", g("IN_PRICE")]
@@ -159,7 +168,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Rebuild the dashboard
-        if: inputs.action == 'log' || inputs.action == 'close' || inputs.action == 'ratify'
+        if: inputs.action == 'log' || inputs.action == 'enter' || inputs.action == 'close' || inputs.action == 'ratify'
         env:
           LEAGUE: ${{ inputs.league }}
           SEASON: ${{ vars.SEASON || '2026' }}
@@ -171,10 +180,11 @@ jobs:
             WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
           fi
           python scripts/report.py --week "$WEEK"
+          python scripts/console.py --week "$WEEK"
           python scripts/review.py || true
 
       - name: Commit
-        if: inputs.action == 'log' || inputs.action == 'close' || inputs.action == 'ratify'
+        if: inputs.action == 'log' || inputs.action == 'enter' || inputs.action == 'close' || inputs.action == 'ratify'
         env:
           A: ${{ inputs.action }}
           L: ${{ inputs.league }}
