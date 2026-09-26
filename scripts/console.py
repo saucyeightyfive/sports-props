@@ -86,9 +86,17 @@ def load(week):
         "recommendations": recs, "slips": slips, "too_thin": thin,
         "correlated": correlated,
         "bets": bets,
+        # Only rows the USER entered lock a card. An auto row means the
+        # engine is already testing it at zero stake, which is no reason to
+        # stop the user placing it at their own number.
         "logged_keys": [f"{b.get('player')}|{b.get('prop_type')}|"
                         f"{b.get('side')}|{b.get('line_stake')}"
-                        for b in bets if str(b.get("week")) == str(week)],
+                        for b in bets if str(b.get("week")) == str(week)
+                        and (b.get("source") or "auto") == "console"],
+        "auto_keys": [f"{b.get('player')}|{b.get('prop_type')}|"
+                      f"{b.get('side')}|{b.get('line_stake')}"
+                      for b in bets if str(b.get("week")) == str(week)
+                      and (b.get("source") or "auto") == "auto"],
         "hypotheses": {k: {"tier": v.get("tier", "SHADOW"),
                            "status": v.get("status", ""),
                            "claim": (v.get("claimed_edge") or {}).get("value"),
@@ -319,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 # ------------------------------------------------------------------------ render
-def leg_card(i, r, already):
+def leg_card(i, r, already, tracked=False):
     tone = " done" if already else ""
     ev, hyp_ev, shop_ev = r["ev_pct"], r["ev_hypothesis_pct"], r["ev_shopping_pct"]
     cls = lambda v: "pos" if v > 0 else "neg"
@@ -332,7 +340,9 @@ def leg_card(i, r, already):
   <div>
     <div class="leg-t">{UI.esc(r['player'])} · {UI.esc(r['market'])} {r['side']} {r['line']}</div>
     <div class="leg-s">{UI.esc(r['team'])} — {UI.esc(r['game'])} · {r['hypothesis']}
-      {' · <b style="color:var(--muted)">already on the ledger</b>' if already else ''}</div>
+      {' · <b style="color:var(--muted)">you entered this</b>' if already
+        else ' · <b style="color:var(--purple)">engine is tracking this at 0u</b>'
+             if tracked else ''}</div>
     <div class="leg-w">{vac} Consensus fair {r['fair_prob']}%; the price needs
       {r['breakeven_prob']}% to break even.</div>
     <div class="evsplit">
@@ -378,9 +388,10 @@ def tab_picks(d):
             "zero units. That is not a limitation to work around — it is the "
             "system refusing to bet an unproven claim. What accumulates now is "
             "CLV and margin vs fair, not money.", "under", "◆")
+    auto = set(d.get("auto_keys") or [])
     for i, r in enumerate(recs):
         key = f"{r['player']}|{r['market']}|{r['side']}|{r['line']}"
-        body += leg_card(i, r, key in logged)
+        body += leg_card(i, r, key in logged, key in auto)
     return body
 
 
@@ -444,6 +455,8 @@ def tab_tracking(d):
       {UI.badge(b.get('hypothesis',''), 'shadow')}
       {UI.badge(b.get('tier_at_stake',''), 'shadow')}
       {UI.badge((b.get('stake_units') or '0') + 'u', 'skip')}
+      {UI.badge('YOURS' if (b.get('source') or 'auto') == 'console' else 'ENGINE',
+                'pending' if (b.get('source') or 'auto') == 'console' else 'skip')}
     </span>
   </div>
   <div class="leg-s">entered @ {b['price_stake']} ({UI.esc(b.get('book_stake',''))})
