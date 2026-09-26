@@ -34,6 +34,9 @@ import config as C
 
 CLASSES = ["CONFIRMED", "GAMBLED", "TEACHING", "FRONTIER"]
 HELD = ["HELD", "FAILED", "UNCLEAR"]
+SLIP_COLS = ["slip_id", "season", "week", "date", "ts_stake", "n_legs",
+             "leg_row_ids", "combined_price", "stake_units", "outcome",
+             "pnl_units", "notes"]
 
 
 def read(path, cols=None):
@@ -102,9 +105,16 @@ def cmd_list(a):
         print(f"\n  already logged this week: {len(have)} row(s)")
 
 
-def _log_one(r, a, week, bets, fields):
-    """Build and append one bet row. Returns the row, or None if a duplicate."""
-    line = str(a.line if a.line is not None else r["line"])
+def _log_one(r, o, week, bets, fields):
+    """Build and append one bet row. Returns the row, or None if a duplicate.
+
+    `o` carries the user's own numbers for this leg -- line, price, book, stake,
+    slip, note. It is a plain dict rather than the argparse namespace so the
+    console can pass a different override per leg in one submission; the CLI
+    path builds a one-key dict and calls the same function.
+    """
+    get = (lambda k, d=None: o.get(k, d))
+    line = str(get("line") if get("line") is not None else r["line"])
     side = r["side"]
     for b in bets:
         if (str(b.get("week")) == str(week) and b.get("player") == r["player"]
@@ -117,7 +127,7 @@ def _log_one(r, a, week, bets, fields):
 
     hid = r["hypothesis"]
     tier = tier_of(hid)
-    stake = float(a.stake or 0)
+    stake = float(get("stake") or 0)
     if stake > 0 and tier != "PROVEN":
         sys.exit(f"{hid} is {tier}. Only a PROVEN hypothesis takes money. Log it "
                  f"at 0 units and let it earn the tier — this is refused, not "
@@ -132,27 +142,28 @@ def _log_one(r, a, week, bets, fields):
         "prop_type": r["market"], "side": side,
         # Your book is the authority; the captured board is a reference.
         "line_stake": line,
-        "price_stake": str(a.price if a.price is not None else r["best_price"]),
-        "book_stake": a.book or r["best_book"],
+        "price_stake": str(get("price") if get("price") is not None
+                           else r["best_price"]),
+        "book_stake": get("book") or r["best_book"],
         "ts_stake": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "hypothesis": hid, "tier_at_stake": tier,
-        "status_at_stake": a.status,
+        "status_at_stake": get("status") or "PROJECTED",
         "stake_units": str(stake),
-        "slip_id": a.slip or "",
+        "slip_id": get("slip") or "",
         "expression_conditions": " | ".join(filter(None, [
             f"{r['player']} plays a normal snap count",
             (f"absorbs share vacated by {r['vacated_by']}"
              if r.get("vacated_by") else None),
             "targets convert at his established rate"])),
         "conjunction": "true",
-        "thesis": a.thesis or (
+        "thesis": get("thesis") or (
             f"{r['player']} absorbs targets vacated by {r.get('vacated_by','?')} "
             f"({r.get('vacated_share',0):.0%} share, {r.get('vacated_status','')}). "
             f"Consensus fair {r['fair_prob']}%, model {r['model_prob']}% on "
             f"{hid}'s claimed {r['claimed_edge']} points. Of {r['ev_pct']}% EV, "
             f"{r['ev_hypothesis_pct']}% is the hypothesis and "
             f"{r['ev_shopping_pct']}% is the price."),
-        "notes": a.note or "",
+        "notes": get("note") or "",
     })
     bets.append(row)
     print(f"logged {row['row_id']}: {row['player']} {row['prop_type']} "
@@ -186,16 +197,22 @@ def cmd_log(a):
             sys.exit(f"--pick must be 1..{len(recs)} or 'all'")
         chosen = [recs[i - 1]]
 
+    o = {"line": a.line, "price": a.price, "book": a.book, "stake": a.stake,
+         "status": a.status, "slip": a.slip, "thesis": a.thesis, "note": a.note}
     bets, fields = read(C.BETS)
-    written = [r for r in (_log_one(c, a, week, bets, fields) for c in chosen) if r]
+    written = [r for r in (_log_one(c, o, week, bets, fields) for c in chosen) if r]
     if not written:
         print("nothing new to log.")
         return
     write(C.BETS, fields, bets)
+    _report_correlation(written)
 
     if not float(a.stake or 0):
         print("  Zero stake. Fully tracked and graded; no money. This is the "
               "point of a shadow row.")
+
+
+def _report_correlation(written):
     games = {}
     for r in written:
         games[r["game"]] = games.get(r["game"], 0) + 1
@@ -203,6 +220,89 @@ def cmd_log(a):
         if n > 1:
             print(f"\n  CORRELATION WARNING — {n} rows logged from {g}. They are "
                   f"one read's worth of evidence, not {n}. Never on one slip.")
+
+
+# ------------------------------------------------------------------------ enter
+def cmd_enter(a):
+    """Record a selection made in the console: several legs, each with the
+    user's own number, in one submission.
+
+    The console is the only caller. It exists because the alternative -- one
+    dispatch per leg -- would write the ledger in five separate commits for one
+    decision, and a slip's legs would not even be guaranteed to land together.
+    """
+    try:
+        payload = json.loads(a.json)
+    except json.JSONDecodeError as e:
+        sys.exit(f"could not parse --json: {e}")
+    legs = payload.get("legs") or []
+    if not legs:
+        sys.exit("no legs in the submission. Nothing to enter.")
+
+    week = int(payload.get("week") or C.default_week())
+    recs, _ = load_recs(week)
+    if not recs:
+        sys.exit(f"week {week} has no recommendations to select from.")
+
+    as_slip = bool(payload.get("slip"))
+    slip_id = ""
+    if as_slip:
+        existing, _ = read(C.SLIPS, SLIP_COLS)
+        slip_id = f"W{week}S{len(existing) + 1:03d}"
+
+    bets, fields = read(C.BETS)
+    written = []
+    for leg in legs:
+        try:
+            i = int(leg.get("pick"))
+        except (TypeError, ValueError):
+            sys.exit(f"leg has no usable pick number: {leg}")
+        if not (1 <= i <= len(recs)):
+            sys.exit(f"pick {i} is out of range; week {week} has {len(recs)}.")
+        o = dict(leg)
+        o["slip"] = slip_id or leg.get("slip") or ""
+        row = _log_one(recs[i - 1], o, week, bets, fields)
+        if row:
+            written.append(row)
+
+    if not written:
+        print("nothing new to enter — every selected leg is already on the "
+              "ledger. Corrections are appended with a note, never duplicated.")
+        return
+    write(C.BETS, fields, bets)
+
+    if as_slip:
+        _write_slip(slip_id, week, written, payload)
+    _report_correlation(written)
+    print(f"\nentered {len(written)} leg(s)"
+          + (f" as slip {slip_id}" if as_slip else " as singles"))
+
+
+def _write_slip(slip_id, week, rows, payload):
+    """A slip is its own record. Parlay results live here and never touch a
+    hypothesis's record -- a hypothesis judged on parlay outcomes is judged on
+    the other legs' luck (parlay.py)."""
+    slips, fields = read(C.SLIPS, SLIP_COLS)
+    fields = fields or SLIP_COLS
+    dec = 1.0
+    for r in rows:
+        p = float(r["price_stake"])
+        dec *= 1 + (100 / -p if p < 0 else p / 100)
+    combined = int(round(-100 * 1 / (dec - 1))) if dec - 1 < 1 \
+        else int(round((dec - 1) * 100))
+    slips.append({
+        "slip_id": slip_id, "season": str(C.SEASON), "week": str(week),
+        "date": date.today().isoformat(),
+        "ts_stake": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "n_legs": str(len(rows)),
+        "leg_row_ids": " ".join(r["row_id"] for r in rows),
+        "combined_price": str(combined),
+        "stake_units": str(sum(float(r.get("stake_units") or 0) for r in rows)),
+        "outcome": "", "pnl_units": "",
+        "notes": payload.get("note") or "",
+    })
+    write(C.SLIPS, fields, slips)
+    print(f"slip {slip_id}: {len(rows)} legs, combined {combined:+d}")
 
 
 # ------------------------------------------------------------------------- close
@@ -303,6 +403,12 @@ def main():
     p.add_argument("--thesis")
     p.add_argument("--note")
     p.set_defaults(fn=cmd_log)
+
+    p = sub.add_parser("enter")
+    p.add_argument("--json", required=True,
+                   help='{"week":3,"slip":false,"legs":[{"pick":1,'
+                        '"line":5.5,"price":-115,"book":"fanduel"}]}')
+    p.set_defaults(fn=cmd_enter)
 
     p = sub.add_parser("close")
     p.add_argument("--row", required=True)
