@@ -131,13 +131,11 @@ jobs:
             fi
 
             echo "----- $L | rebuild views -----"
+            # Console FIRST -- report.py links it from the landing page
+            # only if the file already exists (see ledger.yml).
+            python scripts/console.py --week "$WEEK" || true
             python scripts/report.py --week "$WEEK"
             REPORT_RC=$?
-            # The console is the write-enabled view. It embeds the week's
-            # recommendations and ledger rows at build time, so it has to be
-            # rebuilt whenever either changes -- otherwise the page offers
-            # last week's picks and reports a ledger that has moved on.
-            python scripts/console.py --week "$WEEK" || REPORT_RC=1
             python scripts/review.py || true
             if [ $REPORT_RC -ne 0 ]; then
               BROKEN="$BROKEN $L"
