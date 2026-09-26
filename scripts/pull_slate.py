@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import config as C
+import gaps
 
 
 def snapshot(name, payload, week):
@@ -63,7 +64,7 @@ def pull_nflverse(week):
 def pull_props(week):
     """Open prop lines from The Odds API."""
     if not C.ODDS_API_KEY:
-        print("  [skip] ODDS_API_KEY not set — see README")
+        gaps.announce(gaps.record("props_open", week, "no_key"))
         return None
     import urllib.request, urllib.parse, urllib.error
     events_url = (f"{C.ODDS_BASE}/sports/{C.SPORT}/events"
@@ -72,10 +73,10 @@ def pull_props(week):
         with urllib.request.urlopen(events_url, timeout=30) as r:
             events = json.loads(r.read())
     except urllib.error.URLError as e:
-        print(f"  [warn] events fetch failed: {e}")
+        gaps.announce(gaps.record("props_open", week, "fetch_failed", str(e)))
         return None
     print(f"  events: {len(events)}")
-    out = []
+    out, failed = [], []
     for ev in events:
         q = urllib.parse.urlencode({
             "apiKey": C.ODDS_API_KEY,
@@ -89,8 +90,22 @@ def pull_props(week):
             with urllib.request.urlopen(url, timeout=30) as r:
                 out.append(json.loads(r.read()))
         except urllib.error.URLError as e:
-            print(f"  [warn] props for {ev.get('id')}: {e}")
+            failed.append(f"{ev.get('id')}: {e}")
+            if len(failed) <= 3:
+                print(f"  [warn] props for {ev.get('id')}: {e}")
+            elif len(failed) == 4:
+                print("  [warn] ... further per-event failures suppressed")
     print(f"  prop boards: {len(out)}")
+    if not out:
+        # The old code returned an empty list here and main() silently skipped
+        # the write. A week with no board is not a week with no candidates, and
+        # the record has to be able to tell them apart.
+        gaps.announce(gaps.record(
+            "props_open", week, "empty",
+            f"{len(events)} event(s) listed, {len(failed)} call(s) failed, "
+            f"0 boards returned"))
+    else:
+        gaps.resolve("props_open", week)
     return out
 
 
@@ -102,9 +117,20 @@ def main():
     nv = pull_nflverse(a.week)
     if nv:
         snapshot("nflverse", nv, a.week)
+        gaps.resolve("nflverse", a.week)
+    else:
+        gaps.announce(gaps.record("nflverse", a.week, "source_unavailable"))
+
     pr = pull_props(a.week)
     if pr:
         snapshot("props_open", pr, a.week)
+
+    open_gaps = gaps.for_week(a.week)
+    if open_gaps:
+        print(f"\n  {len(open_gaps)} OPEN COLLECTION GAP(S) for week {a.week}.")
+        print("  The dashboard will show this in red until the data arrives.")
+        print("  A green run with a gap in it is the failure this project")
+        print("  exists to prevent — do not let it scroll past.")
     print("\nSnapshots are immutable. Next: analyze, verify underlying (G4),")
     print("decompose the expression (G3), then log candidate rows to bets.csv")
     print("with line_stake/price_stake/ts_stake filled in.")
