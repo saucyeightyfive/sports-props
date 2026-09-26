@@ -179,8 +179,12 @@ jobs:
           if [ -z "$WEEK" ]; then
             WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
           fi
-          python scripts/report.py --week "$WEEK"
+          # Console FIRST. report.py builds the Pages landing page, and it
+          # only links the console if console.html is already on disk --
+          # so building report first means the very run that creates the
+          # console publishes an index that does not link to it.
           python scripts/console.py --week "$WEEK"
+          python scripts/report.py --week "$WEEK"
           python scripts/review.py || true
 
       - name: Commit
