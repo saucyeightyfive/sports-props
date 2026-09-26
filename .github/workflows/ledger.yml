@@ -1,0 +1,193 @@
+name: ledger
+
+# The write path, from a browser.
+#
+# Three weeks of recommendations went into an empty ledger because the only way
+# to log a row was app.py on a machine that cannot run Python. A system whose
+# write path is unreachable does not collect data -- it produces opinions and
+# forgets them. This puts log / close / ratify on the Actions tab, so recording
+# a pick is filling in a form.
+#
+# It writes the ledger and rebuilds the dashboard in the same run, so the site
+# reflects the row by the time the run goes green.
+#
+# What it deliberately does NOT do: stake money on an unproven hypothesis.
+# ledger.py refuses that and this workflow does not carry an override. Judgment
+# stays manual (CLAUDE.md); this automates the typing, not the decision.
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'what to do'
+        type: choice
+        default: 'list'
+        options: [list, log, close, ratify, show]
+      league:
+        description: 'nfl | ncaa'
+        default: 'nfl'
+      week:
+        description: 'week number — blank uses the calendar'
+        required: false
+      pick:
+        description: 'LOG: recommendation number from `list`, or "all"'
+        required: false
+      row:
+        description: 'CLOSE / RATIFY: row id, e.g. W3R001'
+        required: false
+      line:
+        description: 'LOG/CLOSE: your book''s line, if it differs from the board'
+        required: false
+      price:
+        description: 'LOG/CLOSE: your book''s American price, e.g. -115 or 105'
+        required: false
+      book:
+        description: 'LOG/CLOSE: which book you actually saw it at'
+        required: false
+      stake:
+        description: 'LOG: units. Leave 0. Refused above 0 unless PROVEN.'
+        default: '0'
+      held:
+        description: 'RATIFY: HELD | FAILED | UNCLEAR — did the thesis happen'
+        required: false
+      klass:
+        description: 'RATIFY: CONFIRMED | GAMBLED | TEACHING | FRONTIER'
+        required: false
+      note:
+        description: 'free text — goes in the record'
+        required: false
+
+permissions:
+  contents: write
+
+# Shares a lane with weekly-capture: both write the same CSVs, and two runs
+# rewriting bets.csv at once is how an audit trail stops being one.
+concurrency:
+  group: capture
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'   # see weekly.yml — 3.11 is a real hazard here
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Write
+        env:
+          LEAGUE: ${{ inputs.league }}
+          SEASON: ${{ vars.SEASON || '2026' }}
+          IN_ACTION: ${{ inputs.action }}
+          IN_WEEK:   ${{ inputs.week }}
+          IN_PICK:   ${{ inputs.pick }}
+          IN_ROW:    ${{ inputs.row }}
+          IN_LINE:   ${{ inputs.line }}
+          IN_PRICE:  ${{ inputs.price }}
+          IN_BOOK:   ${{ inputs.book }}
+          IN_STAKE:  ${{ inputs.stake }}
+          IN_HELD:   ${{ inputs.held }}
+          IN_KLASS:  ${{ inputs.klass }}
+          IN_NOTE:   ${{ inputs.note }}
+        run: |
+          # pipefail matters: without it the pipeline's status is tee's, and a
+          # ledger.py that refused a write would report success.
+          set -eo pipefail
+          # The argument list is assembled in Python from the environment and
+          # handed to the child as argv. Nothing the user typed is ever parsed
+          # by a shell, so a note containing a quote, a semicolon or a newline
+          # is text -- which is what a form field should be.
+          python - <<'PY' | tee /tmp/out.txt
+          import os, subprocess, sys
+
+          g = lambda k: (os.environ.get(k) or "").strip()
+          act = g("IN_ACTION") or "list"
+          argv = [sys.executable, "scripts/ledger.py", act]
+
+          def opt(flag, key):
+              v = g(key)
+              if v:
+                  argv.extend([flag, v])
+
+          def need(*keys):
+              missing = [k for k in keys if not g(k)]
+              if missing:
+                  print(f"::error::{act} needs: {', '.join(k[3:].lower() for k in missing)}")
+                  if act == "log":
+                      print("::error::Run this workflow with action=list first to see "
+                            "the numbered recommendations.")
+                  if act == "close":
+                      print("::error::The closing price is the one number that cannot "
+                            "be recovered after kickoff.")
+                  sys.exit(1)
+
+          if act in ("list", "show"):
+              opt("--week", "IN_WEEK")
+          elif act == "log":
+              need("IN_PICK")
+              argv += ["--pick", g("IN_PICK"), "--stake", g("IN_STAKE") or "0"]
+              for f, k in (("--week", "IN_WEEK"), ("--line", "IN_LINE"),
+                           ("--price", "IN_PRICE"), ("--book", "IN_BOOK"),
+                           ("--note", "IN_NOTE")):
+                  opt(f, k)
+          elif act == "close":
+              need("IN_ROW", "IN_PRICE")
+              argv += ["--row", g("IN_ROW"), "--price", g("IN_PRICE")]
+              opt("--line", "IN_LINE")
+              opt("--book", "IN_BOOK")
+          elif act == "ratify":
+              need("IN_ROW")
+              if not g("IN_HELD") and not g("IN_KLASS"):
+                  print("::error::ratify needs held and/or klass — otherwise it "
+                        "does nothing.")
+                  sys.exit(1)
+              argv += ["--row", g("IN_ROW")]
+              opt("--held", "IN_HELD")
+              opt("--class", "IN_KLASS")
+              opt("--note", "IN_NOTE")
+
+          sys.exit(subprocess.call(argv))
+          PY
+          {
+            echo '## ledger — ${{ inputs.action }} (${{ inputs.league }})'
+            echo '```'
+            cat /tmp/out.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild the dashboard
+        if: inputs.action == 'log' || inputs.action == 'close' || inputs.action == 'ratify'
+        env:
+          LEAGUE: ${{ inputs.league }}
+          SEASON: ${{ vars.SEASON || '2026' }}
+          IN_WEEK: ${{ inputs.week }}
+        run: |
+          set -e
+          WEEK="$IN_WEEK"
+          if [ -z "$WEEK" ]; then
+            WEEK=$(python -c "import sys;sys.path.insert(0,'scripts');import config as C;print(C.default_week())")
+          fi
+          python scripts/report.py --week "$WEEK"
+          python scripts/review.py || true
+
+      - name: Commit
+        if: inputs.action == 'log' || inputs.action == 'close' || inputs.action == 'ratify'
+        env:
+          A: ${{ inputs.action }}
+          L: ${{ inputs.league }}
+        run: |
+          set -e
+          git config user.name  "props-bot"
+          git config user.email "props-bot@users.noreply.github.com"
+          git add state/ dashboards/ || true
+          if git diff --staged --quiet; then
+            echo "::warning::nothing changed. The row was probably already there —"
+            echo "::warning::ledger.py refuses to duplicate a row rather than logging it twice."
+            exit 0
+          fi
+          git commit -m "ledger: $A ($L) [skip ci]"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
