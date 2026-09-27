@@ -2,7 +2,7 @@
   "league": "nfl",
   "season": 2026,
   "week": 3,
-  "generated": "2026-09-26T21:44:33+00:00",
+  "generated": "2026-09-27T16:37:38+00:00",
   "recommendations": [
     {
       "hypothesis": "H2",
@@ -285,7 +285,7 @@
     ],
     [
       "H3",
-      "hypothesis could not be evaluated"
+      "edge is in closing_line_cents, measured on the ledger rather than priced here"
     ]
   ]
 }

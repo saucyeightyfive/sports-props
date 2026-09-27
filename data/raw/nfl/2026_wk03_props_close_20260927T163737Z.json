@@ -1,0 +1,7222 @@
+{
+  "('Chuba Hubbard', 'player_anytime_td', 'Yes')": [
+    -110,
+    null,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_anytime_td', 'Yes')": [
+    115,
+    null,
+    "betmgm"
+  ],
+  "('Tetairoa McMillan', 'player_anytime_td', 'Yes')": [
+    175,
+    null,
+    "betmgm"
+  ],
+  "('Denzel Boston', 'player_anytime_td', 'Yes')": [
+    250,
+    null,
+    "betmgm"
+  ],
+  "('Jalen Coker', 'player_anytime_td', 'Yes')": [
+    185,
+    null,
+    "betmgm"
+  ],
+  "('Harold Fannin Jr.', 'player_anytime_td', 'Yes')": [
+    270,
+    null,
+    "betmgm"
+  ],
+  "('KC Concepcion', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Darren Waller', 'player_anytime_td', 'Yes')": [
+    380,
+    null,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_anytime_td', 'Yes')": [
+    250,
+    null,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Jerry Jeudy', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "betmgm"
+  ],
+  "('Carolina Panthers D/ST', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Tommy Tremble', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Cleveland Browns D/ST', 'player_anytime_td', 'Yes')": [
+    475,
+    null,
+    "betmgm"
+  ],
+  "('John Metchie III', 'player_anytime_td', 'Yes')": [
+    825,
+    null,
+    "betmgm"
+  ],
+  "('Raheim Sanders', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('AJ Dillon', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Brycen Tremayne', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "betmgm"
+  ],
+  "('Mitchell Evans', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Blake Whiteheart', 'player_anytime_td', 'Yes')": [
+    1200,
+    null,
+    "betmgm"
+  ],
+  "('David Moore', 'player_anytime_td', 'Yes')": [
+    1500,
+    null,
+    "betmgm"
+  ],
+  "('Tylan Wallace', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Malachi Corley', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "betmgm"
+  ],
+  "('Jaleel McLaughlin', 'player_anytime_td', 'Yes')": [
+    1300,
+    null,
+    "betmgm"
+  ],
+  "('Isaiah Bond', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Anthony Tyus III', 'player_anytime_td', 'Yes')": [
+    1850,
+    null,
+    "betmgm"
+  ],
+  "('Feleipe Franks', 'player_anytime_td', 'Yes')": [
+    3000,
+    null,
+    "fanduel"
+  ],
+  "('Carsen Ryan', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "betmgm"
+  ],
+  "('Michael Burton', 'player_anytime_td', 'Yes')": [
+    4500,
+    null,
+    "fanduel"
+  ],
+  "('Bryce Young', 'player_pass_tds', 'Over')": [
+    125,
+    1.5,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_pass_tds', 'Under')": [
+    -165,
+    1.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_pass_tds', 'Over')": [
+    -275,
+    0.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_pass_tds', 'Under')": [
+    200,
+    0.5,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_pass_yds', 'Over')": [
+    -105,
+    226.5,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_pass_yds', 'Under')": [
+    -125,
+    226.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_pass_yds', 'Over')": [
+    -115,
+    189.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_pass_yds', 'Under')": [
+    -115,
+    189.5,
+    "betmgm"
+  ],
+  "('Tetairoa McMillan', 'player_reception_yds', 'Over')": [
+    -115,
+    64.5,
+    "betmgm"
+  ],
+  "('Tetairoa McMillan', 'player_reception_yds', 'Under')": [
+    -115,
+    64.5,
+    "betmgm"
+  ],
+  "('Jalen Coker', 'player_reception_yds', 'Over')": [
+    -115,
+    58.5,
+    "betmgm"
+  ],
+  "('Jalen Coker', 'player_reception_yds', 'Under')": [
+    -115,
+    58.5,
+    "betmgm"
+  ],
+  "('Denzel Boston', 'player_reception_yds', 'Over')": [
+    -115,
+    45.5,
+    "betmgm"
+  ],
+  "('Denzel Boston', 'player_reception_yds', 'Under')": [
+    -115,
+    45.5,
+    "betmgm"
+  ],
+  "('Harold Fannin Jr.', 'player_reception_yds', 'Over')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Harold Fannin Jr.', 'player_reception_yds', 'Under')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('KC Concepcion', 'player_reception_yds', 'Over')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('KC Concepcion', 'player_reception_yds', 'Under')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Jerry Jeudy', 'player_reception_yds', 'Over')": [
+    -120,
+    18.5,
+    "betmgm"
+  ],
+  "('Jerry Jeudy', 'player_reception_yds', 'Under')": [
+    -111,
+    18.5,
+    "betmgm"
+  ],
+  "('Darren Waller', 'player_reception_yds', 'Over')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('Darren Waller', 'player_reception_yds', 'Under')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('Chuba Hubbard', 'player_reception_yds', 'Over')": [
+    -111,
+    14.5,
+    "betmgm"
+  ],
+  "('Chuba Hubbard', 'player_reception_yds', 'Under')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_reception_yds', 'Over')": [
+    -120,
+    13.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_reception_yds', 'Under')": [
+    -110,
+    13.5,
+    "betmgm"
+  ],
+  "('Tommy Tremble', 'player_reception_yds', 'Over')": [
+    -120,
+    10.5,
+    "betmgm"
+  ],
+  "('Tommy Tremble', 'player_reception_yds', 'Under')": [
+    -110,
+    10.5,
+    "betmgm"
+  ],
+  "('Blake Whiteheart', 'player_reception_yds', 'Over')": [
+    -113,
+    5.5,
+    "fanduel"
+  ],
+  "('Blake Whiteheart', 'player_reception_yds', 'Under')": [
+    -113,
+    5.5,
+    "fanduel"
+  ],
+  "('Raheim Sanders', 'player_reception_yds', 'Over')": [
+    -106,
+    2.5,
+    "fanduel"
+  ],
+  "('Raheim Sanders', 'player_reception_yds', 'Under')": [
+    -120,
+    2.5,
+    "fanduel"
+  ],
+  "('Jalen Coker', 'player_receptions', 'Over')": [
+    -140,
+    4.5,
+    "betmgm"
+  ],
+  "('Jalen Coker', 'player_receptions', 'Under')": [
+    100,
+    4.5,
+    "betmgm"
+  ],
+  "('Tetairoa McMillan', 'player_receptions', 'Over')": [
+    -140,
+    4.5,
+    "betmgm"
+  ],
+  "('Tetairoa McMillan', 'player_receptions', 'Under')": [
+    105,
+    4.5,
+    "betmgm"
+  ],
+  "('Harold Fannin Jr.', 'player_receptions', 'Over')": [
+    -150,
+    3.5,
+    "betmgm"
+  ],
+  "('Harold Fannin Jr.', 'player_receptions', 'Under')": [
+    110,
+    3.5,
+    "betmgm"
+  ],
+  "('KC Concepcion', 'player_receptions', 'Over')": [
+    -135,
+    3.5,
+    "betmgm"
+  ],
+  "('KC Concepcion', 'player_receptions', 'Under')": [
+    100,
+    3.5,
+    "betmgm"
+  ],
+  "('Denzel Boston', 'player_receptions', 'Over')": [
+    -120,
+    3.5,
+    "betmgm"
+  ],
+  "('Denzel Boston', 'player_receptions', 'Under')": [
+    -110,
+    3.5,
+    "betmgm"
+  ],
+  "('Chuba Hubbard', 'player_receptions', 'Over')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Chuba Hubbard', 'player_receptions', 'Under')": [
+    -130,
+    2.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_receptions', 'Over')": [
+    100,
+    2.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_receptions', 'Under')": [
+    -135,
+    2.5,
+    "betmgm"
+  ],
+  "('Darren Waller', 'player_receptions', 'Over')": [
+    130,
+    2.5,
+    "betmgm"
+  ],
+  "('Darren Waller', 'player_receptions', 'Under')": [
+    -175,
+    2.5,
+    "betmgm"
+  ],
+  "('Jerry Jeudy', 'player_receptions', 'Over')": [
+    -155,
+    1.5,
+    "betmgm"
+  ],
+  "('Jerry Jeudy', 'player_receptions', 'Under')": [
+    115,
+    1.5,
+    "betmgm"
+  ],
+  "('Tommy Tremble', 'player_receptions', 'Over')": [
+    -111,
+    1.5,
+    "betmgm"
+  ],
+  "('Tommy Tremble', 'player_receptions', 'Under')": [
+    -120,
+    1.5,
+    "betmgm"
+  ],
+  "('Raheim Sanders', 'player_receptions', 'Over')": [
+    -160,
+    0.5,
+    "fanduel"
+  ],
+  "('Raheim Sanders', 'player_receptions', 'Under')": [
+    120,
+    0.5,
+    "fanduel"
+  ],
+  "('Blake Whiteheart', 'player_receptions', 'Over')": [
+    -172,
+    0.5,
+    "fanduel"
+  ],
+  "('Blake Whiteheart', 'player_receptions', 'Under')": [
+    128,
+    0.5,
+    "fanduel"
+  ],
+  "('Chuba Hubbard', 'player_rush_yds', 'Over')": [
+    -115,
+    70.5,
+    "betmgm"
+  ],
+  "('Chuba Hubbard', 'player_rush_yds', 'Under')": [
+    -115,
+    70.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_rush_yds', 'Over')": [
+    -115,
+    61.5,
+    "betmgm"
+  ],
+  "('Quinshon Judkins', 'player_rush_yds', 'Under')": [
+    -115,
+    61.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_rush_yds', 'Over')": [
+    105,
+    28.5,
+    "betmgm"
+  ],
+  "('Deshaun Watson', 'player_rush_yds', 'Under')": [
+    -140,
+    28.5,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_rush_yds', 'Over')": [
+    -111,
+    14.5,
+    "betmgm"
+  ],
+  "('Bryce Young', 'player_rush_yds', 'Under')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('AJ Dillon', 'player_rush_yds', 'Over')": [
+    -113,
+    14.5,
+    "fanduel"
+  ],
+  "('AJ Dillon', 'player_rush_yds', 'Under')": [
+    -113,
+    14.5,
+    "fanduel"
+  ],
+  "('Raheim Sanders', 'player_rush_yds', 'Over')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('Raheim Sanders', 'player_rush_yds', 'Under')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('KC Concepcion', 'player_rush_yds', 'Over')": [
+    -104,
+    5.5,
+    "fanduel"
+  ],
+  "('KC Concepcion', 'player_rush_yds', 'Under')": [
+    -122,
+    5.5,
+    "fanduel"
+  ],
+  "('Cleveland Browns Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Carolina Panthers Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Mitchell Evans', 'player_reception_yds', 'Over')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('Mitchell Evans', 'player_reception_yds', 'Under')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('Rhamondre Stevenson', 'player_anytime_td', 'Yes')": [
+    140,
+    null,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_anytime_td', 'Yes')": [
+    135,
+    null,
+    "betmgm"
+  ],
+  "('Parker Washington', 'player_anytime_td', 'Yes')": [
+    145,
+    null,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_anytime_td', 'Yes')": [
+    188,
+    null,
+    "betmgm"
+  ],
+  "('Hunter Henry', 'player_anytime_td', 'Yes')": [
+    230,
+    null,
+    "betmgm"
+  ],
+  "('Jakobi Meyers', 'player_anytime_td', 'Yes')": [
+    280,
+    null,
+    "betmgm"
+  ],
+  "('Chris Rodriguez Jr.', 'player_anytime_td', 'Yes')": [
+    195,
+    null,
+    "betmgm"
+  ],
+  "('Brian Thomas Jr', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Brenton Strange', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Romeo Doubs', 'player_anytime_td', 'Yes')": [
+    250,
+    null,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_anytime_td', 'Yes')": [
+    250,
+    null,
+    "betmgm"
+  ],
+  "('Mack Hollins', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('DeMario Douglas', 'player_anytime_td', 'Yes')": [
+    350,
+    null,
+    "betmgm"
+  ],
+  "('Jacksonville Jaguars D/ST', 'player_anytime_td', 'Yes')": [
+    475,
+    null,
+    "betmgm"
+  ],
+  "('New England Patriots D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Ameer Abdullah', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Nate Boerkircher', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Kyle Williams', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Travis Hunter', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Josh Cameron', 'player_anytime_td', 'Yes')": [
+    1550,
+    null,
+    "betmgm"
+  ],
+  "('LeQuint Allen Jr.', 'player_anytime_td', 'Yes')": [
+    1200,
+    null,
+    "betmgm"
+  ],
+  "('Efton Chism III', 'player_anytime_td', 'Yes')": [
+    1850,
+    null,
+    "betmgm"
+  ],
+  "('Cameron Latu', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Corey Kiner', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Tanner Koziol', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Quintin Morris', 'player_anytime_td', 'Yes')": [
+    1350,
+    null,
+    "betmgm"
+  ],
+  "('Reggie Gilliam', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "betmgm"
+  ],
+  "('Tanner Arkin', 'player_anytime_td', 'Yes')": [
+    2700,
+    null,
+    "fanduel"
+  ],
+  "('Trevor Lawrence', 'player_pass_tds', 'Over')": [
+    -105,
+    1.5,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_pass_tds', 'Under')": [
+    -125,
+    1.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_pass_tds', 'Over')": [
+    125,
+    1.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_pass_tds', 'Under')": [
+    -165,
+    1.5,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_pass_yds', 'Over')": [
+    -115,
+    231.5,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_pass_yds', 'Under')": [
+    -115,
+    231.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_pass_yds', 'Over')": [
+    -115,
+    219.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_pass_yds', 'Under')": [
+    -115,
+    219.5,
+    "betmgm"
+  ],
+  "('Parker Washington', 'player_reception_yds', 'Over')": [
+    -115,
+    67.5,
+    "betmgm"
+  ],
+  "('Parker Washington', 'player_reception_yds', 'Under')": [
+    -115,
+    67.5,
+    "betmgm"
+  ],
+  "('Romeo Doubs', 'player_reception_yds', 'Over')": [
+    -115,
+    43.5,
+    "betmgm"
+  ],
+  "('Romeo Doubs', 'player_reception_yds', 'Under')": [
+    -115,
+    43.5,
+    "betmgm"
+  ],
+  "('Hunter Henry', 'player_reception_yds', 'Over')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Hunter Henry', 'player_reception_yds', 'Under')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Jakobi Meyers', 'player_reception_yds', 'Over')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Jakobi Meyers', 'player_reception_yds', 'Under')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Mack Hollins', 'player_reception_yds', 'Over')": [
+    -111,
+    36.5,
+    "betmgm"
+  ],
+  "('Mack Hollins', 'player_reception_yds', 'Under')": [
+    -118,
+    36.5,
+    "betmgm"
+  ],
+  "('Brian Thomas Jr', 'player_reception_yds', 'Over')": [
+    -115,
+    34.5,
+    "betmgm"
+  ],
+  "('Brian Thomas Jr', 'player_reception_yds', 'Under')": [
+    -115,
+    34.5,
+    "betmgm"
+  ],
+  "('Brenton Strange', 'player_reception_yds', 'Over')": [
+    -115,
+    29.5,
+    "betmgm"
+  ],
+  "('Brenton Strange', 'player_reception_yds', 'Under')": [
+    -115,
+    29.5,
+    "betmgm"
+  ],
+  "('DeMario Douglas', 'player_reception_yds', 'Over')": [
+    -115,
+    30.5,
+    "betmgm"
+  ],
+  "('DeMario Douglas', 'player_reception_yds', 'Under')": [
+    -115,
+    30.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_reception_yds', 'Over')": [
+    -110,
+    14.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_reception_yds', 'Under')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_reception_yds', 'Over')": [
+    -135,
+    8.5,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_reception_yds', 'Under')": [
+    100,
+    8.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_reception_yds', 'Over')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_reception_yds', 'Under')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('Kyle Williams', 'player_reception_yds', 'Over')": [
+    -113,
+    7.5,
+    "fanduel"
+  ],
+  "('Kyle Williams', 'player_reception_yds', 'Under')": [
+    -113,
+    7.5,
+    "fanduel"
+  ],
+  "('Travis Hunter', 'player_reception_yds', 'Over')": [
+    -113,
+    5.5,
+    "fanduel"
+  ],
+  "('Travis Hunter', 'player_reception_yds', 'Under')": [
+    -113,
+    5.5,
+    "fanduel"
+  ],
+  "('Parker Washington', 'player_receptions', 'Over')": [
+    105,
+    5.5,
+    "betmgm"
+  ],
+  "('Parker Washington', 'player_receptions', 'Under')": [
+    -140,
+    5.5,
+    "betmgm"
+  ],
+  "('Hunter Henry', 'player_receptions', 'Over')": [
+    -155,
+    3.5,
+    "betmgm"
+  ],
+  "('Hunter Henry', 'player_receptions', 'Under')": [
+    115,
+    3.5,
+    "betmgm"
+  ],
+  "('Jakobi Meyers', 'player_receptions', 'Over')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Jakobi Meyers', 'player_receptions', 'Under')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('Romeo Doubs', 'player_receptions', 'Over')": [
+    105,
+    3.5,
+    "betmgm"
+  ],
+  "('Romeo Doubs', 'player_receptions', 'Under')": [
+    -140,
+    3.5,
+    "betmgm"
+  ],
+  "('Brenton Strange', 'player_receptions', 'Over')": [
+    130,
+    3.5,
+    "betmgm"
+  ],
+  "('Brenton Strange', 'player_receptions', 'Under')": [
+    -175,
+    3.5,
+    "betmgm"
+  ],
+  "('DeMario Douglas', 'player_receptions', 'Over')": [
+    -165,
+    2.5,
+    "betmgm"
+  ],
+  "('DeMario Douglas', 'player_receptions', 'Under')": [
+    125,
+    2.5,
+    "betmgm"
+  ],
+  "('Brian Thomas Jr', 'player_receptions', 'Over')": [
+    -140,
+    2.5,
+    "betmgm"
+  ],
+  "('Brian Thomas Jr', 'player_receptions', 'Under')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('Mack Hollins', 'player_receptions', 'Over')": [
+    -165,
+    2.5,
+    "betmgm"
+  ],
+  "('Mack Hollins', 'player_receptions', 'Under')": [
+    125,
+    2.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_receptions', 'Over')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_receptions', 'Under')": [
+    -145,
+    2.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_receptions', 'Over')": [
+    -120,
+    1.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_receptions', 'Under')": [
+    -110,
+    1.5,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_receptions', 'Over')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_receptions', 'Under')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Kyle Williams', 'player_receptions', 'Over')": [
+    -172,
+    0.5,
+    "fanduel"
+  ],
+  "('Kyle Williams', 'player_receptions', 'Under')": [
+    128,
+    0.5,
+    "fanduel"
+  ],
+  "('Travis Hunter', 'player_receptions', 'Over')": [
+    -172,
+    0.5,
+    "fanduel"
+  ],
+  "('Travis Hunter', 'player_receptions', 'Under')": [
+    128,
+    0.5,
+    "fanduel"
+  ],
+  "('Bhayshul Tuten', 'player_rush_yds', 'Over')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('Bhayshul Tuten', 'player_rush_yds', 'Under')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_rush_yds', 'Over')": [
+    -120,
+    41.5,
+    "betmgm"
+  ],
+  "('TreVeyon Henderson', 'player_rush_yds', 'Under')": [
+    -111,
+    41.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_rush_yds', 'Over')": [
+    -111,
+    34.5,
+    "betmgm"
+  ],
+  "('Rhamondre Stevenson', 'player_rush_yds', 'Under')": [
+    -118,
+    34.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_rush_yds', 'Over')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Drake Maye', 'player_rush_yds', 'Under')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Chris Rodriguez Jr.', 'player_rush_yds', 'Over')": [
+    -120,
+    19.5,
+    "betmgm"
+  ],
+  "('Chris Rodriguez Jr.', 'player_rush_yds', 'Under')": [
+    -110,
+    19.5,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_rush_yds', 'Over')": [
+    -115,
+    17.5,
+    "betmgm"
+  ],
+  "('Trevor Lawrence', 'player_rush_yds', 'Under')": [
+    -115,
+    17.5,
+    "betmgm"
+  ],
+  "('New England Patriots Defense', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Jacksonville Jaguars Defense', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_anytime_td', 'Yes')": [
+    -195,
+    null,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_anytime_td', 'Yes')": [
+    120,
+    null,
+    "fanduel"
+  ],
+  "('Rashee Rice', 'player_anytime_td', 'Yes')": [
+    140,
+    null,
+    "fanduel"
+  ],
+  "('Travis Kelce', 'player_anytime_td', 'Yes')": [
+    150,
+    null,
+    "fanduel"
+  ],
+  "('Xavier Worthy', 'player_anytime_td', 'Yes')": [
+    200,
+    null,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_anytime_td', 'Yes')": [
+    330,
+    null,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_anytime_td', 'Yes')": [
+    350,
+    null,
+    "fanduel"
+  ],
+  "('Malik Washington', 'player_anytime_td', 'Yes')": [
+    330,
+    null,
+    "fanduel"
+  ],
+  "('Greg Dulcich', 'player_anytime_td', 'Yes')": [
+    410,
+    null,
+    "fanduel"
+  ],
+  "('Tyquan Thornton', 'player_anytime_td', 'Yes')": [
+    440,
+    null,
+    "fanduel"
+  ],
+  "('Ollie Gordon II', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "fanduel"
+  ],
+  "('Kansas City Chiefs D/ST', 'player_anytime_td', 'Yes')": [
+    550,
+    null,
+    "draftkings"
+  ],
+  "('Chris Bell', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Noah Gray', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Miami Dolphins D/ST', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "draftkings"
+  ],
+  "('Kevin Coleman Jr.', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "fanduel"
+  ],
+  "('Will Kacmarek', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "fanduel"
+  ],
+  "('Jalen Royals', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "fanduel"
+  ],
+  "('Brashard Smith', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Jake Briningstool', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "fanduel"
+  ],
+  "('Jalen Tolbert', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "fanduel"
+  ],
+  "('Nikko Remigio', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Ryan Miller', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "fanduel"
+  ],
+  "('Cyrus Allen', 'player_anytime_td', 'Yes')": [
+    1800,
+    null,
+    "fanduel"
+  ],
+  "('Seydou Traore', 'player_anytime_td', 'Yes')": [
+    3000,
+    null,
+    "fanduel"
+  ],
+  "('DJ Herman', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "fanduel"
+  ],
+  "('Justin Joly', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "fanduel"
+  ],
+  "('Ben VanSumeren', 'player_anytime_td', 'Yes')": [
+    6000,
+    null,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_pass_tds', 'Over')": [
+    -170,
+    1.5,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_pass_tds', 'Under')": [
+    132,
+    1.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_pass_tds', 'Over')": [
+    -225,
+    0.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_pass_tds', 'Under')": [
+    168,
+    0.5,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_pass_yds', 'Over')": [
+    -113,
+    235.5,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_pass_yds', 'Under')": [
+    -113,
+    235.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_pass_yds', 'Over')": [
+    -113,
+    174.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_pass_yds', 'Under')": [
+    -113,
+    174.5,
+    "fanduel"
+  ],
+  "('Travis Kelce', 'player_reception_yds', 'Over')": [
+    -113,
+    52.5,
+    "fanduel"
+  ],
+  "('Travis Kelce', 'player_reception_yds', 'Under')": [
+    -113,
+    52.5,
+    "fanduel"
+  ],
+  "('Rashee Rice', 'player_reception_yds', 'Over')": [
+    -113,
+    47.5,
+    "fanduel"
+  ],
+  "('Rashee Rice', 'player_reception_yds', 'Under')": [
+    -113,
+    47.5,
+    "fanduel"
+  ],
+  "('Malik Washington', 'player_reception_yds', 'Over')": [
+    -113,
+    38.5,
+    "fanduel"
+  ],
+  "('Malik Washington', 'player_reception_yds', 'Under')": [
+    -113,
+    38.5,
+    "fanduel"
+  ],
+  "('Xavier Worthy', 'player_reception_yds', 'Over')": [
+    -113,
+    38.5,
+    "fanduel"
+  ],
+  "('Xavier Worthy', 'player_reception_yds', 'Under')": [
+    -113,
+    38.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_reception_yds', 'Over')": [
+    -113,
+    27.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_reception_yds', 'Under')": [
+    -113,
+    27.5,
+    "fanduel"
+  ],
+  "('Greg Dulcich', 'player_reception_yds', 'Over')": [
+    -113,
+    22.5,
+    "fanduel"
+  ],
+  "('Greg Dulcich', 'player_reception_yds', 'Under')": [
+    -113,
+    22.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_reception_yds', 'Over')": [
+    -113,
+    22.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_reception_yds', 'Under')": [
+    -113,
+    22.5,
+    "fanduel"
+  ],
+  "('Tyquan Thornton', 'player_reception_yds', 'Over')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('Tyquan Thornton', 'player_reception_yds', 'Under')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('Chris Bell', 'player_reception_yds', 'Over')": [
+    -113,
+    19.5,
+    "fanduel"
+  ],
+  "('Chris Bell', 'player_reception_yds', 'Under')": [
+    -113,
+    19.5,
+    "fanduel"
+  ],
+  "('Kevin Coleman Jr.', 'player_reception_yds', 'Over')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Kevin Coleman Jr.', 'player_reception_yds', 'Under')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_reception_yds', 'Over')": [
+    -113,
+    10.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_reception_yds', 'Under')": [
+    -113,
+    10.5,
+    "fanduel"
+  ],
+  "('Travis Kelce', 'player_receptions', 'Over')": [
+    -114,
+    4.5,
+    "fanduel"
+  ],
+  "('Travis Kelce', 'player_receptions', 'Under')": [
+    -114,
+    4.5,
+    "fanduel"
+  ],
+  "('Rashee Rice', 'player_receptions', 'Over')": [
+    108,
+    4.5,
+    "fanduel"
+  ],
+  "('Rashee Rice', 'player_receptions', 'Under')": [
+    -144,
+    4.5,
+    "fanduel"
+  ],
+  "('Malik Washington', 'player_receptions', 'Over')": [
+    -144,
+    3.5,
+    "fanduel"
+  ],
+  "('Malik Washington', 'player_receptions', 'Under')": [
+    108,
+    3.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_receptions', 'Over')": [
+    -130,
+    3.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_receptions', 'Under')": [
+    -102,
+    3.5,
+    "fanduel"
+  ],
+  "('Xavier Worthy', 'player_receptions', 'Over')": [
+    -108,
+    3.5,
+    "fanduel"
+  ],
+  "('Xavier Worthy', 'player_receptions', 'Under')": [
+    -122,
+    3.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_receptions', 'Over')": [
+    120,
+    3.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_receptions', 'Under')": [
+    -160,
+    3.5,
+    "fanduel"
+  ],
+  "('Greg Dulcich', 'player_receptions', 'Over')": [
+    122,
+    2.5,
+    "fanduel"
+  ],
+  "('Greg Dulcich', 'player_receptions', 'Under')": [
+    -162,
+    2.5,
+    "fanduel"
+  ],
+  "('Chris Bell', 'player_receptions', 'Over')": [
+    -114,
+    1.5,
+    "fanduel"
+  ],
+  "('Chris Bell', 'player_receptions', 'Under')": [
+    -114,
+    1.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_receptions', 'Over')": [
+    -102,
+    1.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_receptions', 'Under')": [
+    -130,
+    1.5,
+    "fanduel"
+  ],
+  "('Kevin Coleman Jr.', 'player_receptions', 'Over')": [
+    110,
+    1.5,
+    "fanduel"
+  ],
+  "('Kevin Coleman Jr.', 'player_receptions', 'Under')": [
+    -146,
+    1.5,
+    "fanduel"
+  ],
+  "('Tyquan Thornton', 'player_receptions', 'Over')": [
+    116,
+    1.5,
+    "fanduel"
+  ],
+  "('Tyquan Thornton', 'player_receptions', 'Under')": [
+    -154,
+    1.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_rush_yds', 'Over')": [
+    -113,
+    82.5,
+    "fanduel"
+  ],
+  "('Kenneth Walker III', 'player_rush_yds', 'Under')": [
+    -113,
+    82.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_rush_yds', 'Over')": [
+    -113,
+    59.5,
+    "fanduel"
+  ],
+  "(\"De'Von Achane\", 'player_rush_yds', 'Under')": [
+    -113,
+    59.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_rush_yds', 'Over')": [
+    -113,
+    32.5,
+    "fanduel"
+  ],
+  "('Malik Willis', 'player_rush_yds', 'Under')": [
+    -113,
+    32.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_rush_yds', 'Over')": [
+    -113,
+    26.5,
+    "fanduel"
+  ],
+  "('Emmett Johnson', 'player_rush_yds', 'Under')": [
+    -113,
+    26.5,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_rush_yds', 'Over')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Patrick Mahomes', 'player_rush_yds', 'Under')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Ollie Gordon II', 'player_rush_yds', 'Over')": [
+    -113,
+    8.5,
+    "fanduel"
+  ],
+  "('Ollie Gordon II', 'player_rush_yds', 'Under')": [
+    -113,
+    8.5,
+    "fanduel"
+  ],
+  "('Kansas City Chiefs Defense', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "fanduel"
+  ],
+  "('Miami Dolphins Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Cam Skattebo', 'player_anytime_td', 'Yes')": [
+    -105,
+    null,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_anytime_td', 'Yes')": [
+    150,
+    null,
+    "betmgm"
+  ],
+  "('Malik Nabers', 'player_anytime_td', 'Yes')": [
+    240,
+    null,
+    "betmgm"
+  ],
+  "('Isaiah Likely', 'player_anytime_td', 'Yes')": [
+    280,
+    null,
+    "betmgm"
+  ],
+  "('Carnell Tate', 'player_anytime_td', 'Yes')": [
+    333,
+    null,
+    "betmgm"
+  ],
+  "('Najee Harris', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('New York Giants D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "(\"Wan'Dale Robinson\", 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Tennessee Titans D/ST', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Tyjae Spears', 'player_anytime_td', 'Yes')": [
+    280,
+    null,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_anytime_td', 'Yes')": [
+    550,
+    null,
+    "betmgm"
+  ],
+  "('Malachi Fields', 'player_anytime_td', 'Yes')": [
+    475,
+    null,
+    "betmgm"
+  ],
+  "('Gunnar Helm', 'player_anytime_td', 'Yes')": [
+    550,
+    null,
+    "betmgm"
+  ],
+  "('Nicholas Singleton', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Tyrone Tracy Jr.', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Darnell Mooney', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Elic Ayomanor', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Calvin Ridley', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Theo Johnson', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Chimere Dike', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Braxton Berrios', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Daniel Bellinger', 'player_anytime_td', 'Yes')": [
+    1200,
+    null,
+    "betmgm"
+  ],
+  "('Julius Chestnut', 'player_anytime_td', 'Yes')": [
+    4000,
+    null,
+    "fanduel"
+  ],
+  "('Odell Beckham Jr.', 'player_anytime_td', 'Yes')": [
+    1750,
+    null,
+    "betmgm"
+  ],
+  "('David Martin-Robinson', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Patrick Ricard', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Chris Manhertz', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_pass_tds', 'Over')": [
+    195,
+    1.5,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_pass_tds', 'Under')": [
+    -275,
+    1.5,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_pass_tds', 'Over')": [
+    -200,
+    0.5,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_pass_tds', 'Under')": [
+    150,
+    0.5,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_pass_yds', 'Over')": [
+    -115,
+    199.5,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_pass_yds', 'Under')": [
+    -115,
+    199.5,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_pass_yds', 'Over')": [
+    -115,
+    182.5,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_pass_yds', 'Under')": [
+    -115,
+    182.5,
+    "betmgm"
+  ],
+  "('Malik Nabers', 'player_reception_yds', 'Over')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('Malik Nabers', 'player_reception_yds', 'Under')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('Carnell Tate', 'player_reception_yds', 'Over')": [
+    -115,
+    38.5,
+    "betmgm"
+  ],
+  "('Carnell Tate', 'player_reception_yds', 'Under')": [
+    -115,
+    38.5,
+    "betmgm"
+  ],
+  "('Isaiah Likely', 'player_reception_yds', 'Over')": [
+    100,
+    40.5,
+    "betmgm"
+  ],
+  "('Isaiah Likely', 'player_reception_yds', 'Under')": [
+    -135,
+    40.5,
+    "betmgm"
+  ],
+  "(\"Wan'Dale Robinson\", 'player_reception_yds', 'Over')": [
+    -115,
+    31.5,
+    "betmgm"
+  ],
+  "(\"Wan'Dale Robinson\", 'player_reception_yds', 'Under')": [
+    -115,
+    31.5,
+    "betmgm"
+  ],
+  "('Malachi Fields', 'player_reception_yds', 'Over')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Malachi Fields', 'player_reception_yds', 'Under')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Gunnar Helm', 'player_reception_yds', 'Over')": [
+    -115,
+    21.5,
+    "betmgm"
+  ],
+  "('Gunnar Helm', 'player_reception_yds', 'Under')": [
+    -115,
+    21.5,
+    "betmgm"
+  ],
+  "('Darnell Mooney', 'player_reception_yds', 'Over')": [
+    -115,
+    17.5,
+    "betmgm"
+  ],
+  "('Darnell Mooney', 'player_reception_yds', 'Under')": [
+    -115,
+    17.5,
+    "betmgm"
+  ],
+  "('Calvin Ridley', 'player_reception_yds', 'Over')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Calvin Ridley', 'player_reception_yds', 'Under')": [
+    -110,
+    14.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_reception_yds', 'Over')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_reception_yds', 'Under')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Elic Ayomanor', 'player_reception_yds', 'Over')": [
+    -120,
+    15.5,
+    "betmgm"
+  ],
+  "('Elic Ayomanor', 'player_reception_yds', 'Under')": [
+    -110,
+    15.5,
+    "betmgm"
+  ],
+  "('Tyjae Spears', 'player_reception_yds', 'Over')": [
+    -113,
+    11.5,
+    "fanduel"
+  ],
+  "('Tyjae Spears', 'player_reception_yds', 'Under')": [
+    -113,
+    11.5,
+    "fanduel"
+  ],
+  "('Tony Pollard', 'player_reception_yds', 'Over')": [
+    -125,
+    4.5,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_reception_yds', 'Under')": [
+    -105,
+    4.5,
+    "betmgm"
+  ],
+  "('Malik Nabers', 'player_receptions', 'Over')": [
+    110,
+    4.5,
+    "betmgm"
+  ],
+  "('Malik Nabers', 'player_receptions', 'Under')": [
+    -150,
+    4.5,
+    "betmgm"
+  ],
+  "('Isaiah Likely', 'player_receptions', 'Over')": [
+    -160,
+    3.5,
+    "betmgm"
+  ],
+  "('Isaiah Likely', 'player_receptions', 'Under')": [
+    120,
+    3.5,
+    "betmgm"
+  ],
+  "(\"Wan'Dale Robinson\", 'player_receptions', 'Over')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "(\"Wan'Dale Robinson\", 'player_receptions', 'Under')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('Carnell Tate', 'player_receptions', 'Over')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Carnell Tate', 'player_receptions', 'Under')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('Gunnar Helm', 'player_receptions', 'Over')": [
+    -125,
+    2.5,
+    "betmgm"
+  ],
+  "('Gunnar Helm', 'player_receptions', 'Under')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Malachi Fields', 'player_receptions', 'Over')": [
+    -190,
+    1.5,
+    "betmgm"
+  ],
+  "('Malachi Fields', 'player_receptions', 'Under')": [
+    140,
+    1.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_receptions', 'Over')": [
+    145,
+    2.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_receptions', 'Under')": [
+    -200,
+    2.5,
+    "betmgm"
+  ],
+  "('Darnell Mooney', 'player_receptions', 'Over')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Darnell Mooney', 'player_receptions', 'Under')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Calvin Ridley', 'player_receptions', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Calvin Ridley', 'player_receptions', 'Under')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Elic Ayomanor', 'player_receptions', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Elic Ayomanor', 'player_receptions', 'Under')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_receptions', 'Over')": [
+    160,
+    1.5,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_receptions', 'Under')": [
+    -220,
+    1.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_rush_yds', 'Over')": [
+    -115,
+    60.5,
+    "betmgm"
+  ],
+  "('Cam Skattebo', 'player_rush_yds', 'Under')": [
+    -115,
+    60.5,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_rush_yds', 'Over')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Tony Pollard', 'player_rush_yds', 'Under')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Najee Harris', 'player_rush_yds', 'Over')": [
+    -115,
+    21.5,
+    "betmgm"
+  ],
+  "('Najee Harris', 'player_rush_yds', 'Under')": [
+    -115,
+    21.5,
+    "betmgm"
+  ],
+  "('Tyjae Spears', 'player_rush_yds', 'Over')": [
+    -113,
+    16.5,
+    "fanduel"
+  ],
+  "('Tyjae Spears', 'player_rush_yds', 'Under')": [
+    -113,
+    16.5,
+    "fanduel"
+  ],
+  "('Cam Ward', 'player_rush_yds', 'Over')": [
+    -115,
+    12.5,
+    "betmgm"
+  ],
+  "('Cam Ward', 'player_rush_yds', 'Under')": [
+    -115,
+    12.5,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_rush_yds', 'Over')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Jameis Winston', 'player_rush_yds', 'Under')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Tennessee Titans Defense', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "fanduel"
+  ],
+  "('New York Giants Defense', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('James Cook', 'player_anytime_td', 'Yes')": [
+    -160,
+    null,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_anytime_td', 'Yes')": [
+    -135,
+    null,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_anytime_td', 'Yes')": [
+    100,
+    null,
+    "betmgm"
+  ],
+  "('Dalton Kincaid', 'player_anytime_td', 'Yes')": [
+    135,
+    null,
+    "betmgm"
+  ],
+  "('DJ Moore', 'player_anytime_td', 'Yes')": [
+    180,
+    null,
+    "betmgm"
+  ],
+  "('Khalil Shakir', 'player_anytime_td', 'Yes')": [
+    220,
+    null,
+    "betmgm"
+  ],
+  "('Ladd McConkey', 'player_anytime_td', 'Yes')": [
+    210,
+    null,
+    "betmgm"
+  ],
+  "('Oronde Gadsden II', 'player_anytime_td', 'Yes')": [
+    260,
+    null,
+    "betmgm"
+  ],
+  "('Quentin Johnston', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Keon Coleman', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Joshua Palmer', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "betmgm"
+  ],
+  "('Ty Johnson', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Dawson Knox', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Tre Harris', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('Buffalo Bills D/ST', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Keaton Mitchell', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Los Angeles Chargers D/ST', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Jackson Hawes', 'player_anytime_td', 'Yes')": [
+    1150,
+    null,
+    "betmgm"
+  ],
+  "('Ray Davis', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "betmgm"
+  ],
+  "('Kimani Vidal', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "betmgm"
+  ],
+  "('Marquez Valdes-Scantling', 'player_anytime_td', 'Yes')": [
+    1500,
+    null,
+    "betmgm"
+  ],
+  "('Patrick Herbert', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Derius Davis', 'player_anytime_td', 'Yes')": [
+    1850,
+    null,
+    "betmgm"
+  ],
+  "('Hayden Rucci', 'player_anytime_td', 'Yes')": [
+    1450,
+    null,
+    "betmgm"
+  ],
+  "('Greg Dortch', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "betmgm"
+  ],
+  "('Keleki Latu', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Alec Ingold', 'player_anytime_td', 'Yes')": [
+    1850,
+    null,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_pass_tds', 'Over')": [
+    -175,
+    1.5,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_pass_tds', 'Under')": [
+    130,
+    1.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_pass_tds', 'Over')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_pass_tds', 'Under')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_pass_yds', 'Over')": [
+    -115,
+    243.5,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_pass_yds', 'Under')": [
+    -115,
+    243.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_pass_yds', 'Over')": [
+    -115,
+    225.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_pass_yds', 'Under')": [
+    -115,
+    225.5,
+    "betmgm"
+  ],
+  "('Ladd McConkey', 'player_reception_yds', 'Over')": [
+    -115,
+    58.5,
+    "betmgm"
+  ],
+  "('Ladd McConkey', 'player_reception_yds', 'Under')": [
+    -115,
+    58.5,
+    "betmgm"
+  ],
+  "('Dalton Kincaid', 'player_reception_yds', 'Over')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Dalton Kincaid', 'player_reception_yds', 'Under')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('DJ Moore', 'player_reception_yds', 'Over')": [
+    -115,
+    47.5,
+    "betmgm"
+  ],
+  "('DJ Moore', 'player_reception_yds', 'Under')": [
+    -115,
+    47.5,
+    "betmgm"
+  ],
+  "('Khalil Shakir', 'player_reception_yds', 'Over')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Khalil Shakir', 'player_reception_yds', 'Under')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Oronde Gadsden II', 'player_reception_yds', 'Over')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Oronde Gadsden II', 'player_reception_yds', 'Under')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Quentin Johnston', 'player_reception_yds', 'Over')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Quentin Johnston', 'player_reception_yds', 'Under')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Tre Harris', 'player_reception_yds', 'Over')": [
+    -120,
+    30.5,
+    "betmgm"
+  ],
+  "('Tre Harris', 'player_reception_yds', 'Under')": [
+    -111,
+    30.5,
+    "betmgm"
+  ],
+  "('Keon Coleman', 'player_reception_yds', 'Over')": [
+    -113,
+    14.5,
+    "fanduel"
+  ],
+  "('Keon Coleman', 'player_reception_yds', 'Under')": [
+    -113,
+    14.5,
+    "fanduel"
+  ],
+  "('James Cook', 'player_reception_yds', 'Over')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('James Cook', 'player_reception_yds', 'Under')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_reception_yds', 'Over')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_reception_yds', 'Under')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('Dawson Knox', 'player_reception_yds', 'Over')": [
+    -110,
+    9.5,
+    "betmgm"
+  ],
+  "('Dawson Knox', 'player_reception_yds', 'Under')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "('Ladd McConkey', 'player_receptions', 'Over')": [
+    -155,
+    4.5,
+    "betmgm"
+  ],
+  "('Ladd McConkey', 'player_receptions', 'Under')": [
+    115,
+    4.5,
+    "betmgm"
+  ],
+  "('Dalton Kincaid', 'player_receptions', 'Over')": [
+    100,
+    4.5,
+    "betmgm"
+  ],
+  "('Dalton Kincaid', 'player_receptions', 'Under')": [
+    -135,
+    4.5,
+    "betmgm"
+  ],
+  "('Khalil Shakir', 'player_receptions', 'Over')": [
+    120,
+    4.5,
+    "betmgm"
+  ],
+  "('Khalil Shakir', 'player_receptions', 'Under')": [
+    -160,
+    4.5,
+    "betmgm"
+  ],
+  "('DJ Moore', 'player_receptions', 'Over')": [
+    -135,
+    3.5,
+    "betmgm"
+  ],
+  "('DJ Moore', 'player_receptions', 'Under')": [
+    100,
+    3.5,
+    "betmgm"
+  ],
+  "('Oronde Gadsden II', 'player_receptions', 'Over')": [
+    100,
+    3.5,
+    "betmgm"
+  ],
+  "('Oronde Gadsden II', 'player_receptions', 'Under')": [
+    -135,
+    3.5,
+    "betmgm"
+  ],
+  "('Quentin Johnston', 'player_receptions', 'Over')": [
+    130,
+    3.5,
+    "betmgm"
+  ],
+  "('Quentin Johnston', 'player_receptions', 'Under')": [
+    -175,
+    3.5,
+    "betmgm"
+  ],
+  "('Tre Harris', 'player_receptions', 'Over')": [
+    -150,
+    2.5,
+    "betmgm"
+  ],
+  "('Tre Harris', 'player_receptions', 'Under')": [
+    110,
+    2.5,
+    "betmgm"
+  ],
+  "('James Cook', 'player_receptions', 'Over')": [
+    -150,
+    1.5,
+    "betmgm"
+  ],
+  "('James Cook', 'player_receptions', 'Under')": [
+    110,
+    1.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_receptions', 'Over')": [
+    -165,
+    1.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_receptions', 'Under')": [
+    125,
+    1.5,
+    "betmgm"
+  ],
+  "('Keon Coleman', 'player_receptions', 'Over')": [
+    -102,
+    1.5,
+    "fanduel"
+  ],
+  "('Keon Coleman', 'player_receptions', 'Under')": [
+    -130,
+    1.5,
+    "fanduel"
+  ],
+  "('Dawson Knox', 'player_receptions', 'Over')": [
+    155,
+    1.5,
+    "betmgm"
+  ],
+  "('Dawson Knox', 'player_receptions', 'Under')": [
+    -210,
+    1.5,
+    "betmgm"
+  ],
+  "('James Cook', 'player_rush_yds', 'Over')": [
+    -115,
+    79.5,
+    "betmgm"
+  ],
+  "('James Cook', 'player_rush_yds', 'Under')": [
+    -115,
+    79.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_rush_yds', 'Over')": [
+    -115,
+    59.5,
+    "betmgm"
+  ],
+  "('Omarion Hampton', 'player_rush_yds', 'Under')": [
+    -115,
+    59.5,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_rush_yds', 'Over')": [
+    -115,
+    33.5,
+    "betmgm"
+  ],
+  "('Josh Allen', 'player_rush_yds', 'Under')": [
+    -115,
+    33.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_rush_yds', 'Over')": [
+    -115,
+    19.5,
+    "betmgm"
+  ],
+  "('Justin Herbert', 'player_rush_yds', 'Under')": [
+    -115,
+    19.5,
+    "betmgm"
+  ],
+  "('Keaton Mitchell', 'player_rush_yds', 'Over')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Keaton Mitchell', 'player_rush_yds', 'Under')": [
+    -110,
+    14.5,
+    "betmgm"
+  ],
+  "('Buffalo Bills Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Los Angeles Chargers Defense', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "fanduel"
+  ],
+  "('Chase Brown', 'player_anytime_td', 'Yes')": [
+    -111,
+    null,
+    "betmgm"
+  ],
+  "(\"Ja'Marr Chase\", 'player_anytime_td', 'Yes')": [
+    120,
+    null,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_anytime_td', 'Yes')": [
+    -111,
+    null,
+    "betmgm"
+  ],
+  "('Tee Higgins', 'player_anytime_td', 'Yes')": [
+    185,
+    null,
+    "betmgm"
+  ],
+  "('DK Metcalf', 'player_anytime_td', 'Yes')": [
+    220,
+    null,
+    "betmgm"
+  ],
+  "('Pat Freiermuth', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Mike Gesicki', 'player_anytime_td', 'Yes')": [
+    390,
+    null,
+    "betmgm"
+  ],
+  "('Michael Pittman Jr.', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Roman Wilson', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Pittsburgh Steelers D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Cincinnati Bengals D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('Germie Bernard', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Darnell Washington', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Travis Homer', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_anytime_td', 'Yes')": [
+    675,
+    null,
+    "betmgm"
+  ],
+  "('Dohnte Meyers', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Drew Sample', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Lew Nichols', 'player_anytime_td', 'Yes')": [
+    1350,
+    null,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_anytime_td', 'Yes')": [
+    1450,
+    null,
+    "betmgm"
+  ],
+  "('Erick All', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Colbie Young', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "betmgm"
+  ],
+  "('Tanner Hudson', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "betmgm"
+  ],
+  "(\"Ke'Shawn Williams\", 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Kaden Wetjen', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Riley Nowakowski', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Tahj Brooks', 'player_anytime_td', 'Yes')": [
+    1750,
+    null,
+    "betmgm"
+  ],
+  "('Ben Skowronek', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Robert Tonyan', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_pass_tds', 'Over')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_pass_tds', 'Under')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_pass_tds', 'Over')": [
+    150,
+    1.5,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_pass_tds', 'Under')": [
+    -200,
+    1.5,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_pass_yds', 'Over')": [
+    -115,
+    253.5,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_pass_yds', 'Under')": [
+    -115,
+    253.5,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_pass_yds', 'Over')": [
+    -115,
+    225.5,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_pass_yds', 'Under')": [
+    -115,
+    225.5,
+    "betmgm"
+  ],
+  "(\"Ja'Marr Chase\", 'player_reception_yds', 'Over')": [
+    -115,
+    76.5,
+    "betmgm"
+  ],
+  "(\"Ja'Marr Chase\", 'player_reception_yds', 'Under')": [
+    -115,
+    76.5,
+    "betmgm"
+  ],
+  "('Tee Higgins', 'player_reception_yds', 'Over')": [
+    -115,
+    55.5,
+    "betmgm"
+  ],
+  "('Tee Higgins', 'player_reception_yds', 'Under')": [
+    -115,
+    55.5,
+    "betmgm"
+  ],
+  "('DK Metcalf', 'player_reception_yds', 'Over')": [
+    -115,
+    53.5,
+    "betmgm"
+  ],
+  "('DK Metcalf', 'player_reception_yds', 'Under')": [
+    -115,
+    53.5,
+    "betmgm"
+  ],
+  "('Pat Freiermuth', 'player_reception_yds', 'Over')": [
+    -120,
+    37.5,
+    "betmgm"
+  ],
+  "('Pat Freiermuth', 'player_reception_yds', 'Under')": [
+    -111,
+    37.5,
+    "betmgm"
+  ],
+  "('Michael Pittman Jr.', 'player_reception_yds', 'Over')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Michael Pittman Jr.', 'player_reception_yds', 'Under')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_reception_yds', 'Over')": [
+    -115,
+    26.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_reception_yds', 'Under')": [
+    -115,
+    26.5,
+    "betmgm"
+  ],
+  "('Mike Gesicki', 'player_reception_yds', 'Over')": [
+    -115,
+    24.5,
+    "betmgm"
+  ],
+  "('Mike Gesicki', 'player_reception_yds', 'Under')": [
+    -115,
+    24.5,
+    "betmgm"
+  ],
+  "('Chase Brown', 'player_reception_yds', 'Over')": [
+    -120,
+    21.5,
+    "betmgm"
+  ],
+  "('Chase Brown', 'player_reception_yds', 'Under')": [
+    -111,
+    21.5,
+    "betmgm"
+  ],
+  "('Roman Wilson', 'player_reception_yds', 'Over')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Roman Wilson', 'player_reception_yds', 'Under')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Darnell Washington', 'player_reception_yds', 'Over')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Darnell Washington', 'player_reception_yds', 'Under')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_reception_yds', 'Over')": [
+    -120,
+    7.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_reception_yds', 'Under')": [
+    -110,
+    7.5,
+    "betmgm"
+  ],
+  "('Drew Sample', 'player_reception_yds', 'Over')": [
+    -115,
+    6.5,
+    "betmgm"
+  ],
+  "('Drew Sample', 'player_reception_yds', 'Under')": [
+    -115,
+    6.5,
+    "betmgm"
+  ],
+  "('Erick All', 'player_reception_yds', 'Over')": [
+    -102,
+    5.5,
+    "fanduel"
+  ],
+  "('Erick All', 'player_reception_yds', 'Under')": [
+    -125,
+    5.5,
+    "fanduel"
+  ],
+  "(\"Ja'Marr Chase\", 'player_receptions', 'Over')": [
+    -125,
+    6.5,
+    "betmgm"
+  ],
+  "(\"Ja'Marr Chase\", 'player_receptions', 'Under')": [
+    -105,
+    6.5,
+    "betmgm"
+  ],
+  "('DK Metcalf', 'player_receptions', 'Over')": [
+    100,
+    4.5,
+    "betmgm"
+  ],
+  "('DK Metcalf', 'player_receptions', 'Under')": [
+    -135,
+    4.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_receptions', 'Over')": [
+    125,
+    4.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_receptions', 'Under')": [
+    -165,
+    4.5,
+    "betmgm"
+  ],
+  "('Tee Higgins', 'player_receptions', 'Over')": [
+    120,
+    4.5,
+    "betmgm"
+  ],
+  "('Tee Higgins', 'player_receptions', 'Under')": [
+    -160,
+    4.5,
+    "betmgm"
+  ],
+  "('Pat Freiermuth', 'player_receptions', 'Over')": [
+    -155,
+    3.5,
+    "betmgm"
+  ],
+  "('Pat Freiermuth', 'player_receptions', 'Under')": [
+    115,
+    3.5,
+    "betmgm"
+  ],
+  "('Chase Brown', 'player_receptions', 'Over')": [
+    105,
+    3.5,
+    "betmgm"
+  ],
+  "('Chase Brown', 'player_receptions', 'Under')": [
+    -140,
+    3.5,
+    "betmgm"
+  ],
+  "('Michael Pittman Jr.', 'player_receptions', 'Over')": [
+    -140,
+    2.5,
+    "betmgm"
+  ],
+  "('Michael Pittman Jr.', 'player_receptions', 'Under')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('Mike Gesicki', 'player_receptions', 'Over')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Mike Gesicki', 'player_receptions', 'Under')": [
+    -125,
+    2.5,
+    "betmgm"
+  ],
+  "('Roman Wilson', 'player_receptions', 'Over')": [
+    110,
+    2.5,
+    "betmgm"
+  ],
+  "('Roman Wilson', 'player_receptions', 'Under')": [
+    -150,
+    2.5,
+    "betmgm"
+  ],
+  "('Darnell Washington', 'player_receptions', 'Over')": [
+    -145,
+    1.5,
+    "betmgm"
+  ],
+  "('Darnell Washington', 'player_receptions', 'Under')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_receptions', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_receptions', 'Under')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Drew Sample', 'player_receptions', 'Over')": [
+    135,
+    1.5,
+    "betmgm"
+  ],
+  "('Drew Sample', 'player_receptions', 'Under')": [
+    -185,
+    1.5,
+    "betmgm"
+  ],
+  "('Erick All', 'player_receptions', 'Over')": [
+    -154,
+    0.5,
+    "fanduel"
+  ],
+  "('Erick All', 'player_receptions', 'Under')": [
+    116,
+    0.5,
+    "fanduel"
+  ],
+  "('Chase Brown', 'player_rush_yds', 'Over')": [
+    -115,
+    63.5,
+    "betmgm"
+  ],
+  "('Chase Brown', 'player_rush_yds', 'Under')": [
+    -115,
+    63.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_rush_yds', 'Over')": [
+    -111,
+    60.5,
+    "betmgm"
+  ],
+  "('Jaylen Warren', 'player_rush_yds', 'Under')": [
+    -118,
+    60.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_rush_yds', 'Over')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Samaje Perine', 'player_rush_yds', 'Under')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_rush_yds', 'Over')": [
+    -115,
+    6.5,
+    "betmgm"
+  ],
+  "('Joe Burrow', 'player_rush_yds', 'Under')": [
+    -115,
+    6.5,
+    "betmgm"
+  ],
+  "('Aaron Rodgers', 'player_rush_yds', 'Over')": [
+    -115,
+    0.5,
+    "fanduel"
+  ],
+  "('Aaron Rodgers', 'player_rush_yds', 'Under')": [
+    -111,
+    0.5,
+    "fanduel"
+  ],
+  "('Cincinnati Bengals Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Pittsburgh Steelers Defense', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Lew Nichols', 'player_rush_yds', 'Over')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Lew Nichols', 'player_rush_yds', 'Under')": [
+    -115,
+    1.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_anytime_td', 'Yes')": [
+    -295,
+    null,
+    "betmgm"
+  ],
+  "('Amon-Ra St. Brown', 'player_anytime_td', 'Yes')": [
+    -118,
+    null,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_anytime_td', 'Yes')": [
+    -110,
+    null,
+    "betmgm"
+  ],
+  "('Jameson Williams', 'player_anytime_td', 'Yes')": [
+    180,
+    null,
+    "betmgm"
+  ],
+  "('Garrett Wilson', 'player_anytime_td', 'Yes')": [
+    145,
+    null,
+    "betmgm"
+  ],
+  "('Sam LaPorta', 'player_anytime_td', 'Yes')": [
+    180,
+    null,
+    "betmgm"
+  ],
+  "('Braelon Allen', 'player_anytime_td', 'Yes')": [
+    350,
+    null,
+    "betmgm"
+  ],
+  "('Kenyon Sadiq', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('Isaiah Williams', 'player_anytime_td', 'Yes')": [
+    350,
+    null,
+    "betmgm"
+  ],
+  "('Isaac TeSlaa', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Detroit Lions D/ST', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Sione Vaki', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('New York Jets D/ST', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Jeremy Ruckert', 'player_anytime_td', 'Yes')": [
+    825,
+    null,
+    "betmgm"
+  ],
+  "('Brock Wright', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_anytime_td', 'Yes')": [
+    675,
+    null,
+    "betmgm"
+  ],
+  "('Sterling Shepard', 'player_anytime_td', 'Yes')": [
+    825,
+    null,
+    "betmgm"
+  ],
+  "('Jelani Woods', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "betmgm"
+  ],
+  "('Jackson Meeks', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "fanduel"
+  ],
+  "('Jared Goff', 'player_anytime_td', 'Yes')": [
+    1650,
+    null,
+    "betmgm"
+  ],
+  "('Tay Martin', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "betmgm"
+  ],
+  "('Tom Kennedy', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "betmgm"
+  ],
+  "('Malik McClain', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Isaiah Davis', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Jamaal Pritchett', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Jacob Saylors', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Andrew Beck', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Jared Goff', 'player_pass_tds', 'Over')": [
+    -185,
+    1.5,
+    "betmgm"
+  ],
+  "('Jared Goff', 'player_pass_tds', 'Under')": [
+    135,
+    1.5,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_pass_tds', 'Over')": [
+    135,
+    1.5,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_pass_tds', 'Under')": [
+    -185,
+    1.5,
+    "betmgm"
+  ],
+  "('Jared Goff', 'player_pass_yds', 'Over')": [
+    -115,
+    262.5,
+    "betmgm"
+  ],
+  "('Jared Goff', 'player_pass_yds', 'Under')": [
+    -115,
+    262.5,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_pass_yds', 'Over')": [
+    -125,
+    223.5,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_pass_yds', 'Under')": [
+    -105,
+    223.5,
+    "betmgm"
+  ],
+  "('Garrett Wilson', 'player_reception_yds', 'Over')": [
+    -115,
+    76.5,
+    "betmgm"
+  ],
+  "('Garrett Wilson', 'player_reception_yds', 'Under')": [
+    -115,
+    76.5,
+    "betmgm"
+  ],
+  "('Amon-Ra St. Brown', 'player_reception_yds', 'Over')": [
+    -115,
+    79.5,
+    "betmgm"
+  ],
+  "('Amon-Ra St. Brown', 'player_reception_yds', 'Under')": [
+    -115,
+    79.5,
+    "betmgm"
+  ],
+  "('Jameson Williams', 'player_reception_yds', 'Over')": [
+    -115,
+    53.5,
+    "betmgm"
+  ],
+  "('Jameson Williams', 'player_reception_yds', 'Under')": [
+    -115,
+    53.5,
+    "betmgm"
+  ],
+  "('Sam LaPorta', 'player_reception_yds', 'Over')": [
+    -115,
+    46.5,
+    "betmgm"
+  ],
+  "('Sam LaPorta', 'player_reception_yds', 'Under')": [
+    -115,
+    46.5,
+    "betmgm"
+  ],
+  "('Isaiah Williams', 'player_reception_yds', 'Over')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Isaiah Williams', 'player_reception_yds', 'Under')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_reception_yds', 'Over')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_reception_yds', 'Under')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Kenyon Sadiq', 'player_reception_yds', 'Over')": [
+    -111,
+    30.5,
+    "betmgm"
+  ],
+  "('Kenyon Sadiq', 'player_reception_yds', 'Under')": [
+    -118,
+    30.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_reception_yds', 'Over')": [
+    -120,
+    21.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_reception_yds', 'Under')": [
+    -110,
+    21.5,
+    "betmgm"
+  ],
+  "('Isaac TeSlaa', 'player_reception_yds', 'Over')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Isaac TeSlaa', 'player_reception_yds', 'Under')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Jeremy Ruckert', 'player_reception_yds', 'Over')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('Jeremy Ruckert', 'player_reception_yds', 'Under')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('Amon-Ra St. Brown', 'player_receptions', 'Over')": [
+    -150,
+    6.5,
+    "betmgm"
+  ],
+  "('Amon-Ra St. Brown', 'player_receptions', 'Under')": [
+    110,
+    6.5,
+    "betmgm"
+  ],
+  "('Garrett Wilson', 'player_receptions', 'Over')": [
+    -155,
+    5.5,
+    "betmgm"
+  ],
+  "('Garrett Wilson', 'player_receptions', 'Under')": [
+    115,
+    5.5,
+    "betmgm"
+  ],
+  "('Sam LaPorta', 'player_receptions', 'Over')": [
+    -120,
+    4.5,
+    "betmgm"
+  ],
+  "('Sam LaPorta', 'player_receptions', 'Under')": [
+    -111,
+    4.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_receptions', 'Over')": [
+    110,
+    4.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_receptions', 'Under')": [
+    -150,
+    4.5,
+    "betmgm"
+  ],
+  "('Jameson Williams', 'player_receptions', 'Over')": [
+    -140,
+    3.5,
+    "betmgm"
+  ],
+  "('Jameson Williams', 'player_receptions', 'Under')": [
+    105,
+    3.5,
+    "betmgm"
+  ],
+  "('Isaiah Williams', 'player_receptions', 'Over')": [
+    105,
+    3.5,
+    "betmgm"
+  ],
+  "('Isaiah Williams', 'player_receptions', 'Under')": [
+    -140,
+    3.5,
+    "betmgm"
+  ],
+  "('Kenyon Sadiq', 'player_receptions', 'Over')": [
+    -175,
+    2.5,
+    "betmgm"
+  ],
+  "('Kenyon Sadiq', 'player_receptions', 'Under')": [
+    130,
+    2.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_receptions', 'Over')": [
+    -175,
+    2.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_receptions', 'Under')": [
+    130,
+    2.5,
+    "betmgm"
+  ],
+  "('Isaac TeSlaa', 'player_receptions', 'Over')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Isaac TeSlaa', 'player_receptions', 'Under')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Jeremy Ruckert', 'player_receptions', 'Over')": [
+    182,
+    1.5,
+    "fanduel"
+  ],
+  "('Jeremy Ruckert', 'player_receptions', 'Under')": [
+    -250,
+    1.5,
+    "fanduel"
+  ],
+  "('Jahmyr Gibbs', 'player_rush_yds', 'Over')": [
+    -115,
+    90.5,
+    "betmgm"
+  ],
+  "('Jahmyr Gibbs', 'player_rush_yds', 'Under')": [
+    -115,
+    90.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_rush_yds', 'Over')": [
+    -111,
+    58.5,
+    "betmgm"
+  ],
+  "('Breece Hall', 'player_rush_yds', 'Under')": [
+    -118,
+    58.5,
+    "betmgm"
+  ],
+  "('Braelon Allen', 'player_rush_yds', 'Over')": [
+    -120,
+    15.5,
+    "betmgm"
+  ],
+  "('Braelon Allen', 'player_rush_yds', 'Under')": [
+    -110,
+    15.5,
+    "betmgm"
+  ],
+  "('Geno Smith', 'player_rush_yds', 'Over')": [
+    -113,
+    11.5,
+    "fanduel"
+  ],
+  "('Geno Smith', 'player_rush_yds', 'Under')": [
+    -113,
+    11.5,
+    "fanduel"
+  ],
+  "('Sione Vaki', 'player_rush_yds', 'Over')": [
+    -120,
+    10.5,
+    "betmgm"
+  ],
+  "('Sione Vaki', 'player_rush_yds', 'Under')": [
+    -110,
+    10.5,
+    "betmgm"
+  ],
+  "('Jared Goff', 'player_rush_yds', 'Over')": [
+    108,
+    0.5,
+    "fanduel"
+  ],
+  "('Jared Goff', 'player_rush_yds', 'Under')": [
+    -138,
+    0.5,
+    "fanduel"
+  ],
+  "('Detroit Lions Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('New York Jets Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Jonathan Taylor', 'player_anytime_td', 'Yes')": [
+    -150,
+    null,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_anytime_td', 'Yes')": [
+    100,
+    null,
+    "betmgm"
+  ],
+  "('Dalton Schultz', 'player_anytime_td', 'Yes')": [
+    195,
+    null,
+    "betmgm"
+  ],
+  "('Tyler Warren', 'player_anytime_td', 'Yes')": [
+    230,
+    null,
+    "betmgm"
+  ],
+  "('Josh Downs', 'player_anytime_td', 'Yes')": [
+    240,
+    null,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Kayshon Boutte', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Keenan Allen', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Xavier Hutchinson', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Jaylin Noel', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Laquon Treadwell', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Indianapolis Colts D/ST', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Houston Texans D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Jared Wayne', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Foster Moreau', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Seth McGowan', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Mo Alie-Cox', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Deion Burks', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Drew Ogletree', 'player_anytime_td', 'Yes')": [
+    1750,
+    null,
+    "betmgm"
+  ],
+  "('Cade Stover', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "betmgm"
+  ],
+  "('Marlin Klein', 'player_anytime_td', 'Yes')": [
+    1700,
+    null,
+    "betmgm"
+  ],
+  "('Nick Westbrook-Ikhine', 'player_anytime_td', 'Yes')": [
+    1700,
+    null,
+    "fanduel"
+  ],
+  "('Anthony Gould', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Lewis Bond', 'player_anytime_td', 'Yes')": [
+    3000,
+    null,
+    "fanduel"
+  ],
+  "('British Brooks', 'player_anytime_td', 'Yes')": [
+    4000,
+    null,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_pass_tds', 'Over')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_pass_tds', 'Under')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_pass_tds', 'Over')": [
+    195,
+    1.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_pass_tds', 'Under')": [
+    -275,
+    1.5,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_pass_yds', 'Over')": [
+    -115,
+    236.5,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_pass_yds', 'Under')": [
+    -115,
+    236.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_pass_yds', 'Over')": [
+    -115,
+    207.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_pass_yds', 'Under')": [
+    -115,
+    207.5,
+    "betmgm"
+  ],
+  "('Josh Downs', 'player_reception_yds', 'Over')": [
+    -115,
+    51.5,
+    "betmgm"
+  ],
+  "('Josh Downs', 'player_reception_yds', 'Under')": [
+    -115,
+    51.5,
+    "betmgm"
+  ],
+  "('Dalton Schultz', 'player_reception_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Dalton Schultz', 'player_reception_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Tyler Warren', 'player_reception_yds', 'Over')": [
+    -120,
+    43.5,
+    "betmgm"
+  ],
+  "('Tyler Warren', 'player_reception_yds', 'Under')": [
+    -111,
+    43.5,
+    "betmgm"
+  ],
+  "('Xavier Hutchinson', 'player_reception_yds', 'Over')": [
+    -115,
+    39.5,
+    "betmgm"
+  ],
+  "('Xavier Hutchinson', 'player_reception_yds', 'Under')": [
+    -115,
+    39.5,
+    "betmgm"
+  ],
+  "('Kayshon Boutte', 'player_reception_yds', 'Over')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Kayshon Boutte', 'player_reception_yds', 'Under')": [
+    -115,
+    37.5,
+    "betmgm"
+  ],
+  "('Keenan Allen', 'player_reception_yds', 'Over')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Keenan Allen', 'player_reception_yds', 'Under')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Jaylin Noel', 'player_reception_yds', 'Over')": [
+    -115,
+    26.5,
+    "betmgm"
+  ],
+  "('Jaylin Noel', 'player_reception_yds', 'Under')": [
+    -115,
+    26.5,
+    "betmgm"
+  ],
+  "('Laquon Treadwell', 'player_reception_yds', 'Over')": [
+    -115,
+    23.5,
+    "betmgm"
+  ],
+  "('Laquon Treadwell', 'player_reception_yds', 'Under')": [
+    -115,
+    23.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_reception_yds', 'Over')": [
+    -120,
+    19.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_reception_yds', 'Under')": [
+    -110,
+    19.5,
+    "betmgm"
+  ],
+  "('Jared Wayne', 'player_reception_yds', 'Over')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Jared Wayne', 'player_reception_yds', 'Under')": [
+    -111,
+    14.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_reception_yds', 'Over')": [
+    -120,
+    10.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_reception_yds', 'Under')": [
+    -111,
+    10.5,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_reception_yds', 'Over')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_reception_yds', 'Under')": [
+    -111,
+    9.5,
+    "betmgm"
+  ],
+  "('Dalton Schultz', 'player_receptions', 'Over')": [
+    -160,
+    4.5,
+    "betmgm"
+  ],
+  "('Dalton Schultz', 'player_receptions', 'Under')": [
+    120,
+    4.5,
+    "betmgm"
+  ],
+  "('Josh Downs', 'player_receptions', 'Over')": [
+    -145,
+    4.5,
+    "betmgm"
+  ],
+  "('Josh Downs', 'player_receptions', 'Under')": [
+    105,
+    4.5,
+    "betmgm"
+  ],
+  "('Tyler Warren', 'player_receptions', 'Over')": [
+    -140,
+    4.5,
+    "betmgm"
+  ],
+  "('Tyler Warren', 'player_receptions', 'Under')": [
+    105,
+    4.5,
+    "betmgm"
+  ],
+  "('Keenan Allen', 'player_receptions', 'Over')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('Keenan Allen', 'player_receptions', 'Under')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Xavier Hutchinson', 'player_receptions', 'Over')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Xavier Hutchinson', 'player_receptions', 'Under')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_receptions', 'Over')": [
+    130,
+    3.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_receptions', 'Under')": [
+    -175,
+    3.5,
+    "betmgm"
+  ],
+  "('Kayshon Boutte', 'player_receptions', 'Over')": [
+    -140,
+    2.5,
+    "betmgm"
+  ],
+  "('Kayshon Boutte', 'player_receptions', 'Under')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('Jaylin Noel', 'player_receptions', 'Over')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Jaylin Noel', 'player_receptions', 'Under')": [
+    -125,
+    2.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_receptions', 'Over')": [
+    -145,
+    1.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_receptions', 'Under')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Laquon Treadwell', 'player_receptions', 'Over')": [
+    -106,
+    1.5,
+    "fanduel"
+  ],
+  "('Laquon Treadwell', 'player_receptions', 'Under')": [
+    -125,
+    1.5,
+    "fanduel"
+  ],
+  "('David Montgomery', 'player_receptions', 'Over')": [
+    -110,
+    1.5,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_receptions', 'Under')": [
+    -120,
+    1.5,
+    "betmgm"
+  ],
+  "('Jared Wayne', 'player_receptions', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Jared Wayne', 'player_receptions', 'Under')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_rush_yds', 'Over')": [
+    -115,
+    81.5,
+    "betmgm"
+  ],
+  "('Jonathan Taylor', 'player_rush_yds', 'Under')": [
+    -115,
+    81.5,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_rush_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('David Montgomery', 'player_rush_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_rush_yds', 'Over')": [
+    -111,
+    28.5,
+    "betmgm"
+  ],
+  "('Woody Marks', 'player_rush_yds', 'Under')": [
+    -118,
+    28.5,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_rush_yds', 'Over')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "('C.J. Stroud', 'player_rush_yds', 'Under')": [
+    -110,
+    9.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_rush_yds', 'Over')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('Daniel Jones', 'player_rush_yds', 'Under')": [
+    -115,
+    9.5,
+    "betmgm"
+  ],
+  "('Indianapolis Colts Defense', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Houston Texans Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Jaxon Smith-Njigba', 'player_anytime_td', 'Yes')": [
+    105,
+    null,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_anytime_td', 'Yes')": [
+    115,
+    null,
+    "betmgm"
+  ],
+  "('Emanuel Wilson', 'player_anytime_td', 'Yes')": [
+    220,
+    null,
+    "betmgm"
+  ],
+  "('Jacory Croskey-Merritt', 'player_anytime_td', 'Yes')": [
+    240,
+    null,
+    "betmgm"
+  ],
+  "('Rashid Shaheed', 'player_anytime_td', 'Yes')": [
+    260,
+    null,
+    "betmgm"
+  ],
+  "('Terry McLaurin', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('AJ Barner', 'player_anytime_td', 'Yes')": [
+    325,
+    null,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_anytime_td', 'Yes')": [
+    300,
+    null,
+    "betmgm"
+  ],
+  "('Cooper Kupp', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('George Holani', 'player_anytime_td', 'Yes')": [
+    300,
+    null,
+    "betmgm"
+  ],
+  "('Seattle Seahawks D/ST', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Stefon Diggs', 'player_anytime_td', 'Yes')": [
+    390,
+    null,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Elijah Arroyo', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Washington Commanders D/ST', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Ben Sinnott', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Tory Horton', 'player_anytime_td', 'Yes')": [
+    1150,
+    null,
+    "betmgm"
+  ],
+  "('Antonio Williams', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Dyami Brown', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Kaytron Allen', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('John Bates', 'player_anytime_td', 'Yes')": [
+    1550,
+    null,
+    "betmgm"
+  ],
+  "('Eric Saubert', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "betmgm"
+  ],
+  "('Velus Jones Jr.', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "fanduel"
+  ],
+  "('Treylon Burks', 'player_anytime_td', 'Yes')": [
+    1650,
+    null,
+    "betmgm"
+  ],
+  "('Jaylin Lane', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Colson Yankoff', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Nick Kallerup', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "fanduel"
+  ],
+  "('Luke McCaffrey', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "fanduel"
+  ],
+  "('Brady Russell', 'player_anytime_td', 'Yes')": [
+    2500,
+    null,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_pass_tds', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_pass_tds', 'Under')": [
+    -145,
+    1.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_pass_tds', 'Over')": [
+    -175,
+    0.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_pass_tds', 'Under')": [
+    130,
+    0.5,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_pass_yds', 'Over')": [
+    -115,
+    219.5,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_pass_yds', 'Under')": [
+    -115,
+    219.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_pass_yds', 'Over')": [
+    -105,
+    174.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_pass_yds', 'Under')": [
+    -125,
+    174.5,
+    "betmgm"
+  ],
+  "('Jaxon Smith-Njigba', 'player_reception_yds', 'Over')": [
+    -115,
+    90.5,
+    "betmgm"
+  ],
+  "('Jaxon Smith-Njigba', 'player_reception_yds', 'Under')": [
+    -115,
+    90.5,
+    "betmgm"
+  ],
+  "('Terry McLaurin', 'player_reception_yds', 'Over')": [
+    -115,
+    42.5,
+    "betmgm"
+  ],
+  "('Terry McLaurin', 'player_reception_yds', 'Under')": [
+    -115,
+    42.5,
+    "betmgm"
+  ],
+  "('Stefon Diggs', 'player_reception_yds', 'Over')": [
+    -115,
+    34.5,
+    "betmgm"
+  ],
+  "('Stefon Diggs', 'player_reception_yds', 'Under')": [
+    -115,
+    34.5,
+    "betmgm"
+  ],
+  "('Rashid Shaheed', 'player_reception_yds', 'Over')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Rashid Shaheed', 'player_reception_yds', 'Under')": [
+    -115,
+    27.5,
+    "betmgm"
+  ],
+  "('Cooper Kupp', 'player_reception_yds', 'Over')": [
+    -115,
+    19.5,
+    "betmgm"
+  ],
+  "('Cooper Kupp', 'player_reception_yds', 'Under')": [
+    -115,
+    19.5,
+    "betmgm"
+  ],
+  "('AJ Barner', 'player_reception_yds', 'Over')": [
+    -111,
+    21.5,
+    "betmgm"
+  ],
+  "('AJ Barner', 'player_reception_yds', 'Under')": [
+    -120,
+    21.5,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_reception_yds', 'Over')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_reception_yds', 'Under')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Antonio Williams', 'player_reception_yds', 'Over')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Antonio Williams', 'player_reception_yds', 'Under')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_reception_yds', 'Over')": [
+    -111,
+    9.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_reception_yds', 'Under')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "('Dyami Brown', 'player_reception_yds', 'Over')": [
+    -115,
+    10.5,
+    "betmgm"
+  ],
+  "('Dyami Brown', 'player_reception_yds', 'Under')": [
+    -115,
+    10.5,
+    "betmgm"
+  ],
+  "('Elijah Arroyo', 'player_reception_yds', 'Over')": [
+    -111,
+    5.5,
+    "betmgm"
+  ],
+  "('Elijah Arroyo', 'player_reception_yds', 'Under')": [
+    -118,
+    5.5,
+    "betmgm"
+  ],
+  "('Jaxon Smith-Njigba', 'player_receptions', 'Over')": [
+    -135,
+    6.5,
+    "betmgm"
+  ],
+  "('Jaxon Smith-Njigba', 'player_receptions', 'Under')": [
+    100,
+    6.5,
+    "betmgm"
+  ],
+  "('Stefon Diggs', 'player_receptions', 'Over')": [
+    -135,
+    3.5,
+    "betmgm"
+  ],
+  "('Stefon Diggs', 'player_receptions', 'Under')": [
+    100,
+    3.5,
+    "betmgm"
+  ],
+  "('Terry McLaurin', 'player_receptions', 'Over')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Terry McLaurin', 'player_receptions', 'Under')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_receptions', 'Over')": [
+    -112,
+    2.5,
+    "fanduel"
+  ],
+  "('Rachaad White', 'player_receptions', 'Under')": [
+    -118,
+    2.5,
+    "fanduel"
+  ],
+  "('AJ Barner', 'player_receptions', 'Over')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('AJ Barner', 'player_receptions', 'Under')": [
+    -140,
+    2.5,
+    "betmgm"
+  ],
+  "('Rashid Shaheed', 'player_receptions', 'Over')": [
+    105,
+    2.5,
+    "betmgm"
+  ],
+  "('Rashid Shaheed', 'player_receptions', 'Under')": [
+    -140,
+    2.5,
+    "betmgm"
+  ],
+  "('Cooper Kupp', 'player_receptions', 'Over')": [
+    -185,
+    1.5,
+    "betmgm"
+  ],
+  "('Cooper Kupp', 'player_receptions', 'Under')": [
+    135,
+    1.5,
+    "betmgm"
+  ],
+  "('Antonio Williams', 'player_receptions', 'Over')": [
+    -125,
+    1.5,
+    "betmgm"
+  ],
+  "('Antonio Williams', 'player_receptions', 'Under')": [
+    -105,
+    1.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_receptions', 'Over')": [
+    100,
+    1.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_receptions', 'Under')": [
+    -135,
+    1.5,
+    "betmgm"
+  ],
+  "('Dyami Brown', 'player_receptions', 'Over')": [
+    124,
+    1.5,
+    "fanduel"
+  ],
+  "('Dyami Brown', 'player_receptions', 'Under')": [
+    -166,
+    1.5,
+    "fanduel"
+  ],
+  "('Elijah Arroyo', 'player_receptions', 'Over')": [
+    -165,
+    0.5,
+    "betmgm"
+  ],
+  "('Elijah Arroyo', 'player_receptions', 'Under')": [
+    125,
+    0.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_rush_yds', 'Over')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Jadarian Price', 'player_rush_yds', 'Under')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Jacory Croskey-Merritt', 'player_rush_yds', 'Over')": [
+    -115,
+    38.5,
+    "betmgm"
+  ],
+  "('Jacory Croskey-Merritt', 'player_rush_yds', 'Under')": [
+    -115,
+    38.5,
+    "betmgm"
+  ],
+  "('Emanuel Wilson', 'player_rush_yds', 'Over')": [
+    -120,
+    31.5,
+    "betmgm"
+  ],
+  "('Emanuel Wilson', 'player_rush_yds', 'Under')": [
+    -111,
+    31.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_rush_yds', 'Over')": [
+    -120,
+    22.5,
+    "betmgm"
+  ],
+  "('Marcus Mariota', 'player_rush_yds', 'Under')": [
+    -110,
+    22.5,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_rush_yds', 'Over')": [
+    -120,
+    19.5,
+    "betmgm"
+  ],
+  "('Rachaad White', 'player_rush_yds', 'Under')": [
+    -110,
+    19.5,
+    "betmgm"
+  ],
+  "('Sam Darnold', 'player_rush_yds', 'Over')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('Sam Darnold', 'player_rush_yds', 'Under')": [
+    -113,
+    6.5,
+    "fanduel"
+  ],
+  "('Washington Commanders Defense', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Seattle Seahawks Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Tory Horton', 'player_reception_yds', 'Over')": [
+    120,
+    0.5,
+    "betmgm"
+  ],
+  "('Tory Horton', 'player_reception_yds', 'Under')": [
+    -160,
+    0.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_anytime_td', 'Yes')": [
+    -235,
+    null,
+    "betmgm"
+  ],
+  "('Mike Evans', 'player_anytime_td', 'Yes')": [
+    160,
+    null,
+    "betmgm"
+  ],
+  "('Jeremiyah Love', 'player_anytime_td', 'Yes')": [
+    145,
+    null,
+    "betmgm"
+  ],
+  "('George Kittle', 'player_anytime_td', 'Yes')": [
+    160,
+    null,
+    "betmgm"
+  ],
+  "('Trey McBride', 'player_anytime_td', 'Yes')": [
+    160,
+    null,
+    "betmgm"
+  ],
+  "('Tyler Allgeier', 'player_anytime_td', 'Yes')": [
+    190,
+    null,
+    "betmgm"
+  ],
+  "('Deebo Samuel', 'player_anytime_td', 'Yes')": [
+    190,
+    null,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('Michael Wilson', 'player_anytime_td', 'Yes')": [
+    270,
+    null,
+    "betmgm"
+  ],
+  "('Kaelon Black', 'player_anytime_td', 'Yes')": [
+    300,
+    null,
+    "betmgm"
+  ],
+  "('Marvin Harrison Jr.', 'player_anytime_td', 'Yes')": [
+    325,
+    null,
+    "betmgm"
+  ],
+  "('San Francisco 49ers D/ST', 'player_anytime_td', 'Yes')": [
+    475,
+    null,
+    "betmgm"
+  ],
+  "('KhaDarel Hodge', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "betmgm"
+  ],
+  "('Jacob Cowing', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Arizona Cardinals D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Kyle Juszczyk', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Kendrick Bourne', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Luke Farrell', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Hunter Long', 'player_anytime_td', 'Yes')": [
+    1550,
+    null,
+    "betmgm"
+  ],
+  "('Jordan Watkins', 'player_anytime_td', 'Yes')": [
+    1500,
+    null,
+    "fanduel"
+  ],
+  "('Elijah Higgins', 'player_anytime_td', 'Yes')": [
+    1900,
+    null,
+    "betmgm"
+  ],
+  "('Brayden Willis', 'player_anytime_td', 'Yes')": [
+    2500,
+    null,
+    "betmgm"
+  ],
+  "('James Jordan', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Simi Fehoko', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Devin Duvernay', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Zonovan Knight', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Jalen Brooks', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_pass_tds', 'Over')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_pass_tds', 'Under')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_pass_tds', 'Over')": [
+    140,
+    1.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_pass_tds', 'Under')": [
+    -190,
+    1.5,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_pass_yds', 'Over')": [
+    -105,
+    243.5,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_pass_yds', 'Under')": [
+    -125,
+    243.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_pass_yds', 'Over')": [
+    -115,
+    224.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_pass_yds', 'Under')": [
+    -115,
+    224.5,
+    "betmgm"
+  ],
+  "('Trey McBride', 'player_reception_yds', 'Over')": [
+    -115,
+    68.5,
+    "betmgm"
+  ],
+  "('Trey McBride', 'player_reception_yds', 'Under')": [
+    -115,
+    68.5,
+    "betmgm"
+  ],
+  "('Mike Evans', 'player_reception_yds', 'Over')": [
+    -115,
+    55.5,
+    "betmgm"
+  ],
+  "('Mike Evans', 'player_reception_yds', 'Under')": [
+    -115,
+    55.5,
+    "betmgm"
+  ],
+  "('George Kittle', 'player_reception_yds', 'Over')": [
+    -105,
+    48.5,
+    "betmgm"
+  ],
+  "('George Kittle', 'player_reception_yds', 'Under')": [
+    -125,
+    48.5,
+    "betmgm"
+  ],
+  "('Michael Wilson', 'player_reception_yds', 'Over')": [
+    -125,
+    44.5,
+    "betmgm"
+  ],
+  "('Michael Wilson', 'player_reception_yds', 'Under')": [
+    -105,
+    44.5,
+    "betmgm"
+  ],
+  "('Deebo Samuel', 'player_reception_yds', 'Over')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Deebo Samuel', 'player_reception_yds', 'Under')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_reception_yds', 'Over')": [
+    -115,
+    39.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_reception_yds', 'Under')": [
+    -115,
+    39.5,
+    "betmgm"
+  ],
+  "('Marvin Harrison Jr.', 'player_reception_yds', 'Over')": [
+    -113,
+    32.5,
+    "fanduel"
+  ],
+  "('Marvin Harrison Jr.', 'player_reception_yds', 'Under')": [
+    -113,
+    32.5,
+    "fanduel"
+  ],
+  "('Kendrick Bourne', 'player_reception_yds', 'Over')": [
+    -113,
+    23.5,
+    "fanduel"
+  ],
+  "('Kendrick Bourne', 'player_reception_yds', 'Under')": [
+    -113,
+    23.5,
+    "fanduel"
+  ],
+  "('Jeremiyah Love', 'player_reception_yds', 'Over')": [
+    -110,
+    15.5,
+    "betmgm"
+  ],
+  "('Jeremiyah Love', 'player_reception_yds', 'Under')": [
+    -120,
+    15.5,
+    "betmgm"
+  ],
+  "('Kyle Juszczyk', 'player_reception_yds', 'Over')": [
+    -113,
+    8.5,
+    "fanduel"
+  ],
+  "('Kyle Juszczyk', 'player_reception_yds', 'Under')": [
+    -113,
+    8.5,
+    "fanduel"
+  ],
+  "('Tyler Allgeier', 'player_reception_yds', 'Over')": [
+    -113,
+    7.5,
+    "fanduel"
+  ],
+  "('Tyler Allgeier', 'player_reception_yds', 'Under')": [
+    -113,
+    7.5,
+    "fanduel"
+  ],
+  "('Trey McBride', 'player_receptions', 'Over')": [
+    100,
+    7.5,
+    "betmgm"
+  ],
+  "('Trey McBride', 'player_receptions', 'Under')": [
+    -135,
+    7.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_receptions', 'Over')": [
+    -110,
+    4.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_receptions', 'Under')": [
+    -120,
+    4.5,
+    "betmgm"
+  ],
+  "('Mike Evans', 'player_receptions', 'Over')": [
+    -165,
+    3.5,
+    "betmgm"
+  ],
+  "('Mike Evans', 'player_receptions', 'Under')": [
+    125,
+    3.5,
+    "betmgm"
+  ],
+  "('George Kittle', 'player_receptions', 'Over')": [
+    105,
+    4.5,
+    "betmgm"
+  ],
+  "('George Kittle', 'player_receptions', 'Under')": [
+    -140,
+    4.5,
+    "betmgm"
+  ],
+  "('Michael Wilson', 'player_receptions', 'Over')": [
+    125,
+    4.5,
+    "betmgm"
+  ],
+  "('Michael Wilson', 'player_receptions', 'Under')": [
+    -165,
+    4.5,
+    "betmgm"
+  ],
+  "('Deebo Samuel', 'player_receptions', 'Over')": [
+    -165,
+    3.5,
+    "betmgm"
+  ],
+  "('Deebo Samuel', 'player_receptions', 'Under')": [
+    125,
+    3.5,
+    "betmgm"
+  ],
+  "('Kendrick Bourne', 'player_receptions', 'Over')": [
+    -112,
+    2.5,
+    "fanduel"
+  ],
+  "('Kendrick Bourne', 'player_receptions', 'Under')": [
+    -118,
+    2.5,
+    "fanduel"
+  ],
+  "('Jeremiyah Love', 'player_receptions', 'Over')": [
+    -120,
+    2.5,
+    "betmgm"
+  ],
+  "('Jeremiyah Love', 'player_receptions', 'Under')": [
+    -110,
+    2.5,
+    "betmgm"
+  ],
+  "('Marvin Harrison Jr.', 'player_receptions', 'Over')": [
+    118,
+    2.5,
+    "fanduel"
+  ],
+  "('Marvin Harrison Jr.', 'player_receptions', 'Under')": [
+    -158,
+    2.5,
+    "fanduel"
+  ],
+  "('Kyle Juszczyk', 'player_receptions', 'Over')": [
+    154,
+    1.5,
+    "fanduel"
+  ],
+  "('Kyle Juszczyk', 'player_receptions', 'Under')": [
+    -210,
+    1.5,
+    "fanduel"
+  ],
+  "('Christian McCaffrey', 'player_rush_yds', 'Over')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Christian McCaffrey', 'player_rush_yds', 'Under')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Jeremiyah Love', 'player_rush_yds', 'Over')": [
+    -111,
+    41.5,
+    "betmgm"
+  ],
+  "('Jeremiyah Love', 'player_rush_yds', 'Under')": [
+    -120,
+    41.5,
+    "betmgm"
+  ],
+  "('Tyler Allgeier', 'player_rush_yds', 'Over')": [
+    -115,
+    31.5,
+    "betmgm"
+  ],
+  "('Tyler Allgeier', 'player_rush_yds', 'Under')": [
+    -115,
+    31.5,
+    "betmgm"
+  ],
+  "('Kaelon Black', 'player_rush_yds', 'Over')": [
+    -120,
+    31.5,
+    "betmgm"
+  ],
+  "('Kaelon Black', 'player_rush_yds', 'Under')": [
+    -111,
+    31.5,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_rush_yds', 'Over')": [
+    100,
+    19.5,
+    "betmgm"
+  ],
+  "('Brock Purdy', 'player_rush_yds', 'Under')": [
+    -135,
+    19.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_rush_yds', 'Over')": [
+    -111,
+    8.5,
+    "betmgm"
+  ],
+  "('Jacoby Brissett', 'player_rush_yds', 'Under')": [
+    -120,
+    8.5,
+    "betmgm"
+  ],
+  "('Arizona Cardinals Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('San Francisco 49ers Defense', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Bam Knight', 'player_anytime_td', 'Yes')": [
+    3000,
+    null,
+    "fanduel"
+  ],
+  "('Deebo Samuel', 'player_rush_yds', 'Over')": [
+    -106,
+    3.5,
+    "fanduel"
+  ],
+  "('Deebo Samuel', 'player_rush_yds', 'Under')": [
+    -120,
+    3.5,
+    "fanduel"
+  ],
+  "('Aaron Jones', 'player_anytime_td', 'Yes')": [
+    100,
+    null,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_anytime_td', 'Yes')": [
+    120,
+    null,
+    "betmgm"
+  ],
+  "('Justin Jefferson', 'player_anytime_td', 'Yes')": [
+    140,
+    null,
+    "betmgm"
+  ],
+  "('Emeka Egbuka', 'player_anytime_td', 'Yes')": [
+    195,
+    null,
+    "betmgm"
+  ],
+  "('Jordan Addison', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_anytime_td', 'Yes')": [
+    290,
+    null,
+    "betmgm"
+  ],
+  "('Chris Godwin', 'player_anytime_td', 'Yes')": [
+    310,
+    null,
+    "betmgm"
+  ],
+  "('T.J. Hockenson', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('Cade Otton', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_anytime_td', 'Yes')": [
+    390,
+    null,
+    "betmgm"
+  ],
+  "('Ted Hurst III', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Jauan Jennings', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Minnesota Vikings D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Tampa Bay Buccaneers D/ST', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Jalen McMillan', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Josh Oliver', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('DeeJay Dallas', 'player_anytime_td', 'Yes')": [
+    725,
+    null,
+    "betmgm"
+  ],
+  "('Tez Johnson', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Sean Tucker', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Kameron Johnson', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Myles Price', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Demond Claiborne', 'player_anytime_td', 'Yes')": [
+    775,
+    null,
+    "betmgm"
+  ],
+  "('Max Bredeson', 'player_anytime_td', 'Yes')": [
+    1650,
+    null,
+    "betmgm"
+  ],
+  "('Payne Durham', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Ko Kieft', 'player_anytime_td', 'Yes')": [
+    2500,
+    null,
+    "fanduel"
+  ],
+  "('Tai Felton', 'player_anytime_td', 'Yes')": [
+    3500,
+    null,
+    "betmgm"
+  ],
+  "('Bauer Sharp', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Gavin Bartholomew', 'player_anytime_td', 'Yes')": [
+    2800,
+    null,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_pass_tds', 'Over')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_pass_tds', 'Under')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_pass_tds', 'Over')": [
+    130,
+    1.5,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_pass_tds', 'Under')": [
+    -175,
+    1.5,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_pass_yds', 'Over')": [
+    -115,
+    213.5,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_pass_yds', 'Under')": [
+    -115,
+    213.5,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_pass_yds', 'Over')": [
+    -115,
+    211.5,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_pass_yds', 'Under')": [
+    -115,
+    211.5,
+    "betmgm"
+  ],
+  "('Justin Jefferson', 'player_reception_yds', 'Over')": [
+    -115,
+    71.5,
+    "betmgm"
+  ],
+  "('Justin Jefferson', 'player_reception_yds', 'Under')": [
+    -115,
+    71.5,
+    "betmgm"
+  ],
+  "('Emeka Egbuka', 'player_reception_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Emeka Egbuka', 'player_reception_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Jordan Addison', 'player_reception_yds', 'Over')": [
+    -120,
+    35.5,
+    "betmgm"
+  ],
+  "('Jordan Addison', 'player_reception_yds', 'Under')": [
+    -111,
+    35.5,
+    "betmgm"
+  ],
+  "('Chris Godwin', 'player_reception_yds', 'Over')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Chris Godwin', 'player_reception_yds', 'Under')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('T.J. Hockenson', 'player_reception_yds', 'Over')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('T.J. Hockenson', 'player_reception_yds', 'Under')": [
+    -115,
+    32.5,
+    "betmgm"
+  ],
+  "('Cade Otton', 'player_reception_yds', 'Over')": [
+    -115,
+    28.5,
+    "betmgm"
+  ],
+  "('Cade Otton', 'player_reception_yds', 'Under')": [
+    -115,
+    28.5,
+    "betmgm"
+  ],
+  "('Ted Hurst III', 'player_reception_yds', 'Over')": [
+    -135,
+    23.5,
+    "betmgm"
+  ],
+  "('Ted Hurst III', 'player_reception_yds', 'Under')": [
+    100,
+    23.5,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_reception_yds', 'Over')": [
+    -110,
+    17.5,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_reception_yds', 'Under')": [
+    -120,
+    17.5,
+    "betmgm"
+  ],
+  "('Jauan Jennings', 'player_reception_yds', 'Over')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Jauan Jennings', 'player_reception_yds', 'Under')": [
+    -115,
+    14.5,
+    "betmgm"
+  ],
+  "('Jalen McMillan', 'player_reception_yds', 'Over')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Jalen McMillan', 'player_reception_yds', 'Under')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Aaron Jones', 'player_reception_yds', 'Over')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Aaron Jones', 'player_reception_yds', 'Under')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Josh Oliver', 'player_reception_yds', 'Over')": [
+    -120,
+    8.5,
+    "betmgm"
+  ],
+  "('Josh Oliver', 'player_reception_yds', 'Under')": [
+    -110,
+    8.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_reception_yds', 'Over')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_reception_yds', 'Under')": [
+    -115,
+    11.5,
+    "betmgm"
+  ],
+  "('Justin Jefferson', 'player_receptions', 'Over')": [
+    -150,
+    5.5,
+    "betmgm"
+  ],
+  "('Justin Jefferson', 'player_receptions', 'Under')": [
+    110,
+    5.5,
+    "betmgm"
+  ],
+  "('Emeka Egbuka', 'player_receptions', 'Over')": [
+    130,
+    4.5,
+    "betmgm"
+  ],
+  "('Emeka Egbuka', 'player_receptions', 'Under')": [
+    -175,
+    4.5,
+    "betmgm"
+  ],
+  "('T.J. Hockenson', 'player_receptions', 'Over')": [
+    -125,
+    3.5,
+    "betmgm"
+  ],
+  "('T.J. Hockenson', 'player_receptions', 'Under')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Chris Godwin', 'player_receptions', 'Over')": [
+    100,
+    3.5,
+    "betmgm"
+  ],
+  "('Chris Godwin', 'player_receptions', 'Under')": [
+    -135,
+    3.5,
+    "betmgm"
+  ],
+  "('Jordan Addison', 'player_receptions', 'Over')": [
+    120,
+    3.5,
+    "betmgm"
+  ],
+  "('Jordan Addison', 'player_receptions', 'Under')": [
+    -160,
+    3.5,
+    "betmgm"
+  ],
+  "('Cade Otton', 'player_receptions', 'Over')": [
+    135,
+    3.5,
+    "betmgm"
+  ],
+  "('Cade Otton', 'player_receptions', 'Under')": [
+    -185,
+    3.5,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_receptions', 'Over')": [
+    -135,
+    2.5,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_receptions', 'Under')": [
+    100,
+    2.5,
+    "betmgm"
+  ],
+  "('Ted Hurst III', 'player_receptions', 'Over')": [
+    120,
+    2.5,
+    "fanduel"
+  ],
+  "('Ted Hurst III', 'player_receptions', 'Under')": [
+    -160,
+    2.5,
+    "fanduel"
+  ],
+  "('Aaron Jones', 'player_receptions', 'Over')": [
+    140,
+    2.5,
+    "betmgm"
+  ],
+  "('Aaron Jones', 'player_receptions', 'Under')": [
+    -190,
+    2.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_receptions', 'Over')": [
+    -165,
+    1.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_receptions', 'Under')": [
+    125,
+    1.5,
+    "betmgm"
+  ],
+  "('Jauan Jennings', 'player_receptions', 'Over')": [
+    -105,
+    1.5,
+    "betmgm"
+  ],
+  "('Jauan Jennings', 'player_receptions', 'Under')": [
+    -125,
+    1.5,
+    "betmgm"
+  ],
+  "('Josh Oliver', 'player_receptions', 'Over')": [
+    125,
+    1.5,
+    "betmgm"
+  ],
+  "('Josh Oliver', 'player_receptions', 'Under')": [
+    -165,
+    1.5,
+    "betmgm"
+  ],
+  "('Jalen McMillan', 'player_receptions', 'Over')": [
+    130,
+    1.5,
+    "fanduel"
+  ],
+  "('Jalen McMillan', 'player_receptions', 'Under')": [
+    -174,
+    1.5,
+    "fanduel"
+  ],
+  "('Bucky Irving', 'player_rush_yds', 'Over')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Bucky Irving', 'player_rush_yds', 'Under')": [
+    -115,
+    56.5,
+    "betmgm"
+  ],
+  "('Aaron Jones', 'player_rush_yds', 'Over')": [
+    -115,
+    51.5,
+    "betmgm"
+  ],
+  "('Aaron Jones', 'player_rush_yds', 'Under')": [
+    -115,
+    51.5,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_rush_yds', 'Over')": [
+    -120,
+    21.5,
+    "betmgm"
+  ],
+  "('Kyler Murray', 'player_rush_yds', 'Under')": [
+    -111,
+    21.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_rush_yds', 'Over')": [
+    -120,
+    17.5,
+    "betmgm"
+  ],
+  "('Kenny Gainwell', 'player_rush_yds', 'Under')": [
+    -110,
+    17.5,
+    "betmgm"
+  ],
+  "('Baker Mayfield', 'player_rush_yds', 'Over')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('Baker Mayfield', 'player_rush_yds', 'Under')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('Tampa Bay Buccaneers Defense', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Minnesota Vikings Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Derrick Henry', 'player_anytime_td', 'Yes')": [
+    -235,
+    null,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_anytime_td', 'Yes')": [
+    -160,
+    null,
+    "betmgm"
+  ],
+  "('CeeDee Lamb', 'player_anytime_td', 'Yes')": [
+    120,
+    null,
+    "betmgm"
+  ],
+  "('Mark Andrews', 'player_anytime_td', 'Yes')": [
+    125,
+    null,
+    "betmgm"
+  ],
+  "('Rashod Bateman', 'player_anytime_td', 'Yes')": [
+    185,
+    null,
+    "betmgm"
+  ],
+  "('George Pickens', 'player_anytime_td', 'Yes')": [
+    160,
+    null,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_anytime_td', 'Yes')": [
+    210,
+    null,
+    "betmgm"
+  ],
+  "('Jake Ferguson', 'player_anytime_td', 'Yes')": [
+    270,
+    null,
+    "betmgm"
+  ],
+  "('LaJohntay Wester', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Ryan Flournoy', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('Chris Moore', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('Baltimore Ravens D/ST', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "betmgm"
+  ],
+  "('Devontez Walker', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Elijah Sarratt', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "fanduel"
+  ],
+  "('Dallas Cowboys D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Emari Demercado', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "betmgm"
+  ],
+  "('Dak Prescott', 'player_anytime_td', 'Yes')": [
+    500,
+    null,
+    "betmgm"
+  ],
+  "('Durham Smythe', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('KaVontae Turpin', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Hunter Luepke', 'player_anytime_td', 'Yes')": [
+    1200,
+    null,
+    "betmgm"
+  ],
+  "('Brevyn Spann-Ford', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Luke Schoonmaker', 'player_anytime_td', 'Yes')": [
+    1300,
+    null,
+    "betmgm"
+  ],
+  "('Matthew Hibner', 'player_anytime_td', 'Yes')": [
+    850,
+    null,
+    "betmgm"
+  ],
+  "('Josh Cuevas', 'player_anytime_td', 'Yes')": [
+    1650,
+    null,
+    "betmgm"
+  ],
+  "('Jonathan Mingo', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Rasheen Ali', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Camden Brown', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Dak Prescott', 'player_pass_tds', 'Over')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "('Dak Prescott', 'player_pass_tds', 'Under')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_pass_tds', 'Over')": [
+    -150,
+    1.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_pass_tds', 'Under')": [
+    110,
+    1.5,
+    "betmgm"
+  ],
+  "('Dak Prescott', 'player_pass_yds', 'Over')": [
+    -115,
+    266.5,
+    "betmgm"
+  ],
+  "('Dak Prescott', 'player_pass_yds', 'Under')": [
+    -115,
+    266.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_pass_yds', 'Over')": [
+    -115,
+    237.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_pass_yds', 'Under')": [
+    -115,
+    237.5,
+    "betmgm"
+  ],
+  "('CeeDee Lamb', 'player_reception_yds', 'Over')": [
+    -115,
+    80.5,
+    "betmgm"
+  ],
+  "('CeeDee Lamb', 'player_reception_yds', 'Under')": [
+    -115,
+    80.5,
+    "betmgm"
+  ],
+  "('George Pickens', 'player_reception_yds', 'Over')": [
+    -125,
+    63.5,
+    "betmgm"
+  ],
+  "('George Pickens', 'player_reception_yds', 'Under')": [
+    -105,
+    63.5,
+    "betmgm"
+  ],
+  "('Rashod Bateman', 'player_reception_yds', 'Over')": [
+    -113,
+    46.5,
+    "fanduel"
+  ],
+  "('Rashod Bateman', 'player_reception_yds', 'Under')": [
+    -113,
+    46.5,
+    "fanduel"
+  ],
+  "('Mark Andrews', 'player_reception_yds', 'Over')": [
+    -113,
+    40.5,
+    "fanduel"
+  ],
+  "('Mark Andrews', 'player_reception_yds', 'Under')": [
+    -113,
+    40.5,
+    "fanduel"
+  ],
+  "('Ryan Flournoy', 'player_reception_yds', 'Over')": [
+    -111,
+    31.5,
+    "betmgm"
+  ],
+  "('Ryan Flournoy', 'player_reception_yds', 'Under')": [
+    -118,
+    31.5,
+    "betmgm"
+  ],
+  "('Jake Ferguson', 'player_reception_yds', 'Over')": [
+    -120,
+    27.5,
+    "betmgm"
+  ],
+  "('Jake Ferguson', 'player_reception_yds', 'Under')": [
+    -110,
+    27.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_reception_yds', 'Over')": [
+    -110,
+    16.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_reception_yds', 'Under')": [
+    -120,
+    16.5,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_reception_yds', 'Over')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_reception_yds', 'Under')": [
+    -115,
+    13.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_reception_yds', 'Over')": [
+    -110,
+    9.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_reception_yds', 'Under')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "('CeeDee Lamb', 'player_receptions', 'Over')": [
+    -110,
+    6.5,
+    "betmgm"
+  ],
+  "('CeeDee Lamb', 'player_receptions', 'Under')": [
+    -120,
+    6.5,
+    "betmgm"
+  ],
+  "('George Pickens', 'player_receptions', 'Over')": [
+    115,
+    5.5,
+    "betmgm"
+  ],
+  "('George Pickens', 'player_receptions', 'Under')": [
+    -155,
+    5.5,
+    "betmgm"
+  ],
+  "('Mark Andrews', 'player_receptions', 'Over')": [
+    116,
+    4.5,
+    "fanduel"
+  ],
+  "('Mark Andrews', 'player_receptions', 'Under')": [
+    -154,
+    4.5,
+    "fanduel"
+  ],
+  "('Jake Ferguson', 'player_receptions', 'Over')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Jake Ferguson', 'player_receptions', 'Under')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Rashod Bateman', 'player_receptions', 'Over')": [
+    102,
+    3.5,
+    "fanduel"
+  ],
+  "('Rashod Bateman', 'player_receptions', 'Under')": [
+    -136,
+    3.5,
+    "fanduel"
+  ],
+  "('Ryan Flournoy', 'player_receptions', 'Over')": [
+    115,
+    3.5,
+    "betmgm"
+  ],
+  "('Ryan Flournoy', 'player_receptions', 'Under')": [
+    -155,
+    3.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_receptions', 'Over')": [
+    -150,
+    2.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_receptions', 'Under')": [
+    110,
+    2.5,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_receptions', 'Over')": [
+    145,
+    2.5,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_receptions', 'Under')": [
+    -200,
+    2.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_receptions', 'Over')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_receptions', 'Under')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_rush_yds', 'Over')": [
+    -115,
+    92.5,
+    "betmgm"
+  ],
+  "('Derrick Henry', 'player_rush_yds', 'Under')": [
+    -115,
+    92.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_rush_yds', 'Over')": [
+    -115,
+    54.5,
+    "betmgm"
+  ],
+  "('Javonte Williams', 'player_rush_yds', 'Under')": [
+    -115,
+    54.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_rush_yds', 'Over')": [
+    -140,
+    38.5,
+    "betmgm"
+  ],
+  "('Lamar Jackson', 'player_rush_yds', 'Under')": [
+    105,
+    38.5,
+    "betmgm"
+  ],
+  "('Justice Hill', 'player_rush_yds', 'Over')": [
+    -113,
+    13.5,
+    "fanduel"
+  ],
+  "('Justice Hill', 'player_rush_yds', 'Under')": [
+    -113,
+    13.5,
+    "fanduel"
+  ],
+  "('Dak Prescott', 'player_rush_yds', 'Over')": [
+    -111,
+    12.5,
+    "betmgm"
+  ],
+  "('Dak Prescott', 'player_rush_yds', 'Under')": [
+    -120,
+    12.5,
+    "betmgm"
+  ],
+  "('Emari Demercado', 'player_rush_yds', 'Over')": [
+    -110,
+    8.5,
+    "betmgm"
+  ],
+  "('Emari Demercado', 'player_rush_yds', 'Under')": [
+    -120,
+    8.5,
+    "betmgm"
+  ],
+  "('Dallas Cowboys Defense', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Baltimore Ravens Defense', 'player_anytime_td', 'Yes')": [
+    800,
+    null,
+    "fanduel"
+  ],
+  "('Tyler Goodson', 'player_anytime_td', 'Yes')": [
+    2700,
+    null,
+    "fanduel"
+  ],
+  "('Ashton Jeanty', 'player_anytime_td', 'Yes')": [
+    -111,
+    null,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_anytime_td', 'Yes')": [
+    135,
+    null,
+    "betmgm"
+  ],
+  "('Chris Olave', 'player_anytime_td', 'Yes')": [
+    145,
+    null,
+    "betmgm"
+  ],
+  "('Alvin Kamara', 'player_anytime_td', 'Yes')": [
+    200,
+    null,
+    "betmgm"
+  ],
+  "('Brock Bowers', 'player_anytime_td', 'Yes')": [
+    230,
+    null,
+    "betmgm"
+  ],
+  "('Juwan Johnson', 'player_anytime_td', 'Yes')": [
+    260,
+    null,
+    "betmgm"
+  ],
+  "('Devaughn Vele', 'player_anytime_td', 'Yes')": [
+    230,
+    null,
+    "betmgm"
+  ],
+  "('Tyler Shough', 'player_anytime_td', 'Yes')": [
+    325,
+    null,
+    "betmgm"
+  ],
+  "('Michael Mayer', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Tre Tucker', 'player_anytime_td', 'Yes')": [
+    300,
+    null,
+    "betmgm"
+  ],
+  "('Mike Washington Jr.', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Jalen Nailor', 'player_anytime_td', 'Yes')": [
+    475,
+    null,
+    "betmgm"
+  ],
+  "('Bryce Lance', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Noah Fant', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('New Orleans Saints D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Jack Bech', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Las Vegas Raiders D/ST', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('CJ Donaldson', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Kendre Miller', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Connor Heyward', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Dareke Young', 'player_anytime_td', 'Yes')": [
+    1550,
+    null,
+    "betmgm"
+  ],
+  "('Oscar Delp', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "betmgm"
+  ],
+  "('Cody White', 'player_anytime_td', 'Yes')": [
+    1700,
+    null,
+    "betmgm"
+  ],
+  "('Malik Benson', 'player_anytime_td', 'Yes')": [
+    1550,
+    null,
+    "betmgm"
+  ],
+  "('Ian Thomas', 'player_anytime_td', 'Yes')": [
+    1700,
+    null,
+    "betmgm"
+  ],
+  "('Kevin Austin', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_anytime_td', 'Yes')": [
+    1400,
+    null,
+    "betmgm"
+  ],
+  "('Dylan Laube', 'player_anytime_td', 'Yes')": [
+    1850,
+    null,
+    "betmgm"
+  ],
+  "('Treyton Welch', 'player_anytime_td', 'Yes')": [
+    3000,
+    null,
+    "fanduel"
+  ],
+  "('Tyler Shough', 'player_pass_tds', 'Over')": [
+    -110,
+    1.5,
+    "betmgm"
+  ],
+  "('Tyler Shough', 'player_pass_tds', 'Under')": [
+    -120,
+    1.5,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_pass_tds', 'Over')": [
+    165,
+    1.5,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_pass_tds', 'Under')": [
+    -225,
+    1.5,
+    "betmgm"
+  ],
+  "('Tyler Shough', 'player_pass_yds', 'Over')": [
+    -115,
+    253.5,
+    "betmgm"
+  ],
+  "('Tyler Shough', 'player_pass_yds', 'Under')": [
+    -115,
+    253.5,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_pass_yds', 'Over')": [
+    -115,
+    211.5,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_pass_yds', 'Under')": [
+    -115,
+    211.5,
+    "betmgm"
+  ],
+  "('Chris Olave', 'player_reception_yds', 'Over')": [
+    -115,
+    77.5,
+    "betmgm"
+  ],
+  "('Chris Olave', 'player_reception_yds', 'Under')": [
+    -115,
+    77.5,
+    "betmgm"
+  ],
+  "('Devaughn Vele', 'player_reception_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Devaughn Vele', 'player_reception_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Brock Bowers', 'player_reception_yds', 'Over')": [
+    -115,
+    45.5,
+    "betmgm"
+  ],
+  "('Brock Bowers', 'player_reception_yds', 'Under')": [
+    -115,
+    45.5,
+    "betmgm"
+  ],
+  "('Tre Tucker', 'player_reception_yds', 'Over')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Tre Tucker', 'player_reception_yds', 'Under')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Juwan Johnson', 'player_reception_yds', 'Over')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Juwan Johnson', 'player_reception_yds', 'Under')": [
+    -115,
+    35.5,
+    "betmgm"
+  ],
+  "('Jalen Nailor', 'player_reception_yds', 'Over')": [
+    -111,
+    23.5,
+    "betmgm"
+  ],
+  "('Jalen Nailor', 'player_reception_yds', 'Under')": [
+    -118,
+    23.5,
+    "betmgm"
+  ],
+  "('Ashton Jeanty', 'player_reception_yds', 'Over')": [
+    -115,
+    23.5,
+    "betmgm"
+  ],
+  "('Ashton Jeanty', 'player_reception_yds', 'Under')": [
+    -115,
+    23.5,
+    "betmgm"
+  ],
+  "('Michael Mayer', 'player_reception_yds', 'Over')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Michael Mayer', 'player_reception_yds', 'Under')": [
+    -115,
+    22.5,
+    "betmgm"
+  ],
+  "('Bryce Lance', 'player_reception_yds', 'Over')": [
+    -120,
+    16.5,
+    "betmgm"
+  ],
+  "('Bryce Lance', 'player_reception_yds', 'Under')": [
+    -111,
+    16.5,
+    "betmgm"
+  ],
+  "('Jack Bech', 'player_reception_yds', 'Over')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Jack Bech', 'player_reception_yds', 'Under')": [
+    -115,
+    15.5,
+    "betmgm"
+  ],
+  "('Alvin Kamara', 'player_reception_yds', 'Over')": [
+    -113,
+    13.5,
+    "fanduel"
+  ],
+  "('Alvin Kamara', 'player_reception_yds', 'Under')": [
+    -113,
+    13.5,
+    "fanduel"
+  ],
+  "('Noah Fant', 'player_reception_yds', 'Over')": [
+    -111,
+    11.5,
+    "betmgm"
+  ],
+  "('Noah Fant', 'player_reception_yds', 'Under')": [
+    -118,
+    11.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_reception_yds', 'Over')": [
+    -120,
+    10.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_reception_yds', 'Under')": [
+    -110,
+    10.5,
+    "betmgm"
+  ],
+  "('Chris Olave', 'player_receptions', 'Over')": [
+    105,
+    6.5,
+    "betmgm"
+  ],
+  "('Chris Olave', 'player_receptions', 'Under')": [
+    -145,
+    6.5,
+    "betmgm"
+  ],
+  "('Brock Bowers', 'player_receptions', 'Over')": [
+    -110,
+    4.5,
+    "betmgm"
+  ],
+  "('Brock Bowers', 'player_receptions', 'Under')": [
+    -120,
+    4.5,
+    "betmgm"
+  ],
+  "('Devaughn Vele', 'player_receptions', 'Over')": [
+    115,
+    4.5,
+    "betmgm"
+  ],
+  "('Devaughn Vele', 'player_receptions', 'Under')": [
+    -155,
+    4.5,
+    "betmgm"
+  ],
+  "('Ashton Jeanty', 'player_receptions', 'Over')": [
+    -150,
+    3.5,
+    "betmgm"
+  ],
+  "('Ashton Jeanty', 'player_receptions', 'Under')": [
+    110,
+    3.5,
+    "betmgm"
+  ],
+  "('Tre Tucker', 'player_receptions', 'Over')": [
+    112,
+    3.5,
+    "fanduel"
+  ],
+  "('Tre Tucker', 'player_receptions', 'Under')": [
+    -148,
+    3.5,
+    "fanduel"
+  ],
+  "('Juwan Johnson', 'player_receptions', 'Over')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Juwan Johnson', 'player_receptions', 'Under')": [
+    -115,
+    3.5,
+    "betmgm"
+  ],
+  "('Alvin Kamara', 'player_receptions', 'Over')": [
+    -122,
+    2.5,
+    "fanduel"
+  ],
+  "('Alvin Kamara', 'player_receptions', 'Under')": [
+    -108,
+    2.5,
+    "fanduel"
+  ],
+  "('Michael Mayer', 'player_receptions', 'Over')": [
+    100,
+    2.5,
+    "betmgm"
+  ],
+  "('Michael Mayer', 'player_receptions', 'Under')": [
+    -135,
+    2.5,
+    "betmgm"
+  ],
+  "('Jalen Nailor', 'player_receptions', 'Over')": [
+    125,
+    2.5,
+    "betmgm"
+  ],
+  "('Jalen Nailor', 'player_receptions', 'Under')": [
+    -165,
+    2.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_receptions', 'Over')": [
+    -140,
+    1.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_receptions', 'Under')": [
+    105,
+    1.5,
+    "betmgm"
+  ],
+  "('Jack Bech', 'player_receptions', 'Over')": [
+    100,
+    1.5,
+    "betmgm"
+  ],
+  "('Jack Bech', 'player_receptions', 'Under')": [
+    -135,
+    1.5,
+    "betmgm"
+  ],
+  "('Noah Fant', 'player_receptions', 'Over')": [
+    -110,
+    1.5,
+    "betmgm"
+  ],
+  "('Noah Fant', 'player_receptions', 'Under')": [
+    -120,
+    1.5,
+    "betmgm"
+  ],
+  "('Bryce Lance', 'player_receptions', 'Over')": [
+    -106,
+    1.5,
+    "fanduel"
+  ],
+  "('Bryce Lance', 'player_receptions', 'Under')": [
+    -125,
+    1.5,
+    "fanduel"
+  ],
+  "('Ashton Jeanty', 'player_rush_yds', 'Over')": [
+    -111,
+    68.5,
+    "betmgm"
+  ],
+  "('Ashton Jeanty', 'player_rush_yds', 'Under')": [
+    -118,
+    68.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_rush_yds', 'Over')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Travis Etienne Jr.', 'player_rush_yds', 'Under')": [
+    -115,
+    40.5,
+    "betmgm"
+  ],
+  "('Alvin Kamara', 'player_rush_yds', 'Over')": [
+    -113,
+    27.5,
+    "fanduel"
+  ],
+  "('Alvin Kamara', 'player_rush_yds', 'Under')": [
+    -113,
+    27.5,
+    "fanduel"
+  ],
+  "('Mike Washington Jr.', 'player_rush_yds', 'Over')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Mike Washington Jr.', 'player_rush_yds', 'Under')": [
+    -113,
+    15.5,
+    "fanduel"
+  ],
+  "('Tyler Shough', 'player_rush_yds', 'Over')": [
+    -120,
+    14.5,
+    "betmgm"
+  ],
+  "('Tyler Shough', 'player_rush_yds', 'Under')": [
+    -111,
+    14.5,
+    "betmgm"
+  ],
+  "('Kirk Cousins', 'player_rush_yds', 'Over')": [
+    -102,
+    1.5,
+    "fanduel"
+  ],
+  "('Kirk Cousins', 'player_rush_yds', 'Under')": [
+    -125,
+    1.5,
+    "fanduel"
+  ],
+  "('New Orleans Saints Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Las Vegas Raiders Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Kyren Williams', 'player_anytime_td', 'Yes')": [
+    -120,
+    null,
+    "betmgm"
+  ],
+  "('Davante Adams', 'player_anytime_td', 'Yes')": [
+    110,
+    null,
+    "betmgm"
+  ],
+  "('J.K. Dobbins', 'player_anytime_td', 'Yes')": [
+    160,
+    null,
+    "betmgm"
+  ],
+  "('Jaylen Waddle', 'player_anytime_td', 'Yes')": [
+    195,
+    null,
+    "betmgm"
+  ],
+  "('Terrance Ferguson', 'player_anytime_td', 'Yes')": [
+    240,
+    null,
+    "betmgm"
+  ],
+  "('Blake Corum', 'player_anytime_td', 'Yes')": [
+    230,
+    null,
+    "betmgm"
+  ],
+  "('Courtland Sutton', 'player_anytime_td', 'Yes')": [
+    270,
+    null,
+    "betmgm"
+  ],
+  "('Colby Parkinson', 'player_anytime_td', 'Yes')": [
+    360,
+    null,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_anytime_td', 'Yes')": [
+    270,
+    null,
+    "betmgm"
+  ],
+  "('Evan Engram', 'player_anytime_td', 'Yes')": [
+    380,
+    null,
+    "betmgm"
+  ],
+  "('Pat Bryant', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_anytime_td', 'Yes')": [
+    320,
+    null,
+    "betmgm"
+  ],
+  "('Konata Mumpfield', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Jordan Whittington', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "betmgm"
+  ],
+  "('Denver Broncos D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Los Angeles Rams D/ST', 'player_anytime_td', 'Yes')": [
+    575,
+    null,
+    "betmgm"
+  ],
+  "('Adam Trautman', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Tyler Higbee', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Marvin Mims Jr.', 'player_anytime_td', 'Yes')": [
+    1150,
+    null,
+    "betmgm"
+  ],
+  "('Troy Franklin', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "betmgm"
+  ],
+  "('Tyler Badie', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Xavier Smith', 'player_anytime_td', 'Yes')": [
+    1050,
+    null,
+    "betmgm"
+  ],
+  "('Davis Allen', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Tutu Atwell', 'player_anytime_td', 'Yes')": [
+    1750,
+    null,
+    "betmgm"
+  ],
+  "('Matthew Stafford', 'player_anytime_td', 'Yes')": [
+    1700,
+    null,
+    "betmgm"
+  ],
+  "('Kolbe Katsis', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "(\"Lil'Jordan Humphrey\", 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "fanduel"
+  ],
+  "('Nate Adkins', 'player_anytime_td', 'Yes')": [
+    1650,
+    null,
+    "betmgm"
+  ],
+  "('Adam Prentice', 'player_anytime_td', 'Yes')": [
+    1150,
+    null,
+    "betmgm"
+  ],
+  "('Dallen Bentley', 'player_anytime_td', 'Yes')": [
+    2500,
+    null,
+    "fanduel"
+  ],
+  "('Dean Connors', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Max Klare', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "fanduel"
+  ],
+  "('CJ Daniels', 'player_anytime_td', 'Yes')": [
+    3300,
+    null,
+    "fanduel"
+  ],
+  "('Matthew Stafford', 'player_pass_tds', 'Over')": [
+    -105,
+    1.5,
+    "betmgm"
+  ],
+  "('Matthew Stafford', 'player_pass_tds', 'Under')": [
+    -125,
+    1.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_pass_tds', 'Over')": [
+    145,
+    1.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_pass_tds', 'Under')": [
+    -200,
+    1.5,
+    "betmgm"
+  ],
+  "('Matthew Stafford', 'player_pass_yds', 'Over')": [
+    105,
+    242.5,
+    "betmgm"
+  ],
+  "('Matthew Stafford', 'player_pass_yds', 'Under')": [
+    -140,
+    242.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_pass_yds', 'Over')": [
+    -105,
+    217.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_pass_yds', 'Under')": [
+    -125,
+    217.5,
+    "betmgm"
+  ],
+  "('Davante Adams', 'player_reception_yds', 'Over')": [
+    -110,
+    72.5,
+    "betmgm"
+  ],
+  "('Davante Adams', 'player_reception_yds', 'Under')": [
+    -120,
+    72.5,
+    "betmgm"
+  ],
+  "('Jaylen Waddle', 'player_reception_yds', 'Over')": [
+    -115,
+    57.5,
+    "betmgm"
+  ],
+  "('Jaylen Waddle', 'player_reception_yds', 'Under')": [
+    -115,
+    57.5,
+    "betmgm"
+  ],
+  "('Terrance Ferguson', 'player_reception_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Terrance Ferguson', 'player_reception_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Courtland Sutton', 'player_reception_yds', 'Over')": [
+    -115,
+    36.5,
+    "betmgm"
+  ],
+  "('Courtland Sutton', 'player_reception_yds', 'Under')": [
+    -115,
+    36.5,
+    "betmgm"
+  ],
+  "('Pat Bryant', 'player_reception_yds', 'Over')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Pat Bryant', 'player_reception_yds', 'Under')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Evan Engram', 'player_reception_yds', 'Over')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('Evan Engram', 'player_reception_yds', 'Under')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('Colby Parkinson', 'player_reception_yds', 'Over')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('Colby Parkinson', 'player_reception_yds', 'Under')": [
+    -113,
+    18.5,
+    "fanduel"
+  ],
+  "('RJ Harvey', 'player_reception_yds', 'Over')": [
+    -110,
+    19.5,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_reception_yds', 'Under')": [
+    -120,
+    19.5,
+    "betmgm"
+  ],
+  "('Kyren Williams', 'player_reception_yds', 'Over')": [
+    -115,
+    12.5,
+    "betmgm"
+  ],
+  "('Kyren Williams', 'player_reception_yds', 'Under')": [
+    -115,
+    12.5,
+    "betmgm"
+  ],
+  "('Adam Trautman', 'player_reception_yds', 'Over')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Adam Trautman', 'player_reception_yds', 'Under')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Davante Adams', 'player_receptions', 'Over')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Davante Adams', 'player_receptions', 'Under')": [
+    -115,
+    5.5,
+    "betmgm"
+  ],
+  "('Jaylen Waddle', 'player_receptions', 'Over')": [
+    -150,
+    4.5,
+    "betmgm"
+  ],
+  "('Jaylen Waddle', 'player_receptions', 'Under')": [
+    110,
+    4.5,
+    "betmgm"
+  ],
+  "('Terrance Ferguson', 'player_receptions', 'Over')": [
+    -155,
+    3.5,
+    "betmgm"
+  ],
+  "('Terrance Ferguson', 'player_receptions', 'Under')": [
+    115,
+    3.5,
+    "betmgm"
+  ],
+  "('Courtland Sutton', 'player_receptions', 'Over')": [
+    120,
+    3.5,
+    "betmgm"
+  ],
+  "('Courtland Sutton', 'player_receptions', 'Under')": [
+    -160,
+    3.5,
+    "betmgm"
+  ],
+  "('Pat Bryant', 'player_receptions', 'Over')": [
+    -115,
+    2.5,
+    "betmgm"
+  ],
+  "('Pat Bryant', 'player_receptions', 'Under')": [
+    -115,
+    2.5,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_receptions', 'Over')": [
+    -155,
+    2.5,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_receptions', 'Under')": [
+    115,
+    2.5,
+    "betmgm"
+  ],
+  "('Evan Engram', 'player_receptions', 'Over')": [
+    -125,
+    2.5,
+    "betmgm"
+  ],
+  "('Evan Engram', 'player_receptions', 'Under')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Colby Parkinson', 'player_receptions', 'Over')": [
+    -130,
+    2.5,
+    "fanduel"
+  ],
+  "('Colby Parkinson', 'player_receptions', 'Under')": [
+    -102,
+    2.5,
+    "fanduel"
+  ],
+  "('Kyren Williams', 'player_receptions', 'Over')": [
+    -210,
+    1.5,
+    "betmgm"
+  ],
+  "('Kyren Williams', 'player_receptions', 'Under')": [
+    155,
+    1.5,
+    "betmgm"
+  ],
+  "('Adam Trautman', 'player_receptions', 'Over')": [
+    -225,
+    0.5,
+    "betmgm"
+  ],
+  "('Adam Trautman', 'player_receptions', 'Under')": [
+    165,
+    0.5,
+    "betmgm"
+  ],
+  "('Kyren Williams', 'player_rush_yds', 'Over')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('Kyren Williams', 'player_rush_yds', 'Under')": [
+    -115,
+    52.5,
+    "betmgm"
+  ],
+  "('J.K. Dobbins', 'player_rush_yds', 'Over')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('J.K. Dobbins', 'player_rush_yds', 'Under')": [
+    -115,
+    49.5,
+    "betmgm"
+  ],
+  "('Blake Corum', 'player_rush_yds', 'Over')": [
+    -115,
+    48.5,
+    "betmgm"
+  ],
+  "('Blake Corum', 'player_rush_yds', 'Under')": [
+    -115,
+    48.5,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_rush_yds', 'Over')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('RJ Harvey', 'player_rush_yds', 'Under')": [
+    -115,
+    20.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_rush_yds', 'Over')": [
+    -115,
+    16.5,
+    "betmgm"
+  ],
+  "('Bo Nix', 'player_rush_yds', 'Under')": [
+    -115,
+    16.5,
+    "betmgm"
+  ],
+  "('Matthew Stafford', 'player_rush_yds', 'Over')": [
+    118,
+    0.5,
+    "fanduel"
+  ],
+  "('Matthew Stafford', 'player_rush_yds', 'Under')": [
+    -150,
+    0.5,
+    "fanduel"
+  ],
+  "('Denver Broncos Defense', 'player_anytime_td', 'Yes')": [
+    750,
+    null,
+    "fanduel"
+  ],
+  "('Los Angeles Rams Defense', 'player_anytime_td', 'Yes')": [
+    900,
+    null,
+    "fanduel"
+  ],
+  "('Saquon Barkley', 'player_anytime_td', 'Yes')": [
+    -118,
+    null,
+    "betmgm"
+  ],
+  "(\"D'Andre Swift\", 'player_anytime_td', 'Yes')": [
+    110,
+    null,
+    "betmgm"
+  ],
+  "('Jalen Hurts', 'player_anytime_td', 'Yes')": [
+    150,
+    null,
+    "betmgm"
+  ],
+  "('DeVonta Smith', 'player_anytime_td', 'Yes')": [
+    150,
+    null,
+    "betmgm"
+  ],
+  "('Kyle Monangai', 'player_anytime_td', 'Yes')": [
+    210,
+    null,
+    "betmgm"
+  ],
+  "('Dontayvion Wicks', 'player_anytime_td', 'Yes')": [
+    260,
+    null,
+    "betmgm"
+  ],
+  "('Colston Loveland', 'player_anytime_td', 'Yes')": [
+    340,
+    null,
+    "betmgm"
+  ],
+  "('Luther Burden III', 'player_anytime_td', 'Yes')": [
+    325,
+    null,
+    "betmgm"
+  ],
+  "('Makai Lemon', 'player_anytime_td', 'Yes')": [
+    400,
+    null,
+    "betmgm"
+  ],
+  "('Rome Odunze', 'player_anytime_td', 'Yes')": [
+    450,
+    null,
+    "betmgm"
+  ],
+  "('Will Shipley', 'player_anytime_td', 'Yes')": [
+    825,
+    null,
+    "betmgm"
+  ],
+  "('Tank Bigsby', 'player_anytime_td', 'Yes')": [
+    550,
+    null,
+    "betmgm"
+  ],
+  "('Zach Ertz', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Kalif Raymond', 'player_anytime_td', 'Yes')": [
+    425,
+    null,
+    "betmgm"
+  ],
+  "('Cole Kmet', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Johnny Mundt', 'player_anytime_td', 'Yes')": [
+    700,
+    null,
+    "betmgm"
+  ],
+  "('Philadelphia Eagles D/ST', 'player_anytime_td', 'Yes')": [
+    600,
+    null,
+    "betmgm"
+  ],
+  "('Chicago Bears D/ST', 'player_anytime_td', 'Yes')": [
+    525,
+    null,
+    "betmgm"
+  ],
+  "('Darius Cooper', 'player_anytime_td', 'Yes')": [
+    1000,
+    null,
+    "betmgm"
+  ],
+  "('Case Keenum', 'player_anytime_td', 'Yes')": [
+    1350,
+    null,
+    "betmgm"
+  ],
+  "('Elijah Moore', 'player_anytime_td', 'Yes')": [
+    1600,
+    null,
+    "fanduel"
+  ],
+  "('E.J. Jenkins', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Jahdae Walker', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "betmgm"
+  ],
+  "('Sam Roush', 'player_anytime_td', 'Yes')": [
+    2000,
+    null,
+    "betmgm"
+  ],
+  "('Roschon Johnson', 'player_anytime_td', 'Yes')": [
+    2700,
+    null,
+    "fanduel"
+  ],
+  "('Britain Covey', 'player_anytime_td', 'Yes')": [
+    2200,
+    null,
+    "fanduel"
+  ],
+  "('Zavion Thomas', 'player_anytime_td', 'Yes')": [
+    5000,
+    null,
+    "fanduel"
+  ],
+  "('Jalen Hurts', 'player_pass_tds', 'Over')": [
+    140,
+    1.5,
+    "betmgm"
+  ],
+  "('Jalen Hurts', 'player_pass_tds', 'Under')": [
+    -190,
+    1.5,
+    "betmgm"
+  ],
+  "('Case Keenum', 'player_pass_tds', 'Over')": [
+    -205,
+    0.5,
+    "fanduel"
+  ],
+  "('Case Keenum', 'player_pass_tds', 'Under')": [
+    152,
+    0.5,
+    "fanduel"
+  ],
+  "('Jalen Hurts', 'player_pass_yds', 'Over')": [
+    -115,
+    214.5,
+    "betmgm"
+  ],
+  "('Jalen Hurts', 'player_pass_yds', 'Under')": [
+    -115,
+    214.5,
+    "betmgm"
+  ],
+  "('Case Keenum', 'player_pass_yds', 'Over')": [
+    -114,
+    165.5,
+    "fanduel"
+  ],
+  "('Case Keenum', 'player_pass_yds', 'Under')": [
+    -114,
+    165.5,
+    "fanduel"
+  ],
+  "('DeVonta Smith', 'player_reception_yds', 'Over')": [
+    -115,
+    72.5,
+    "betmgm"
+  ],
+  "('DeVonta Smith', 'player_reception_yds', 'Under')": [
+    -115,
+    72.5,
+    "betmgm"
+  ],
+  "('Dontayvion Wicks', 'player_reception_yds', 'Over')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Dontayvion Wicks', 'player_reception_yds', 'Under')": [
+    -115,
+    41.5,
+    "betmgm"
+  ],
+  "('Luther Burden III', 'player_reception_yds', 'Over')": [
+    -111,
+    34.5,
+    "betmgm"
+  ],
+  "('Luther Burden III', 'player_reception_yds', 'Under')": [
+    -120,
+    34.5,
+    "betmgm"
+  ],
+  "('Colston Loveland', 'player_reception_yds', 'Over')": [
+    -115,
+    33.5,
+    "betmgm"
+  ],
+  "('Colston Loveland', 'player_reception_yds', 'Under')": [
+    -115,
+    33.5,
+    "betmgm"
+  ],
+  "('Makai Lemon', 'player_reception_yds', 'Over')": [
+    -135,
+    25.5,
+    "betmgm"
+  ],
+  "('Makai Lemon', 'player_reception_yds', 'Under')": [
+    100,
+    25.5,
+    "betmgm"
+  ],
+  "('Rome Odunze', 'player_reception_yds', 'Over')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Rome Odunze', 'player_reception_yds', 'Under')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Kalif Raymond', 'player_reception_yds', 'Over')": [
+    -115,
+    24.5,
+    "betmgm"
+  ],
+  "('Kalif Raymond', 'player_reception_yds', 'Under')": [
+    -115,
+    24.5,
+    "betmgm"
+  ],
+  "('Saquon Barkley', 'player_reception_yds', 'Over')": [
+    -114,
+    13.5,
+    "fanduel"
+  ],
+  "('Saquon Barkley', 'player_reception_yds', 'Under')": [
+    -114,
+    13.5,
+    "fanduel"
+  ],
+  "(\"D'Andre Swift\", 'player_reception_yds', 'Over')": [
+    -120,
+    9.5,
+    "betmgm"
+  ],
+  "(\"D'Andre Swift\", 'player_reception_yds', 'Under')": [
+    -110,
+    9.5,
+    "betmgm"
+  ],
+  "('Zach Ertz', 'player_reception_yds', 'Over')": [
+    -111,
+    12.5,
+    "betmgm"
+  ],
+  "('Zach Ertz', 'player_reception_yds', 'Under')": [
+    -120,
+    12.5,
+    "betmgm"
+  ],
+  "('Cole Kmet', 'player_reception_yds', 'Over')": [
+    -114,
+    9.5,
+    "fanduel"
+  ],
+  "('Cole Kmet', 'player_reception_yds', 'Under')": [
+    -114,
+    9.5,
+    "fanduel"
+  ],
+  "('DeVonta Smith', 'player_receptions', 'Over')": [
+    -110,
+    5.5,
+    "betmgm"
+  ],
+  "('DeVonta Smith', 'player_receptions', 'Under')": [
+    -120,
+    5.5,
+    "betmgm"
+  ],
+  "('Luther Burden III', 'player_receptions', 'Over')": [
+    -120,
+    3.5,
+    "betmgm"
+  ],
+  "('Luther Burden III', 'player_receptions', 'Under')": [
+    -110,
+    3.5,
+    "betmgm"
+  ],
+  "('Colston Loveland', 'player_receptions', 'Over')": [
+    -105,
+    3.5,
+    "betmgm"
+  ],
+  "('Colston Loveland', 'player_receptions', 'Under')": [
+    -130,
+    3.5,
+    "betmgm"
+  ],
+  "('Dontayvion Wicks', 'player_receptions', 'Over')": [
+    125,
+    3.5,
+    "betmgm"
+  ],
+  "('Dontayvion Wicks', 'player_receptions', 'Under')": [
+    -165,
+    3.5,
+    "betmgm"
+  ],
+  "('Kalif Raymond', 'player_receptions', 'Over')": [
+    130,
+    3.5,
+    "betmgm"
+  ],
+  "('Kalif Raymond', 'player_receptions', 'Under')": [
+    -175,
+    3.5,
+    "betmgm"
+  ],
+  "('Makai Lemon', 'player_receptions', 'Over')": [
+    -115,
+    2.5,
+    "betmgm"
+  ],
+  "('Makai Lemon', 'player_receptions', 'Under')": [
+    -115,
+    2.5,
+    "betmgm"
+  ],
+  "('Rome Odunze', 'player_receptions', 'Over')": [
+    -105,
+    2.5,
+    "betmgm"
+  ],
+  "('Rome Odunze', 'player_receptions', 'Under')": [
+    -125,
+    2.5,
+    "betmgm"
+  ],
+  "('Saquon Barkley', 'player_receptions', 'Over')": [
+    116,
+    2.5,
+    "fanduel"
+  ],
+  "('Saquon Barkley', 'player_receptions', 'Under')": [
+    -154,
+    2.5,
+    "fanduel"
+  ],
+  "(\"D'Andre Swift\", 'player_receptions', 'Over')": [
+    -160,
+    1.5,
+    "betmgm"
+  ],
+  "(\"D'Andre Swift\", 'player_receptions', 'Under')": [
+    120,
+    1.5,
+    "betmgm"
+  ],
+  "('Cole Kmet', 'player_receptions', 'Over')": [
+    -108,
+    1.5,
+    "fanduel"
+  ],
+  "('Cole Kmet', 'player_receptions', 'Under')": [
+    -122,
+    1.5,
+    "fanduel"
+  ],
+  "('Zach Ertz', 'player_receptions', 'Over')": [
+    -105,
+    1.5,
+    "betmgm"
+  ],
+  "('Zach Ertz', 'player_receptions', 'Under')": [
+    -130,
+    1.5,
+    "betmgm"
+  ],
+  "('Saquon Barkley', 'player_rush_yds', 'Over')": [
+    -114,
+    71.5,
+    "fanduel"
+  ],
+  "('Saquon Barkley', 'player_rush_yds', 'Under')": [
+    -114,
+    71.5,
+    "fanduel"
+  ],
+  "(\"D'Andre Swift\", 'player_rush_yds', 'Over')": [
+    -115,
+    59.5,
+    "betmgm"
+  ],
+  "(\"D'Andre Swift\", 'player_rush_yds', 'Under')": [
+    -115,
+    59.5,
+    "betmgm"
+  ],
+  "('Kyle Monangai', 'player_rush_yds', 'Over')": [
+    -120,
+    37.5,
+    "betmgm"
+  ],
+  "('Kyle Monangai', 'player_rush_yds', 'Under')": [
+    -111,
+    37.5,
+    "betmgm"
+  ],
+  "('Jalen Hurts', 'player_rush_yds', 'Over')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Jalen Hurts', 'player_rush_yds', 'Under')": [
+    -115,
+    25.5,
+    "betmgm"
+  ],
+  "('Philadelphia Eagles Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ],
+  "('Chicago Bears Defense', 'player_anytime_td', 'Yes')": [
+    650,
+    null,
+    "fanduel"
+  ]
+}
