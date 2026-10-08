@@ -1,0 +1,20 @@
+{
+  "league": "nfl",
+  "season": 2026,
+  "week": 5,
+  "generated": "2026-10-08T16:07:13+00:00",
+  "recommendations": [],
+  "too_thin": [],
+  "correlated_games": [],
+  "no_price": [],
+  "skipped": [
+    [
+      "H1",
+      "hypothesis could not be evaluated"
+    ],
+    [
+      "H3",
+      "hypothesis could not be evaluated"
+    ]
+  ]
+}
