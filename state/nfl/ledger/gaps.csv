@@ -1,4 +1,4 @@
 gap_id,ts,season,week,kind,reason,detail,resolved
 G0001,2026-09-26T20:29:56+00:00,2026,3,props_open,empty,"29 event(s) listed, 29 call(s) failed, 0 boards returned | resolved 2026-09-26T20:39Z",yes
-G0002,2026-10-10T17:50:15+00:00,2026,6,props_open,no_key,,
-G0003,2026-10-10T17:53:40+00:00,2026,6,props_open,fetch_failed,HTTP Error 401: Unauthorized,
+G0002,2026-10-10T17:50:15+00:00,2026,6,props_open,no_key, | resolved 2026-10-10T17:56Z,yes
+G0003,2026-10-10T17:53:40+00:00,2026,6,props_open,fetch_failed,HTTP Error 401: Unauthorized | resolved 2026-10-10T17:56Z,yes

@@ -2,8 +2,8 @@
   "league": "nfl",
   "season": 2026,
   "week": 6,
-  "generated": "2026-10-10T17:53:41+00:00",
-  "board_lines": 0,
+  "generated": "2026-10-10T17:56:09+00:00",
+  "board_lines": 3524,
   "players_with_usage": 416,
   "results": [
     {
@@ -34,7 +34,7 @@
       "verdict": "UNEVALUABLE",
       "candidates": [],
       "notes": [
-        "needs two prop-board snapshots to measure line movement; 0 open + 0 close captured for week 6",
+        "needs two prop-board snapshots to measure line movement; 1 open + 0 close captured for week 6",
         "the Thursday slate pull and the Sunday closing pull are the intended pair"
       ]
     },
